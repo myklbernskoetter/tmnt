@@ -39,6 +39,7 @@ Thumbs.db
 # Build Folders #
 #################
 node_modules
+.nuxt
 
 # PHPStorm #
 ############

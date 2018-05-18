@@ -27,13 +27,14 @@ export default {
         'Explorer',
         'Pathfinder',
         'Builder',
+        'Digit',
         'Developer']
     }
   },
    beforeMount() {
      const self = this;
      this.intervalid1 = setInterval(function(){
-       if (self.counter < 7) {
+       if (self.counter < 8) {
          self.counter++;
        } else {
          clearInterval(this.intervalid1);
