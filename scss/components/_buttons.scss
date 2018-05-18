@@ -1,0 +1,17 @@
+button,
+.button {
+  font-size: 2rem;
+  background-color: var(--color-magenta);
+  color: var(--color-white);
+  border-radius: 10px;
+  border: .1rem solid var(--color-black);
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-family: var(--font-kollektif);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+  background-color: var(--color-magentadark);
+  }
+}

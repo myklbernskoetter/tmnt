@@ -1,0 +1,36 @@
+* {
+  position: relative;
+}
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+html { font-size: 62.5%; }
+body { font-size: 2rem; }
+
+body {
+  --font-kollektif: 'kollektif', sans-serif;
+  --font-montserrat: 'montserrat', sans-serif;
+  --font-norwester: 'norwester', sans-serif;
+  @include font-smoothing;
+  font-family: var(--font-montserrat);
+}
+img {
+  width: 100%;
+}
+
+.nuxt-link-active {
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  color: var(--color-main-text);
+  background-color: var(--color-white);
+}

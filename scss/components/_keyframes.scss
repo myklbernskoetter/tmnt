@@ -1,0 +1,48 @@
+@keyframes pop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes split-in {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes left-out {
+  to {
+    transform: translateX(-110%);
+  }
+}
+
+@keyframes right-out {
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes frame-draw {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes frame-draw2 {
+  to {
+    transform: scaleX(1);
+  }
+}
