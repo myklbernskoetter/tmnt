@@ -31,6 +31,20 @@ img {
 .container {
   width: 100vw;
   height: 100vh;
+  padding-top: 10rem;
   color: var(--color-main-text);
   background-color: var(--color-white);
+
+  @media screen and (min-width: 640px) {
+    padding-top: 0;
+  }
+}
+
+a:visited {
+  color: var(--color-darkmagenta);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-magenta)
 }

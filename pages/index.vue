@@ -102,12 +102,16 @@ export default {
 
 .home-image {
   margin-left: .1rem;
-  opacity: 0;
+  max-width: 108rem;
   animation: fade-in 500ms linear forwards;
   animation-delay: 1250ms;
+  opacity: 0;
 }
 
 .home-image-wrapper {
+  max-width: 60rem;
+  margin: auto;
+
   &::before {
     content: '';
     display: block;
@@ -122,6 +126,10 @@ export default {
     animation: frame-draw2 450ms linear forwards;
     animation-delay: 2000ms;
     z-index: 1;
+  }
+
+  @media screen and (min-width: 1020px) {
+    max-width: none;
   }
 }
 

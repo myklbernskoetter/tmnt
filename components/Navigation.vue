@@ -1,14 +1,12 @@
 <template>
   <nav class="site-nav">
-    <div class="site-nav-container">
-      <div class="menu-wrapper">
-        <nuxt-link class="menu-link" exact to="/">Home</nuxt-link>
-        <nuxt-link class="menu-link" to="/about">About</nuxt-link>
-        <nuxt-link class="menu-link" to="/experiments">Show</nuxt-link>
-        <nuxt-link class="menu-link" to="/production">... And Tell</nuxt-link>
-        <nuxt-link class="menu-link" to="/contact">Contact</nuxt-link>
-      </div>
-    </div>
+    <ul class="site-nav-container">
+      <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Home</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" to="/about">About</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" to="/experiments">Show</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" to="/production">... And Tell</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" to="/contact">Contact</nuxt-link></li>
+    </ul>
   </nav>
 </template>
 
@@ -23,13 +21,36 @@ export default {
 <style lang="scss">
 
   .site-nav {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     z-index: 2;
-    // background-color: var(--color-white);
+    transform: translateY(-100%);
+    animation: drop-in-mobile 500ms linear forwards;
+    animation-delay: 1000ms;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: .1rem;
+      background-color: var(--color-black);
+    }
+
+    @media screen and (min-width: 640px) {
+      top: unset;
+      bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
   }
 
   .nav-close-button {
@@ -39,13 +60,40 @@ export default {
 
   .site-nav-container {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     max-width: 107rem;
     margin: auto;
+    padding: 0;
+    list-style: none;
+    background-color: var(--color-white);
+    box-shadow: 0px 6px 13px -2px rgba(0,0,0,0.69);
+
+    @media screen and (min-width: 640px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: var(--color-black);
+      box-shadow: none;
+    }
+  }
+
+  .menu-item {
+    @media screen and (min-width: 640px) {
+      &:hover,
+      &:focus {
+
+        .menu-link {
+          transform: translateY(-2rem);
+        }
+      }
+    }
   }
 
   a.menu-link {
+    flex-grow: 1;
+    min-width: 12rem;
+    text-align: center;
     display: inline-block;
     padding: 1rem 1rem;
     font-size: 1.6rem;
@@ -54,13 +102,20 @@ export default {
     font-family: var(--font-kollektif);
     font-size: 2.5rem;
     text-decoration: none;
-    color: var(--color-white);
-    background-color: var(--color-black);
 
     &:hover,
     &:focus {
       color: var(--color-yellow);
-      padding-bottom: 2rem;
+    }
+
+    @media screen and (min-width: 640px) {
+      color: var(--color-white);
+      background-color: var(--color-black);
+      &:hover,
+      &:focus {
+        color: var(--color-yellow);
+        transform: translateY(-2rem);
+      }
     }
   }
 

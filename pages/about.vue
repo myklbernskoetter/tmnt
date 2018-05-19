@@ -4,34 +4,17 @@
     <div class="split-page">
     <div class="first-column">
     <div class="bio">
-      <h2>About Me</h2>
+      <h2>Where I've been</h2>
       <p>
-        In 2013 I had the chance to join a very small web development shop-
-        and it changed my life.
-        I realized quickly that this was a career worth pursuing,
-        one that I loved waking up for each morning. Unfortunately for me,
-        the company was soon bought and shutdown as the owner went to work with a larger
-        firm in Washington DC.  I took my licks and partnered up with another Developer
-        and we struggled for the better part of 2014 to make a go of freelance work.
-      </p>
-      <p>
-        In late 2014 I read about a dev shop in Springfield that was growing and hiring.
-        I took the opportunity to join them as a jr. developer. My first year consisted of
-        a lot of email development, a job which many would decline, but it was my foot in the door
-        of a company and a career that I love. While adding email dev to my toolkit of skills,
-        I was also working to learn about the processes, tools, and skills that 40Digits used to build
-        their projects.
+        I began coding in late 2013
       </p>
       <p>
         I enjoy working with and around passionate people who take pride in their work.
       </p>
       </div>
-      <div class="values">
-        <ul>
-          <li>Positivity, patience, and good humor can do amazing things</li>
-          <li>Never stop learning</li>
-        </ul>
-      </div>
+      <ul class="values">
+        <li></li>
+      </ul>
     </div>
     <div class="second-column page-detail-wrapper">
       <div class="learning-blurb">
@@ -65,7 +48,16 @@
 <script>
 
 export default {
-  transition: 'fadeOpacity'
+  transition: 'fadeOpacity',
+  data() {
+    return {
+      values: [
+        'Positivity, patience, and good humor can do amazing things',
+        'Never stop learning',
+        ''
+      ]
+    }
+  }
 }
 </script>
 
