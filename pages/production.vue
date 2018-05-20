@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import workBlocks from '~/components/workBlocks.vue';
+// import workBlocks from '~/components/workBlocks.vue';
 export default {
   components: {
-    workBlocks,
+    // workBlocks,
   },
 transition: 'fadeOpacity',
 }

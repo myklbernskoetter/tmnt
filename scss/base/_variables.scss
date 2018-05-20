@@ -4,6 +4,7 @@ body {
   --color-black: #000;
   --color-white: #fff;
   --color-yellow: #e8d181;
+  --color-pale-yellow: rgba(232, 209, 129, .2);
   --color-orange: #d36b00;
   --color-grey: #B0B0B0;
   --color-magenta: #8B008B;
@@ -11,6 +12,7 @@ body {
   --color-palegreen: rgba(194, 255, 137, 0.3);
 
   --gradient-green-white: linear-gradient(to bottom, rgba(154,255,137,0.33) 0%,rgba(155,255,138,0.33) 1%,rgba(255,255,255,1) 100%);
+  --gradient-yellow-white: linear-gradient(to bottom, rgba(154,255,137,0.33) 0%,rgba(155,255,138,0.33) 1%,rgba(255,255,255,1) 100%);
 
   --light-glow: 4px 25px 67px 25px rgba(255,215,0,0.77);
 

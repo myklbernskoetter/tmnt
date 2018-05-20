@@ -46,6 +46,8 @@ export default {
     @media screen and (min-width: 640px) {
       top: unset;
       bottom: 0;
+      transform: translateY(0);
+      animation: none;
 
       &::after {
         display: none;

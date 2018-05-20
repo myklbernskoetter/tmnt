@@ -12,13 +12,35 @@
             <img src="~/assets/images/featured-experiement-image1.png" alt="">
             <button type="button" v-on:click="activeExperiment = 'light-array', active = true" name="button">Explore</button>
           </div>
+          <ul class="experiments-list">
+            <li class="list-item">
+              <button class="item-toggle" type="button" name="button">Experiment 1 Name</button>
+              <div class="item-description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+                <span>
+                  <button type="button" name="button" v-on:click="activeExperiment = 'experiment-2', active = true">Explore</button>
+                </span>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="experiment-panels" v-bind:class="{active: active}">
-      <div class="light-array" v-show="activeExperiment === 'light-array'">
+      <div class="panel-header">
         <button class="close-button" type="button" name="button" v-on:click="closePanel()">Close</button>
-        <app-light-array></app-light-array>
+      </div>
+      <div class="light-array" v-if="activeExperiment === 'light-array'">
+        <div class="panel-content">
+          <app-light-array></app-light-array>
+        </div>
+      </div>
+
+      <div class="experiment-2" v-if="activeExperiment === 'experiment-2'">
+        test 2
       </div>
     </div>
   </div>
@@ -68,5 +90,27 @@ export default {
 
 .close-button {
   z-index: 1;
+}
+
+.experiments-list {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  .list-item {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.item-toggle {
+  width: 90%;
+  color: var(--color-black);
+  background-color: white;
+  border: .2rem solid var(--color-black);
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-grey);
+  }
 }
 </style>

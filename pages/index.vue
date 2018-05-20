@@ -44,9 +44,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+.site-title,
+.word-spinner {
+  height: 50%;
+}
 
 .site-title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 0;
   padding: 0 2rem;
 
   &::before {
@@ -56,7 +65,7 @@ export default {
     bottom: -1rem;
     left: 0;
     width: 50vw;
-    height: .1rem;
+    height: .2rem;
     background-color: var(--color-black);
     transform: scaleX(0);
     transform-origin: left;
@@ -82,7 +91,14 @@ export default {
 .word-spinner {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
+  margin: 1rem 0 0 0;
+  padding-top: 2rem;
   list-style: none;
+
+  @media screen and (min-width: 1020px) {
+    background-color: var(--color-pale-yellow);
+  }
 
   .word {
     position: absolute;
@@ -121,13 +137,13 @@ export default {
       bottom: .4rem;
       left: 0;
       width: 50vw;
-      height: .1rem;
+      height: .2rem;
       background-color: var(--color-black);
       transform: scaleX(0);
       transform-origin: right;
       animation: frame-draw2 450ms linear forwards;
       animation-delay: 2000ms;
-      z-index: 1;
+      z-index: 2;
     }
   }
 
@@ -135,5 +151,4 @@ export default {
     max-width: none;
   }
 }
-
 </style>
