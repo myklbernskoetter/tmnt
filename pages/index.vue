@@ -106,6 +106,7 @@ export default {
   animation: fade-in 500ms linear forwards;
   animation-delay: 1250ms;
   opacity: 0;
+  z-index: 1;
 }
 
 .home-image-wrapper {
@@ -113,19 +114,21 @@ export default {
   margin: auto;
 
   &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: .4rem;
-    left: 0;
-    width: 50vw;
-    height: .1rem;
-    background-color: var(--color-black);
-    transform: scaleX(0);
-    transform-origin: right;
-    animation: frame-draw2 450ms linear forwards;
-    animation-delay: 2000ms;
-    z-index: 1;
+    @media screen and (min-width: 768px) {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: .4rem;
+      left: 0;
+      width: 50vw;
+      height: .1rem;
+      background-color: var(--color-black);
+      transform: scaleX(0);
+      transform-origin: right;
+      animation: frame-draw2 450ms linear forwards;
+      animation-delay: 2000ms;
+      z-index: 1;
+    }
   }
 
   @media screen and (min-width: 1020px) {
