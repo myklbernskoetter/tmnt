@@ -39,6 +39,5 @@ export default {
 
   .fadeOpacity-leave-active {
     opacity: 0;
-    // transform: scale(.8);
   }
 </style>

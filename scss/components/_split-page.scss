@@ -5,7 +5,7 @@
   height: 100vh;
 
   @media screen and (min-width: 920px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1.5fr 2fr;
   }
 }
 
@@ -53,4 +53,8 @@
 
 .page-detail {
   padding: 2.5rem;
+
+  .three-active & {
+    padding: 0;
+  }
 }

@@ -1,8 +1,6 @@
 <template lang="html">
   <div class="container">
     <h1>About</h1>
-    <div class="split-page">
-    <div class="first-column">
     <div class="bio">
       <h2>Where I've been</h2>
       <p>
@@ -11,12 +9,10 @@
       <p>
         I enjoy working with and around passionate people who take pride in their work.
       </p>
-      </div>
-      <ul class="values">
-        <li></li>
-      </ul>
     </div>
-    <div class="second-column page-detail-wrapper">
+    <ul class="values">
+      <li></li>
+    </ul>
       <div class="learning-blurb">
         <!-- <div class="about-image-wrapper"><img class="about-image" src="~/assets/images/about-image1.jpg" alt=""></div> -->
         <h2>What am I learning about?</h2>
@@ -40,9 +36,7 @@
         <p>
           These examples include puzzle cubes, interactive ui's, and even the transitions you're enjoying between pages on this site.
         </p>
-      </div>
     </div>
-  </div>
 </div>
 </template>
 <script>

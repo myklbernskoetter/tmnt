@@ -7,7 +7,6 @@
       <transition-group name="test2" tag="div" class="page-detail-wrapper">
         <div key="content" class="page-detail">
           <div class="featured-work">
-
           </div>
         </div>
       </transition-group>

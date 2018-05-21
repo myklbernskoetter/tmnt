@@ -64,7 +64,7 @@ export default {
     position: absolute;
     bottom: -1rem;
     left: 0;
-    width: 50vw;
+    width: 100vw;
     height: .2rem;
     background-color: var(--color-black);
     transform: scaleX(0);
@@ -105,7 +105,7 @@ export default {
     transform: translateY(100%);
     transition: all 500ms;
     font-family: var(--font-kollektif);
-    font-size: 3.5rem;
+    font-size: 5.5rem;
     opacity: 0;
 
     &.active {
@@ -136,7 +136,7 @@ export default {
       position: absolute;
       bottom: .4rem;
       left: 0;
-      width: 50vw;
+      width: 100vw;
       height: .2rem;
       background-color: var(--color-black);
       transform: scaleX(0);

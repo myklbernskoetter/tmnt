@@ -6,11 +6,14 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
+    "build": "parallelshell \"npm run build:symbols\"",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "build:symbols": "svg-sprite --dest ./assets/images/symbols --symbol --symbol-inline --symbol-dest \"symbols.svg\" --symbol-sprite . ./assets/images/symbols/**/*.svg",
+    "watch:symbols": "chokidar \"./_src/symbols/**/*.svg\" -c \"npm run build:symbols\"",
+    "watch": "parallelshell \"npm run watch:symbols\""
   },
   "dependencies": {
     "ajv": "^6.4.0",
@@ -18,6 +21,8 @@
     "vue-style-loader": "^4.1.0",
     "node-sass": "^4.8.3",
     "sass-loader": "^6.0.7",
+    "parallelshell": "3.0.1",
+    "svg-sprite": "^1.2.19",
     "style-loader": "^0.20.3",
     "vuex": "^3.0.1"
   },
