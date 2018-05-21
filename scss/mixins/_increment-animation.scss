@@ -1,1 +1,7 @@
-
+@mixin increment-animation($time-default:.25, $loops:1) {
+  @for $i from 1 through $loops {
+    &:nth-child(#{$i}) {
+      transition-delay: $i * $time-default + s;
+    }
+  }
+}

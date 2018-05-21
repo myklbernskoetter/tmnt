@@ -4,7 +4,6 @@
       <div class="title-wrapper">
         <h1 class="page-title">Experimental<br>
           Opportunities
-          {{openListItem}}
         </h1>
       </div>
       <div class="page-detail-wrapper">
@@ -102,11 +101,14 @@ export default {
         this.openListItem = setIndex;
       }
     }
+  },
+  beforeMount() {
+    this.openListItem = null;
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .experiment-panels {
   position: fixed;
@@ -139,9 +141,13 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 auto 2.5rem;
-    border: .2rem solid var(--color-black);
-    width: 90%;
+    // margin: 0 auto 2.5rem;
+    border-bottom: .2rem solid var(--color-black);
+    width: 100%;
+
+    &:last-child {
+      border: none;
+    }
   }
 }
 
@@ -152,6 +158,7 @@ export default {
 .item-toggle {
   width: 100%;
   border: none;
+  padding-top: 2.5rem;
   color: var(--color-black);
   background-color: white;
 
@@ -236,4 +243,13 @@ svg path {
   transition: 0.35s;
 }
 
+.page-title {
+
+  @media screen and (min-width: 768px) {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8rem;
+  }
+}
 </style>

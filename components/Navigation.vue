@@ -3,8 +3,8 @@
     <ul class="site-nav-container">
       <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Home</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" to="/about">About</nuxt-link></li>
-      <li class="menu-item"><nuxt-link class="menu-link" to="/experiments">Show</nuxt-link></li>
-      <li class="menu-item"><nuxt-link class="menu-link" to="/production">... And Tell</nuxt-link></li>
+      <!-- <li class="menu-item"><nuxt-link class="menu-link" to="/experiments">Show</nuxt-link></li> -->
+      <li class="menu-item"><nuxt-link class="menu-link" to="/production">Work</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" to="/contact">Contact</nuxt-link></li>
     </ul>
   </nav>
@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style lang="scss">
-
   .site-nav {
     position: fixed;
     top: 0;
@@ -30,6 +29,7 @@ export default {
     transform: translateY(-100%);
     animation: drop-in-mobile 500ms linear forwards;
     animation-delay: 1000ms;
+    background-color: var(--color-black);
 
 
     &::after {
@@ -39,7 +39,7 @@ export default {
       left: 0;
       display: block;
       width: 100%;
-      height: .1rem;
+      height: .2rem;
       background-color: var(--color-black);
     }
 
@@ -70,7 +70,7 @@ export default {
     padding: 0;
     list-style: none;
     background-color: var(--color-white);
-    box-shadow: 0px 6px 13px -2px rgba(0,0,0,0.69);
+    // box-shadow: 0px 6px 13px -2px rgba(0,0,0,0.69);
 
     @media screen and (min-width: 640px) {
       flex-wrap: nowrap;
