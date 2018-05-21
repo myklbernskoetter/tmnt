@@ -44,8 +44,8 @@ export default {
     }
 
     @media screen and (min-width: 640px) {
-      top: unset;
-      bottom: 0;
+      // top: unset;
+      // bottom: 0;
       transform: translateY(0);
       animation: none;
 
@@ -86,7 +86,7 @@ export default {
       &:focus {
 
         .menu-link {
-          transform: translateY(-2rem);
+          transform: translateY(2rem);
         }
       }
     }
@@ -116,7 +116,7 @@ export default {
       &:hover,
       &:focus {
         color: var(--color-yellow);
-        transform: translateY(-2rem);
+        transform: translateY(2rem);
       }
     }
   }

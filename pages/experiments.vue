@@ -4,6 +4,7 @@
       <div class="title-wrapper">
         <h1 class="page-title">Experimental<br>
           Opportunities
+          {{openListItem}}
         </h1>
       </div>
       <div class="page-detail-wrapper">
@@ -15,11 +16,11 @@
           <ul class="experiments-list">
             <transition-group name="toggle-open">
               <li class="list-item" v-for='(item, index) in experiments' :key='index' v-bind:class="{'item-open': openListItem == index}">
-                <button class="item-toggle" v-on:click="openListItem = index" type="button" name="button">
+                <button class="item-toggle" v-on:click="toggleListItem(index)" type="button" name="button">
                   {{item.name}}
-                  <svg viewbox="0 0 100 100" class="svg-1">
-                    <path class="path-1" stroke-width="10" fill="none" d="M10 70 L50 10"></path>
-                    <path class="path-2" stroke-width="10" fill="none" d="M90 70 L50 10"></path>
+                  <svg viewBox="0 0 100 100" class="svg-1">
+                    <path class="path-1" stroke-width="13" fill="none" d="M10 70 L50 10" />
+                    <path class="path-2" stroke-width="13" fill="none" d="M90 70 L50 10" />
                   </svg>
                 </button>
                 <div class="item-description" v-show="openListItem == index">
@@ -91,6 +92,15 @@ export default {
       this.active = true;
       this.openListItem = 'light-array';
       this.indexActive
+    },
+    toggleListItem(index) {
+
+      const setIndex = index;
+      if(this.openListItem == setIndex) {
+        this.openListItem = null;
+      } else {
+        this.openListItem = setIndex;
+      }
     }
   }
 }
@@ -148,12 +158,43 @@ export default {
   &:hover,
   &:focus {
     background-color: var(--color-pale-yellow);
+
+    .path-1 {
+      d: path("M10 30 L50 80");
+    }
+    .path-2 {
+      d: path("M90 30 L50 80");
+    }
+
+    path {
+      stroke: var(--color-orange);
+    }
   }
 
   .active & {
     &:hover,
     &:focus {
       background-color: var(--color-white);
+    }
+  }
+
+  .item-open & {
+
+    .path-1 {
+      d: path("M10 10 L90 90");
+    }
+    .path-2 {
+      d: path("M90 10 L10 90");
+    }
+
+    &:hover,
+    &:focus {
+      .path-1 {
+        d: path("M10 70 L50 10");
+      }
+      .path-2 {
+        d: path("M90 70 L50 10");
+      }
     }
   }
 }
@@ -178,45 +219,12 @@ export default {
   opacity: 0;
 }
 
-.svg-1 {
+svg {
   position: absolute;
   right: 2.5rem;
-  width: 4rem;
+  width: 3rem;
   height: 3rem;
-
-  &:hover {
-    .path-1 {
-      d: path("M10 30 L50 80");
-    }
-    .path-2 {
-      d: path("M90 30 L50 80");
-    }
-
-    path {
-      stroke: var(--color-orange);
-    }
-  }
-
-  .item-open & {
-
-    .path-1 {
-      d: path("M10 10 L90 90");
-    }
-    .path-2 {
-      d: path("M90 10 L10 90");
-    }
-
-    &:hover {
-      .path-1 {
-        d: path("M10 70 L50 10");
-      }
-      .path-2 {
-        d: path("M90 70 L50 10");
-      }
-    }
-  }
 }
-
 
 svg polyline,
 svg line,
@@ -225,7 +233,7 @@ svg path {
   stroke: #000;
   stroke-linecap: round;
   stroke-linejoin: round;
-  transition: 0.2s;
+  transition: 0.35s;
 }
 
 </style>
