@@ -30,7 +30,7 @@
                 </button>
                 <div class="item-description" v-show="openListItem == index">
                   <div class="item-image">
-                    <img v-bind:src="`images/${item.image}`" />
+                    <img v-bind:src="`/images/${item.image}`" />
                   </div>
                   <p>{{item.blurb}}</p>
                   <div>
