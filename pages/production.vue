@@ -29,6 +29,9 @@
                   </svg>
                 </button>
                 <div class="item-description" v-show="openListItem == index">
+                  <div class="item-image">
+                    <img v-bind:src="`images/${item.image}`" />
+                  </div>
                   <p>{{item.blurb}}</p>
                   <div>
                     <button type="button" name="button" v-on:click="populatePanel(index)">Explore</button>
@@ -62,15 +65,15 @@ export default {
       indexActive: 0,
       openListItem: '',
       projects: [
-        {name: 'FutureCast', description: 'description1', blurb: 'blurb'},
-        {name: 'NBH Bank', description: 'description2', blurb: 'blurb'},
-        {name: 'RGA GUM', description: 'description3', blurb: 'blurb'},
-        {name: 'C3', description: 'description4', blurb: 'blurb'},
-        {name: 'Pizza Patrón', description: 'description5', blurb: 'blurb'},
-        {name: 'Quahog Bay', description: 'description5', blurb: 'blurb'},
-        {name: 'Pizza Patrón', description: 'description5', blurb: 'blurb'},
-        {name: 'Barkley KesselRun UI', description: 'description5', blurb: 'blurb'},
-        {name: 'Experiments', description: 'description5', blurb: 'blurb'},
+        {name: 'FutureCast', description: 'description1', blurb: 'blurb', image: 'futurecast-hero-1.png'},
+        {name: 'NBH Bank', description: 'description2', blurb: 'blurb', image: 'bmw-item-image-1.png'},
+        {name: 'RGA GUM', description: 'description3', blurb: 'blurb', image: 'rga-item-image-1.png'},
+        {name: 'C3', description: 'description4', blurb: 'blurb', image: 'c3-item-image-1.png'},
+        {name: 'Pizza Patrón', description: 'description5', blurb: 'blurb', image: 'pizza-patron-image-1.png'},
+        {name: 'Quahog Bay', description: 'description5', blurb: 'blurb', image: 'quahogbay-image-1.png'},
+        {name: 'Wingstop', description: 'description5', blurb: 'blurb', image: 'wingbot-image-1.png'},
+        {name: 'Barkley KesselRun UI', description: 'description5', blurb: 'blurb', image: 'futurecast-hero-1.png'},
+        {name: 'Experiments', description: 'description5', blurb: 'blurb', image: 'futurecast-hero-1.png'},
       ]
     }
   },
@@ -153,7 +156,6 @@ export default {
 
 .featured-image {
   transition: transform 5000ms;
-  // border-bottom: .2rem solid var(--color-black);
   &:hover,
   &:focus {
     transform: scale(1.2);
@@ -213,12 +215,14 @@ export default {
 .item-toggle {
   width: 100%;
   border: none;
+  margin-bottom: .2rem;
   padding-top: 2.5rem;
   color: var(--color-black);
   background-color: white;
 
   &:hover,
   &:focus {
+    color: var(--color-orange);
     background-color: var(--color-pale-yellow);
 
     .path-1 {
@@ -270,21 +274,23 @@ export default {
 }
 
 .list-item {
-  @include increment-animation(500, 7);
+  @include increment-animation(500, 9);
 
   .item-toggle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     animation-delay: inherit;
   }
 
   .item-title {
+    display: block;
+    // position: absolute;
+    transform: translateY(-1rem);
     opacity: 0;
-    animation: fade-in 250ms linear forwards;
+    animation: fade-in-list-items 250ms linear forwards;
     animation-delay: inherit;
   }
-}
-
-.item-description {
-  padding: 0 2.5rem;
 }
 
 .toggle-open-enter-active {
@@ -304,7 +310,6 @@ export default {
 }
 
 svg {
-  position: absolute;
   right: 2.5rem;
   width: 3rem;
   height: 3rem;

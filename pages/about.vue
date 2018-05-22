@@ -14,7 +14,6 @@
       <li></li>
     </ul>
       <div class="learning-blurb">
-        <!-- <div class="about-image-wrapper"><img class="about-image" src="~/assets/images/about-image1.jpg" alt=""></div> -->
         <h2>What am I learning about?</h2>
         <p>
           In this profession, it's not okay to just rest on your laurels.

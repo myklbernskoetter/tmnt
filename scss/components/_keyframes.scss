@@ -34,6 +34,17 @@
   }
 }
 
+@keyframes fade-in-list-items {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 @keyframes split-in {
   to {
