@@ -19,7 +19,7 @@
             the idea for a 'new' power-drink. Mülü was born.
           </p>
           <ul class="projects-list">
-            <transition-group name="toggle-open">
+            <transition-group name="slide" class="slide">
               <li class="list-item" v-for='(item, index) in projects' :key='index' v-bind:class="{'item-open': openListItem == index}">
                 <button class="item-toggle" v-on:click="toggleListItem(index)" type="button" name="button">
                   <span class="item-title">{{item.name}}</span>
@@ -28,7 +28,7 @@
                     <path class="path-2" stroke-width="13" fill="none" d="M90 70 L50 10" />
                   </svg>
                 </button>
-                <div class="item-description" v-show="openListItem == index">
+                <div class="item-description" v-if="openListItem == index" v-show="openListItem == index">
                   <div class="item-image">
                     <img v-bind:src="`/images/${item.image}`" />
                   </div>
@@ -285,7 +285,6 @@ export default {
 
   .item-title {
     display: block;
-    // position: absolute;
     transform: translateY(-1rem);
     opacity: 0;
     animation: fade-in-list-items 250ms linear forwards;
@@ -293,35 +292,54 @@ export default {
   }
 }
 
-.toggle-open-enter-active {
-  transition: all 500ms ease-out;
+.slide-enter-active {
+	animation: slide-in 0.5s;
 }
 
-.toggle-open-enter {
-  opacity: 0;
+.slide-leave-active {
+	animation: slide-out 0.5s;
 }
 
-.toggle-open-leave-active {
-  transition: all 250ms ease-out;
+@keyframes slide-in {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(50px);
+	}
 }
 
-.toggle-open-leave-active {
-  opacity: 0;
+@keyframes slide-out {
+	0% {
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-50px)
+	}
 }
 
-svg {
+.svg-1 {
   right: 2.5rem;
   width: 3rem;
   height: 3rem;
 }
 
-svg polyline,
-svg line,
-svg path {
-  fill: none;
-  stroke: #000;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: 0.35s;
+.svg-1
+.svg-1
+.svg-1 {
+  polyline,
+  line,
+  path {
+    fill: none;
+    stroke: #000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: 0.35s;
+  }
 }
 </style>

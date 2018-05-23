@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   css: [
-      { src: '~scss/style.scss', lang: 'scss' }
+      { src: './scss/style.scss', lang: 'scss' }
   ],
   router: {
    middleware: 'pages'

@@ -1,11 +1,9 @@
-// @import './mixins/increment-animation';
+@import './base/variables';
 @import './mixins/font-smoothing';
 @import './core/options';
 @import './core/media_queries';
-@import './base/variables';
 @import './base/defaults';
 @import './components/keyframes';
 @import './components/fonts';
 @import './components/split-page';
-
 @import './components/buttons';
