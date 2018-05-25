@@ -4,7 +4,7 @@
       <div class="title-wrapper">
         <h1 class="headline-1 page-title" key="title">About</h1>
         <div class="spinner-wrapper">
-          <h2 class="values">Core Values</h2>
+          <h2 class="values">Deep Thoughts</h2>
           <ul class="word-spinner" key="spinner">
             <li class="word" v-for='(item, index) in wordSpinner' :key='index' v-bind:class="{active: counter >= index + 1}">{{item}}</li>
           </ul>
@@ -17,8 +17,22 @@
               "Mykl has gone above and beyond to both perfect his craft and be an
               encouraging presence every day. He’s great on a team and trusted on
               his own, making him someone you want on your side when it comes time
-              to #shipit!"</p>
-              <p class="quote author">- CK Hicks, Lead Developer at Barkley Interactive</p>
+              to #shipit!"<br/>
+              - CK Hicks, Lead Developer at Barkley Interactive
+              </p>
+          </div>
+          <div class="skills">
+            <h2>Skills:</h2>
+            <ul class="skills-list">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript: ES6</li>
+              <li>npm</li>
+              <li>jQuery</li>
+              <li>Vue</li>
+              <li>Webpack</li>
+              <li>Atom / Sublime 3</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -86,7 +100,8 @@ export default {
 
 .spinner-wrapper {
   @media screen and (min-width: 1020px) {
-    background-color: var(--color-pale-yellow);
+    background-color: var(--color-white);
+    animation: background-in 2000ms ease-out forwards;
   }
 }
 
@@ -119,12 +134,30 @@ export default {
 }
 
 .quote-wrapper {
-  padding: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 2rem 2rem;
 }
 
 .quote {
-  color: var(--color-black);
-  font-weight: 600;
+  max-width: 60rem;
   text-align: center;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.page-detail-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-white);
+}
+
+.skills-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-black);
 }
 </style>

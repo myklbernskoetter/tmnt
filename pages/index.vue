@@ -97,7 +97,8 @@ export default {
   list-style: none;
 
   @media screen and (min-width: 1020px) {
-    background-color: var(--color-pale-yellow);
+    background-color: var(--color-white);
+    animation: background-in 2000ms ease-out forwards;
   }
 
   .word {

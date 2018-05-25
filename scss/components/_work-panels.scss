@@ -1,0 +1,40 @@
+.project-panels {
+  position: fixed;
+  top: 0;
+  border-left: .1rem solid var(--color-black);
+  box-shadow: -5px 0px 8px -1px rgba(0,0,0,0.75);
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(110%);
+  transition: all 1000ms;
+  background-color: var(--color-white);
+
+  &.active {
+    overflow: scroll;
+    transform: translateX(0);
+  }
+}
+
+.panel-header {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 10rem 5rem 2.5rem;
+}
+
+.link-to-live {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 5rem 5rem;
+}
+
+.panel-content {
+  padding: 5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.close-wrapper {
+  position: absolute;
+  top: 7.5rem;
+  right: 5rem;
+}
