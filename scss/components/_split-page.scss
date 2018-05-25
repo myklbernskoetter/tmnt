@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
 
-  @media screen and (min-width: 920px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 1.5fr 2fr;
   }
 }
@@ -22,6 +22,7 @@
 }
 
 .page-title {
+  padding: 0 2rem;
   margin: 0;
 }
 
@@ -31,16 +32,19 @@
   animation-delay: 750ms;
 
   &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    width: .2rem;
-    height: 100%;
-    background-color: var(--color-black);
-    transform: scaleY(0);
-    transform-origin: top;
-    z-index: 2;
+
+    @media screen and (min-width: 920px) {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: .2rem;
+      height: 100%;
+      background-color: var(--color-black);
+      transform: scaleY(0);
+      transform-origin: top;
+      z-index: 2;
+    }
   }
 
   .active & {

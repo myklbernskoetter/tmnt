@@ -23,7 +23,7 @@
             <transition-group name="fadeOpacity">
               <li class="list-item" v-for='(item, index) in projects' :key='index' v-bind:class="{'item-open': openListItem == index}">
                 <button class="item-toggle" v-on:click="populatePanel(index)" type="button" name="button">
-                  <span class="item-background" v-bind:style="{ backgroundImage: `url(/images/${item.image})` }"></span>
+                  <span class="item-background" v-bind:style="{ backgroundImage: `url(/images/list-items/${item.image})` }"></span>
                   <span class="item-title">{{item.name}}</span>
                   <svg viewBox="0 0 100 100" class="svg-1">
                     <path class="path-1" stroke-width="13" fill="none" d="M10 70 L50 10" />
@@ -37,17 +37,14 @@
       </div>
     </div>
     <div class="project-panels" v-bind:class="{active: active}">
-      <div class="close-wrapper">
-        <button class="close-button" type="button" name="button" v-on:click="closePanel()">Close</button>
-      </div>
-      <muluPanel v-if="activeProject === 'mulu'" />
-      <c3Panel v-if="activeProject === 'C3'" />
-      <experimentsPanel v-if="activeProject === 'Experiments'" />
-      <futurecastPanel v-if="activeProject === 'FutureCast'" />
-      <kesselrunPanel v-if="activeProject === 'Barkley KesselRun UI'" />
-      <nbhPanel v-if="activeProject === 'nbh'" />
-      <pizzapatronPanel v-if="activeProject === 'Pizza Patrón'" />
-      <quahogbayPanel v-if="activeProject === 'quahogbay'" />
+      <muluPanel @closePanel ="closePanel()" v-if="activeProject === 'mulu'" />
+      <c3Panel @closePanel ="closePanel()" v-if="activeProject === 'C3'" />
+      <experimentsPanel @closePanel ="closePanel()" v-if="activeProject === 'Experiments'" />
+      <futurecastPanel @closePanel ="closePanel()" v-if="activeProject === 'FutureCast'" />
+      <kesselrunPanel @closePanel ="closePanel()" v-if="activeProject === 'Barkley KesselRun UI'" />
+      <nbhPanel @closePanel ="closePanel()" v-if="activeProject === 'nbh'" />
+      <pizzapatronPanel @closePanel ="closePanel()" v-if="activeProject === 'Pizza Patrón'" />
+      <quahogbayPanel @closePanel ="closePanel()" v-if="activeProject === 'quahogbay'" />
     </div>
   </div>
 </template>
@@ -129,6 +126,7 @@ export default {
 <style lang="scss" scoped>
 
 .page-title {
+  padding-bottom: 2rem;
 
   @media screen and (min-width: 768px) {
     position: fixed;
@@ -150,7 +148,6 @@ export default {
 
 .featured-project {
   padding-bottom: 2.5rem;
-  border-bottom: .2rem solid var(--color-black);
 
   @media screen and (min-width: 920px) {
     padding-bottom: 0;
@@ -171,8 +168,9 @@ export default {
 }
 
 .featured-title {
+  padding: 0 2.5rem 0;
 
-  @media screen and (min-width: 920px) {
+  @media screen and (min-width: 728px) {
     position: absolute;
     bottom: 0;
     left: 2.5rem;
@@ -182,7 +180,9 @@ export default {
 }
 
 .featured-button {
-  @media screen and (min-width: 920px) {
+  margin-left: 2.5rem;
+
+  @media screen and (min-width: 728px) {
     position: absolute;
     right: 2.5rem;
     bottom: 3rem;
@@ -190,7 +190,7 @@ export default {
 }
 
 .featured-blurb {
-  padding: 0 2.5rem;
+  padding: 0 2.5rem 5rem;
 }
 
 .page-detail {
@@ -210,7 +210,7 @@ export default {
     border-bottom: .2rem solid var(--color-black);
     width: 100%;
 
-    &:last-child {
+    &:first-child {
       border-top: .2rem solid var(--color-black);
     }
 
@@ -302,7 +302,7 @@ export default {
 }
 
 .list-item {
-  @include increment-animation(500, 9);
+  @include increment-animation(750, 9);
 
   .item-toggle {
     display: flex;
@@ -353,5 +353,4 @@ export default {
   stroke-linejoin: round;
   transition: 0.35s;
 }
-
 </style>

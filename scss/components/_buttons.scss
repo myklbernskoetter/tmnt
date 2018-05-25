@@ -8,10 +8,19 @@ button,
   padding: 1rem 2rem;
   text-transform: uppercase;
   font-family: var(--font-kollektif);
+  transition: all 250ms;
   cursor: pointer;
 
   &:hover,
   &:focus {
   background-color: var(--color-magentadark);
+  }
+}
+
+.close-button {
+  &:hover,
+  &:focus {
+    color: var(--color-black);
+    background-color: var(--color-white);
   }
 }

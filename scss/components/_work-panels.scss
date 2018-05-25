@@ -4,37 +4,126 @@
   border-left: .1rem solid var(--color-black);
   box-shadow: -5px 0px 8px -1px rgba(0,0,0,0.75);
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   transform: translateX(110%);
   transition: all 1000ms;
   background-color: var(--color-white);
 
   &.active {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     transform: translateX(0);
   }
 }
 
-.panel-header {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 10rem 5rem 2.5rem;
-}
-
-.link-to-live {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 5rem 5rem;
-}
-
-.panel-content {
-  padding: 5rem;
-  max-width: 80rem;
-  margin: 0 auto;
-}
-
-.close-wrapper {
+.project-panels::after {
+  content: '';
   position: absolute;
-  top: 7.5rem;
-  right: 5rem;
+  right: 0;
+  top: 5.5rem;
+  display: block;
+  width: 50%;
+  min-height: 100vh;
+  background-color: #434344;
+  z-index: 1;
+}
+
+.panel-container {
+  z-index: 2;
+}
+
+.panel-featured-image {
+  padding-top: 10rem;
+  @media screen and (min-width: 728px) {
+    width: 85%;
+    padding-top: 12.5rem;
+  }
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 5rem 5rem 2.5rem;
+
+  @media screen and (min-width: 728px) {
+    padding: 5rem 5rem 2.5rem;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -6rem;
+    bottom: -1rem;
+    width: 50%;
+    height: .2rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-top: .3rem solid black;
+    animation: frame-draw2 500ms linear forwards;
+    animation-delay: 1500ms;
+  }
+}
+
+.logo-wrapper {
+  width: 10rem;
+
+  @media screen and (min-width: 728px) {
+    position: absolute;
+    top: 18rem;
+    left: 17rem;
+  }
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 5.5rem;
+}
+
+.live-link {
+  color: var(--color-white);
+  display: block;
+  padding-top: 2.5rem;
+
+  &:hover,
+  &:focus {
+    color: var(--color-yellow);
+  }
+
+  &:visited,
+  &:active {
+    color: var(--color-white);
+  }
+}
+
+.panel-content,
+.description {
+  padding: 0 5rem 5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.description {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-white);
+  font-size: 2.2rem;
+  line-height: 1.5;
+
+  @media screen and (min-width: 728px) {
+    padding-top: 0rem;
+    background-color: transparent;
+    color: white;
+    margin-right: 0;
+    width: 40%;
+  }
+}
+
+.split-image {
+  padding-top: 2.5rem;
 }
