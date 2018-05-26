@@ -1,40 +1,49 @@
 <template>
-  <div class="container">
-    <div class="split-page">
-      <div class="title-wrapper">
-        <h1 class="headline-1 page-title" key="title">About</h1>
-        <div class="spinner-wrapper">
-          <h2 class="values">Deep Thoughts</h2>
-          <ul class="word-spinner" key="spinner">
-            <li class="word" v-for='(item, index) in wordSpinner' :key='index' v-bind:class="{active: counter >= index + 1}">{{item}}</li>
-          </ul>
-        </div>
+  <div class="panel-container">
+    <div class="page-header">
+      <img class="about-hero" src="/images/about-1.jpg" alt="comptemplative ">
+      <h1 class="headline-1 page-title" key="title">About</h1>
+    </div>
+    <ul class="Deep Thinks">
+      <li>Always be learning</li>
+      <li>Be humble and approachable</li>
+      <li></li>
+    </ul>
+    <div class="quote-wrapper">
+      <p class="quote">
+        "Mykl has gone above and beyond to both perfect his craft and be an
+        encouraging presence every day. He’s great on a team and trusted on
+        his own, making him someone you want on your side when it comes time
+        to #shipit!"<br/>
+        - CK Hicks, Lead Developer at Barkley Interactive
+        </p>
+    </div>
+    <figure class="image-split-container">
+        <img class="split-image" src="/images/about-2.jpg"/>
+        <!-- <figcaption class="caption">We found the sneaky ol' Sasquatch!</figcaption> -->
+    </figure>
+    <div class="section-31">
+      <div class="skills">
+        <h3 class="headline-3">Skills:</h3>
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript: ES6</li>
+          <li>npm</li>
+          <li>jQuery</li>
+          <li>Vue</li>
+          <li>Wordpress</li>
+          <li>Webpack</li>
+          <li>Atom / Sublime 3</li>
+        </ul>
       </div>
-      <div class="page-detail-wrapper">
-        <div key="page-detail">
-          <div class="quote-wrapper">
-            <p class="quote">
-              "Mykl has gone above and beyond to both perfect his craft and be an
-              encouraging presence every day. He’s great on a team and trusted on
-              his own, making him someone you want on your side when it comes time
-              to #shipit!"<br/>
-              - CK Hicks, Lead Developer at Barkley Interactive
-              </p>
-          </div>
-          <div class="skills">
-            <h2>Skills:</h2>
-            <ul class="skills-list">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Javascript: ES6</li>
-              <li>npm</li>
-              <li>jQuery</li>
-              <li>Vue</li>
-              <li>Webpack</li>
-              <li>Atom / Sublime 3</li>
-            </ul>
-          </div>
-        </div>
+      <div class="about-block">
+        <p class="about-blurb">I'm a front-end web developer that's interesting in building beautiful,
+        fluid, and functional web interfaces. I've learned Vue this year, but I'm also
+        fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
+        <p class="about-blurb">
+          Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
+        </p>
       </div>
     </div>
   </div>
@@ -70,6 +79,50 @@ export default {
 
 <style lang="scss" scoped>
 
+.panel-container {
+  margin-top: 12rem;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 5.5rem;
+    display: block;
+    width: 50vw;
+    min-height: 130vh;
+    background-color: var(--color-dark-grey);
+    z-index: 1;
+  }
+}
+
+.about-hero {
+  width: 100%;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 14rem;
+    width: 70%;
+  }
+}
+
+.page-title {
+  margin-top: -1rem;
+  width: 100%;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    margin-top: 0;
+    width: 30%;
+    text-align: left;
+  }
+}
+
 .spinner-wrapper,
 .headline-1 {
   height: 50%;
@@ -80,22 +133,39 @@ export default {
   justify-content: center;
   align-items: flex-end;
   margin-bottom: 0;
-  padding: 0 2rem;
+  height: auto;
+  padding: 2rem;
+  font-size: 5.5rem;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  z-index: 3;
+
+  @media screen and (min-width: 1020px) {
+    font-size: 7.5rem;
+  }
 
   &::before {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
+    left: -6rem;
+    bottom: -2rem;
+    width: 50vw;
     height: .2rem;
-    background-color: var(--color-black);
     transform: scaleX(0);
     transform-origin: left;
-    animation: frame-draw2 450ms linear forwards;
-    animation-delay: 2000ms;
+    border-top: .3rem solid black;
+    animation: frame-draw2 500ms linear forwards;
+    animation-delay: 1000ms;
   }
+}
+
+.headline-3 {
+  margin: -1rem 0 0;
+  padding-top: 2.5rem;
+  color: var(--color-white);
+  z-index: 2;
+  background-color: var(--color-dark-grey);
 }
 
 .spinner-wrapper {
@@ -103,6 +173,10 @@ export default {
     background-color: var(--color-white);
     animation: background-in 2000ms ease-out forwards;
   }
+}
+
+.title-wrapper {
+  justify-content: flex-end;
 }
 
 .word-spinner {
@@ -135,29 +209,124 @@ export default {
 
 .quote-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  padding: 10rem 2rem 2rem;
+  padding: 5rem;
+  background-color: var(--color-dark-grey);
+  z-index: 5;
+
+
+  @media screen and (min-width: 768px) {
+    padding: 10rem 3rem 7rem;
+    background-color: transparent;
+  }
 }
 
 .quote {
   max-width: 60rem;
   text-align: center;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 .page-detail-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--color-white);
+  color: var(--color-white);
+  background-color: var(--color-dark-grey);
+}
+
+.section-31 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  mad-width: 102rem;
+
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    display: none;
+    width: 50vw;
+    min-height: 75vh;
+    background-color: var(--color-dark-grey);
+    z-index: 1;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
+}
+
+.skills {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
 }
 
 .skills-list {
   margin: 0;
   padding: 0;
   list-style: none;
-  color: var(--color-black);
+  font-weight: 700;
+  color: var(--color-white);
+  z-index: 3;
+  background-color: var(--color-dark-grey);
+  @media screen and (min-width: 768px) {
+    background-color: transparent;
+  }
+}
+
+.image-split-container {
+  margin: 0;
+  text-align: center;
+  z-index: 3;
+}
+
+.split-image {
+  padding: 0;
+  max-width: 130rem;
+  margin: auto;
+}
+
+.about-block {
+  width: 100%;
+  padding: 2.5rem;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 2.5rem;
+    width: 50%;
+    max-width: 65rem;
+    background-color: white;
+    z-index: 2;
+  }
+}
+
+.about-blurb {
+  z-index: 3;
+}
+
+.caption {
+  text-align: left;
+  position: absolute;
+  bottom: .8rem;
+  background-color: white;
+  padding: 1rem;
+}
+
+.final-image {
+  max-width: 72.8rem;
 }
 </style>

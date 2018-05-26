@@ -25,11 +25,11 @@ export default {
     display: flex;
     justify-content: center;
     width: 100%;
-    z-index: 2;
     transform: translateY(-100%);
     animation: drop-in-mobile 500ms linear forwards;
     animation-delay: 1000ms;
     background-color: var(--color-black);
+    z-index: 10;
 
 
     &::after {
