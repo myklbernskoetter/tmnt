@@ -6,7 +6,7 @@
       <div class="close-wrapper">
         <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
       </div>
-      <div class="logo-wrapper"><img class="logo" src="/images/mulu/mulu-logo.png" alt="dfa mulu logo"></div>
+      <div class="logo-wrapper"><img class="logo" src="/images/nbh/bmw-logo.jpg" alt="NBH: Bank Midwest Logo"></div>
     </div>
     <p class="description">
       This represents the largest project I was a part of in 2017.
@@ -19,7 +19,7 @@
       <a class="live-link" href="https://www.bankmw.com/"> Visit Bank Midwest</a>
     </p>
     <div class="image-split-container">
-      <span class="split-image image-right"><img src="/images/mulu/mulu-hero-reveal2.jpg"/></span>
+      <span class="split-image image-right"><img src="/images/nbh/nbh-nav-1.jpg"/></span>
     </div>
     <div class="panel-content">
       <ul class="tools">
@@ -30,7 +30,7 @@
         <li>jQuery</li>
       </ul>
       <div class="image-split-container">
-        <span class="split-image image-right"><img src="/images/mulu/mulu-grid-1.jpg"/></span>
+        <span class="split-image image-right"><img src="/images/nbh/nbh-mobile-1.jpg"/></span>
       </div>
     </div>
   </div>
@@ -38,6 +38,11 @@
 
 <script>
 export default {
+  methods: {
+    closePanel(event) {
+       this.$emit('closePanel', 'true');
+    }
+  }
 }
 </script>
 

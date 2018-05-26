@@ -5,9 +5,7 @@
       <h1 class="headline-1 page-title" key="title">About</h1>
     </div>
     <ul class="Deep Thinks">
-      <li>Always be learning</li>
-      <li>Be humble and approachable</li>
-      <li></li>
+      <li v-for='(item, index) in wordSpinner' :key='index'>{{item}}</li>
     </ul>
     <div class="quote-wrapper">
       <p class="quote">
