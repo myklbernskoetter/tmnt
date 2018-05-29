@@ -35,11 +35,7 @@
 }
 
 @keyframes fade-in-list-items {
-  0% {
-    transform: translateY(-1rem);
-    opacity: 0;
-  }
-  100% {
+  to {
     transform: translateY(0);
     opacity: 1;
   }

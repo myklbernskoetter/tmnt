@@ -2,52 +2,53 @@
   <div class="about-container">
     <header class="page-header">
       <img class="about-hero" src="/images/about-1.jpg" alt="comptemplative ">
-      <h1 class="headline-1 page-title" key="title">About</h1>
+      <h1 class="headline-1 page-title" key="title"><span class="load-wrapper">About</span></h1>
     </header>
     <section class="about-section about-section-one">
-      <div class="values-wrapper">
+      <div class="column values-wrapper">
         <h2 class="headline-3">Core Mindset</h2>
         <ul class="values">
-          <li v-for='(item, index) in wordSpinner' :key='index'>{{item}}</li>
+          <li class="values-item" v-for='(item, index) in wordSpinner' :key='index' v-bind:class="{active: counter >= index + 1}">{{item}}</li>
         </ul>
       </div>
-      <div class="quote-wrapper">
+      <div class="column quote-wrapper">
         <p class="quote">
           "Mykl has gone above and beyond to both perfect his craft and be an
           encouraging presence every day. He’s great on a team and trusted on
           his own, making him someone you want on your side when it comes time
           to #shipit!"<br/>
+        </p>
+        <p class="quote-author">
           - CK Hicks, Lead Developer at Barkley Interactive
-          </p>
+        </p>
       </div>
     </section>
     <figure class="image-split-container">
         <img class="split-image" src="/images/about-2.jpg"/>
     </figure>
-    <section class="about section about-section-two">
-      <div class="section-31">
-        <div class="skills">
-          <h2 class="headline-3">Skills:</h2>
-          <ul class="skills-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript: ES6</li>
-            <li>npm</li>
-            <li>jQuery</li>
-            <li>Vue</li>
-            <li>Wordpress</li>
-            <li>Webpack</li>
-            <li>Atom / Sublime 3</li>
-          </ul>
-        </div>
-        <div class="about-block">
-          <p class="about-blurb">I'm a front-end web developer that's interesting in building beautiful,
-          fluid, and functional web interfaces. I've learned Vue this year, but I'm also
-          fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
-          <p class="about-blurb">
-            Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
-          </p>
-        </div>
+    <section class="about-section about-section-two">
+      <div class="column skills">
+        <h2 class="headline-3">Skills</h2>
+        <ul class="skills-list">
+          <li>Atom / Sublime 3</li>
+          <li>HTML</li>
+          <li>SCSS</li>
+          <li>Javascript: ES6</li>
+          <li>jQuery</li>
+          <li>Vue</li>
+          <li>npm</li>
+          <li>Webpack</li>
+          <li>Drupal</li>
+          <li>Wordpress</li>
+        </ul>
+      </div>
+      <div class="column about-block">
+        <p class="about-blurb">I'm a front-end web developer that's interesting in building beautiful,
+        fluid, and functional web interfaces. I've learned Vue this year, but I'm also
+        fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
+        <p class="about-blurb">
+          Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
+        </p>
       </div>
     </section>
   </div>
@@ -76,7 +77,7 @@ export default {
        } else {
          clearInterval(this.intervalid1);
        }
- }, 2000);
+ }, 1000);
   }
 }
 </script>
@@ -85,6 +86,7 @@ export default {
 
 .about-container {
   margin-top: 12rem;
+  overflow-x: hidden;
 
   @media screen and (min-width: 768px) {
     margin-top: 0;
@@ -123,16 +125,40 @@ export default {
     margin: 0;
     padding-left: 2.5rem;
     text-align: center;
+
     @media screen and (min-width: 768px) {
       text-align: left;
     }
   }
 }
 
+.about-section-two {
+  max-width: 150rem;
+  margin-top: -5rem;
+  padding-top: 5rem;
+
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   display: block;
+  //   width: 50%;
+  //   min-height: 100vh;
+  //   z-index: 1;
+  //
+  //   @media screen and (min-width: 768px) {
+  //   }
+  // }
+}
+
 .about-hero {
   top: 1rem;
   width: 100%;
   z-index: 2;
+  opacity: 0;
+  animation: fade-in 500ms linear forwards;
+  background-color: var(--color-dark-grey);
 
   @media screen and (min-width: 768px) {
     margin-top: 14rem;
@@ -149,6 +175,13 @@ export default {
     width: 30%;
     text-align: left;
   }
+}
+
+.load-wrapper {
+  opacity: 0;
+  transform: translateY(-3rem);
+  animation: fade-in-list-items 1000ms ease-out forwards;
+  animation-delay: 1000ms;
 }
 
 .spinner-wrapper,
@@ -233,26 +266,7 @@ export default {
   }
 }
 
-.values {
-  margin: 0;
-  padding: 3.5rem;
-  background-color: white;
-  z-index: 2;
-
-  @media screen and (min-width: 768px) {
-    background-color: transparent;
-  }
-}
-
-.quote-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 5rem;
-  background-color: var(--color-dark-grey);
-  z-index: 5;
-
-
+.column {
   @media screen and (min-width: 768px) {
     width: 50%;
     padding: 0;
@@ -260,10 +274,48 @@ export default {
   }
 }
 
+.values {
+  margin: 0;
+  padding: 3.5rem;
+  font-weight: 600;
+  background-color: white;
+  z-index: 2;
+  list-style: none;
+
+  @media screen and (min-width: 768px) {
+    background-color: transparent;
+  }
+}
+
+.values-item {
+  margin-bottom: 3rem;
+  opacity: 0;
+
+  &.active {
+    animation: fade-in 500ms linear forwards;
+    animation-delay: 750ms;
+  }
+}
+
+.quote-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5rem;
+  background-color: var(--color-dark-grey);
+  z-index: 5;
+}
+
 .quote {
   max-width: 60rem;
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: var(--color-white);
+}
+
+.quote-author {
   color: var(--color-white);
 }
 
@@ -275,76 +327,69 @@ export default {
   background-color: var(--color-dark-grey);
 }
 
-.section-31 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  mad-width: 102rem;
+.skills {
+  width: 100%;
+  margin-top: -5rem;
+  padding-top: 5rem;
+  background-color: var(--color-dark-grey);
 
 
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+  li {
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    margin-right: 2.5rem;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -1rem;
-    display: none;
-    width: 50vw;
-    min-height: 75vh;
-    background-color: var(--color-dark-grey);
-    z-index: 1;
-
-    @media screen and (min-width: 768px) {
-      display: block;
-    }
+  @media screen and (min-width: 768px) {
+    width: 50%;
   }
 
   .headline-3 {
-    margin: -1rem 0 0;
-    padding-top: 2.5rem;
+    margin: 0;
+    padding: 2.5rem;
     color: var(--color-white);
-    z-index: 2;
     background-color: var(--color-dark-grey);
-  }
-}
-
-.skills {
-  width: 100%;
-
-  @media screen and (min-width: 768px) {
-    width: 40%;
+    font-size: 4rem;
+    text-align: center;
+    z-index: 2;
   }
 }
 
 .skills-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding: 2.5rem;
   list-style: none;
   font-weight: 700;
   color: var(--color-white);
   z-index: 3;
   background-color: var(--color-dark-grey);
   @media screen and (min-width: 768px) {
+    flex-direction: column;
     background-color: transparent;
   }
 }
 
 .image-split-container {
+  display: flex;
+  align-items: flex-end;
   margin: 0;
-  text-align: center;
   z-index: 3;
 }
 
 .split-image {
-  padding: 0;
-  max-width: 130rem;
+  right: 0;
   margin: auto;
+  max-width: 85rem;
+  padding: 0;
+
+  @media screen and (min-width: 768px) {
+    right: -21%;
+  }
 }
 
 .about-block {
@@ -352,7 +397,6 @@ export default {
   padding: 2.5rem;
 
   @media screen and (min-width: 768px) {
-    margin-right: 2.5rem;
     width: 50%;
     max-width: 65rem;
     background-color: white;
@@ -361,6 +405,7 @@ export default {
 }
 
 .about-blurb {
+  font-size: 2.2rem;
   z-index: 3;
 }
 

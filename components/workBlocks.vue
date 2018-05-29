@@ -37,15 +37,6 @@
 </script>
 
 <style lang="scss">
-
-@mixin increment-animation($time-default:250, $loops:1) {
-  @for $i from 1 through $loops {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * $time-default ;
-    }
-  }
-}
-
   .work {
     margin: 0;
     padding: 0;
