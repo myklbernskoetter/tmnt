@@ -21,14 +21,14 @@
     <div class="image-split-container">
       <span class="split-image image-right"><img src="/images/nbh/nbh-nav-1.jpg"/></span>
     </div>
+    <ul class="tools">
+      <li>Wordpress</li>xw
+      <li>Custom Site Switcher</li>
+      <li>Flexbox</li>
+      <li>Javascript</li>
+      <li>jQuery</li>
+    </ul>
     <div class="panel-content">
-      <ul class="tools">
-        <li>Wordpress</li>xw
-        <li>Custom Site Switcher</li>
-        <li>Flexbox</li>
-        <li>Javascript</li>
-        <li>jQuery</li>
-      </ul>
       <div class="image-split-container">
         <span class="split-image image-right"><img src="/images/nbh/nbh-mobile-1.jpg"/></span>
       </div>
@@ -47,4 +47,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.logo-wrapper {
+  top: 20rem;
+  left: 2rem;
+  width: 40rem;
+}
 </style>

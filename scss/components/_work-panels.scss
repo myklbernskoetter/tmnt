@@ -36,7 +36,7 @@
   padding-top: 10rem;
   @media screen and (min-width: 728px) {
     width: 85%;
-    padding-top: 12.5rem;
+    padding-top: 0rem;
   }
 }
 
@@ -126,4 +126,16 @@
 
 .split-image {
   padding-top: 2.5rem;
+}
+
+.tools {
+  margin: -1rem auto 0;
+  padding: 2.5rem;
+  color: var(--color-white);
+  background-color: var(--color-dark-grey);
+  list-style: none;
+}
+
+.close-wrapper {
+  display: none;
 }

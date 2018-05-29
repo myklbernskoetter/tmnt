@@ -37,14 +37,24 @@
       </div>
     </div>
     <div class="project-panels" v-bind:class="{active: active}">
-      <muluPanel @closePanel ="closePanel()" v-if="activeProject === 'mulu'" />
-      <c3Panel @closePanel ="closePanel()" v-if="activeProject === 'C3'" />
-      <experimentsPanel @closePanel ="closePanel()" v-if="activeProject === 'Experiments'" />
-      <futurecastPanel @closePanel ="closePanel()" v-if="activeProject === 'FutureCast'" />
-      <kesselrunPanel @closePanel ="closePanel()" v-if="activeProject === 'Barkley KesselRun UI'" />
-      <nbhPanel @closePanel ="closePanel()" v-if="activeProject === 'nbh'" />
-      <pizzapatronPanel @closePanel ="closePanel()" v-if="activeProject === 'Pizza Patrón'" />
-      <quahogbayPanel @closePanel ="closePanel()" v-if="activeProject === 'quahogbay'" />
+      <span class="close-icon">
+        <button class="close-button" type="button" @click="closePanel()">
+          <svg viewBox="0 0 100 100" class="svg-1">
+            <path class="path-1" stroke-width="13" fill="none" d="M10 70 L50 10" />
+            <path class="path-2" stroke-width="13" fill="none" d="M90 70 L50 10" />
+          </svg>
+          <span>Close</span>
+        </button>
+      </span>
+      <muluPanel v-if="activeProject === 'mulu'" />
+      <c3Panel v-if="activeProject === 'C3'" />
+      <experimentsPanel v-if="activeProject === 'Experiments'" />
+      <futurecastPanel v-if="activeProject === 'FutureCast'" />
+      <kesselrunPanel v-if="activeProject === 'Barkley KesselRun UI'" />
+      <nbhPanel v-if="activeProject === 'nbh'" />
+      <pizzapatronPanel v-if="activeProject === 'Pizza Patrón'" />
+      <quahogbayPanel v-if="activeProject === 'quahogbay'" />
+      <rgaPanel v-if="activeProject === 'rga'" />
     </div>
   </div>
 </template>
@@ -58,6 +68,7 @@ import muluPanel from '~/components/workPanels/mulu.vue';
 import nbhPanel from '~/components/workPanels/nbh.vue';
 import pizzapatronPanel from '~/components/workPanels/pizzapatron.vue';
 import quahogbayPanel from '~/components/workPanels/quahogbay.vue';
+import rgaPanel from '~/components/workPanels/rga.vue';
 
 export default {
   data() {
@@ -69,7 +80,7 @@ export default {
       projects: [
         {name: 'FutureCast', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg', color: '#0093d3'},
         {name: 'nbh', alt: 'alt text', blurb: 'blurb', image: 'bmw-item-image-1.jpg'},
-        {name: 'RGA GUM', alt: 'alt text', blurb: 'blurb', image: 'rga-item-image-1.jpg'},
+        {name: 'rga', alt: 'alt text', blurb: 'blurb', image: 'rga-item-image-1.jpg'},
         {name: 'C3', alt: 'alt text', blurb: 'blurb', image: 'c3-item-image-1.jpg'},
         {name: 'Pizza Patrón', alt: 'alt text', blurb: 'blurb', image: 'pizza-patron-image-1.jpg'},
         {name: 'quahogbay', alt: 'alt text', blurb: 'blurb', image: 'quahogbay-image-1.jpg'},
@@ -87,6 +98,7 @@ export default {
     nbhPanel,
     pizzapatronPanel,
     quahogbayPanel,
+    rgaPanel,
   },
   methods: {
     closePanel() {
@@ -127,6 +139,10 @@ export default {
 
 .page-title {
   padding-bottom: 2rem;
+  transform: translateX(-100%) translateY(-50%);
+  animation: split-in2 1000ms ease-out forwards;
+  opacity: 0;
+
 
   @media screen and (min-width: 768px) {
     position: fixed;
@@ -302,7 +318,7 @@ export default {
 }
 
 .list-item {
-  @include increment-animation(750, 9);
+  @include increment-animation(500, 9);
 
   .item-toggle {
     display: flex;
@@ -352,5 +368,42 @@ export default {
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: 0.35s;
+}
+
+.close-icon {
+  display: block;
+  margin-top: 15rem;
+  margin-left: 5rem;
+  min-width: 20rem;
+  height: 10rem;
+  z-index: 3;
+
+  @media screen and (min-width: 728px) {
+    margin-top: 10rem;
+  }
+
+  .close-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    fill: black;
+    color: var(--color-black);
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+
+    &:hover,
+    &:focus {
+      color: var(--color-dark-grey);
+      svg {
+        transform: rotate(-90deg) translateY(-1rem);
+      }
+    }
+  }
+
+  svg {
+    position: relative;
+    transform: rotate(-90deg) translateY(1rem);
+  }
 }
 </style>

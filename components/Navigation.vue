@@ -44,8 +44,6 @@ export default {
     }
 
     @media screen and (min-width: 640px) {
-      // top: unset;
-      // bottom: 0;
       transform: translateY(0);
       animation: none;
 
@@ -70,7 +68,6 @@ export default {
     padding: 0;
     list-style: none;
     background-color: var(--color-white);
-    // box-shadow: 0px 6px 13px -2px rgba(0,0,0,0.69);
 
     @media screen and (min-width: 640px) {
       flex-wrap: nowrap;

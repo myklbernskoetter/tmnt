@@ -17,12 +17,12 @@
     <div class="image-split-container">
       <span class="split-image image-right"><img src="/images/futurecast/futurecast-work2.jpg"/></span>
     </div>
+    <ul class="tools">
+      <li>Wordpress</li>
+      <li>Jquery</li>
+      <li>CSS Grid</li>
+    </ul>
     <div class="panel-content">
-      <ul class="tools">
-        <li>Wordpress</li>
-        <li>Jquery</li>
-        <li>CSS Grid</li>
-      </ul>
       <div class="image-split-container">
         <span class="split-image image-left"><img alt="futurecast form functionalty and styles" src="/images/futurecast/futureast-form.jpg"/></span>
       </div>

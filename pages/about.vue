@@ -1,49 +1,55 @@
 <template>
-  <div class="panel-container">
-    <div class="page-header">
+  <div class="about-container">
+    <header class="page-header">
       <img class="about-hero" src="/images/about-1.jpg" alt="comptemplative ">
       <h1 class="headline-1 page-title" key="title">About</h1>
-    </div>
-    <ul class="Deep Thinks">
-      <li v-for='(item, index) in wordSpinner' :key='index'>{{item}}</li>
-    </ul>
-    <div class="quote-wrapper">
-      <p class="quote">
-        "Mykl has gone above and beyond to both perfect his craft and be an
-        encouraging presence every day. He’s great on a team and trusted on
-        his own, making him someone you want on your side when it comes time
-        to #shipit!"<br/>
-        - CK Hicks, Lead Developer at Barkley Interactive
-        </p>
-    </div>
-    <figure class="image-split-container">
-        <img class="split-image" src="/images/about-2.jpg"/>
-        <!-- <figcaption class="caption">We found the sneaky ol' Sasquatch!</figcaption> -->
-    </figure>
-    <div class="section-31">
-      <div class="skills">
-        <h3 class="headline-3">Skills:</h3>
-        <ul class="skills-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript: ES6</li>
-          <li>npm</li>
-          <li>jQuery</li>
-          <li>Vue</li>
-          <li>Wordpress</li>
-          <li>Webpack</li>
-          <li>Atom / Sublime 3</li>
+    </header>
+    <section class="about-section about-section-one">
+      <div class="values-wrapper">
+        <h2 class="headline-3">Core Mindset</h2>
+        <ul class="values">
+          <li v-for='(item, index) in wordSpinner' :key='index'>{{item}}</li>
         </ul>
       </div>
-      <div class="about-block">
-        <p class="about-blurb">I'm a front-end web developer that's interesting in building beautiful,
-        fluid, and functional web interfaces. I've learned Vue this year, but I'm also
-        fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
-        <p class="about-blurb">
-          Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
-        </p>
+      <div class="quote-wrapper">
+        <p class="quote">
+          "Mykl has gone above and beyond to both perfect his craft and be an
+          encouraging presence every day. He’s great on a team and trusted on
+          his own, making him someone you want on your side when it comes time
+          to #shipit!"<br/>
+          - CK Hicks, Lead Developer at Barkley Interactive
+          </p>
       </div>
-    </div>
+    </section>
+    <figure class="image-split-container">
+        <img class="split-image" src="/images/about-2.jpg"/>
+    </figure>
+    <section class="about section about-section-two">
+      <div class="section-31">
+        <div class="skills">
+          <h2 class="headline-3">Skills:</h2>
+          <ul class="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript: ES6</li>
+            <li>npm</li>
+            <li>jQuery</li>
+            <li>Vue</li>
+            <li>Wordpress</li>
+            <li>Webpack</li>
+            <li>Atom / Sublime 3</li>
+          </ul>
+        </div>
+        <div class="about-block">
+          <p class="about-blurb">I'm a front-end web developer that's interesting in building beautiful,
+          fluid, and functional web interfaces. I've learned Vue this year, but I'm also
+          fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
+          <p class="about-blurb">
+            Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -77,7 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.panel-container {
+.about-container {
   margin-top: 12rem;
 
   @media screen and (min-width: 768px) {
@@ -92,12 +98,39 @@ export default {
     display: block;
     width: 50vw;
     min-height: 130vh;
-    background-color: var(--color-dark-grey);
     z-index: 1;
+
+    @media screen and (min-width: 768px) {
+      background-color: var(--color-dark-grey);
+    }
+  }
+}
+
+.about-section {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 125rem;
+    margin: 0 auto;
+  }
+}
+
+.about-section-one {
+  padding: 5rem 0;
+
+  .headline-3 {
+    margin: 0;
+    padding-left: 2.5rem;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
   }
 }
 
 .about-hero {
+  top: 1rem;
   width: 100%;
   z-index: 2;
 
@@ -108,13 +141,10 @@ export default {
 }
 
 .page-title {
-  margin-top: -1rem;
   width: 100%;
   text-align: center;
 
   @media screen and (min-width: 768px) {
-    position: absolute;
-    bottom: 0;
     margin-top: 0;
     width: 30%;
     text-align: left;
@@ -138,7 +168,9 @@ export default {
   background-color: var(--color-white);
   z-index: 3;
 
-  @media screen and (min-width: 1020px) {
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: -.2rem;
     font-size: 7.5rem;
   }
 
@@ -148,22 +180,18 @@ export default {
     position: absolute;
     left: -6rem;
     bottom: -2rem;
-    width: 50vw;
+    width: 100vw;
     height: .2rem;
     transform: scaleX(0);
     transform-origin: left;
     border-top: .3rem solid black;
     animation: frame-draw2 500ms linear forwards;
     animation-delay: 1000ms;
-  }
-}
 
-.headline-3 {
-  margin: -1rem 0 0;
-  padding-top: 2.5rem;
-  color: var(--color-white);
-  z-index: 2;
-  background-color: var(--color-dark-grey);
+    @media screen and (min-width: 768px) {
+      width: 50vw;
+    }
+  }
 }
 
 .spinner-wrapper {
@@ -205,6 +233,17 @@ export default {
   }
 }
 
+.values {
+  margin: 0;
+  padding: 3.5rem;
+  background-color: white;
+  z-index: 2;
+
+  @media screen and (min-width: 768px) {
+    background-color: transparent;
+  }
+}
+
 .quote-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -215,7 +254,8 @@ export default {
 
 
   @media screen and (min-width: 768px) {
-    padding: 10rem 3rem 7rem;
+    width: 50%;
+    padding: 0;
     background-color: transparent;
   }
 }
@@ -263,6 +303,14 @@ export default {
     @media screen and (min-width: 768px) {
       display: block;
     }
+  }
+
+  .headline-3 {
+    margin: -1rem 0 0;
+    padding-top: 2.5rem;
+    color: var(--color-white);
+    z-index: 2;
+    background-color: var(--color-dark-grey);
   }
 }
 

@@ -18,13 +18,13 @@
     <div class="image-split-container">
       <span class="split-image image-right"><img src="/images/mulu/mulu-hero-reveal2.jpg"/></span>
     </div>
+    <ul class="tools">
+      <li>Static HTML</li>
+      <li>Vue.js</li>
+      <li>ScrollMagic js</li>
+      <li>CSS Grid</li>
+    </ul>
     <div class="panel-content">
-      <ul class="tools">
-        <li>Static HTML</li>
-        <li>Vue.js</li>
-        <li>ScrollMagic js</li>
-        <li>CSS Grid</li>
-      </ul>
       <div class="image-split-container">
         <span class="split-image image-right"><img src="/images/mulu/mulu-grid-1.jpg"/></span>
       </div>

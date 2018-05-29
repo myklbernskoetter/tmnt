@@ -4,7 +4,7 @@
       <div class="title-wrapper">
         <h1 class="headline-1 site-title" key="title">Mykl Bernskoetter</h1>
         <ul class="word-spinner" key="spinner">
-          <li class="word" v-for='(item, index) in wordSpinner' :key='index' v-bind:class="{active: counter == index + 1}">{{item}}</li>
+          <li class="word" mode="out-in" v-for='(item, index) in wordSpinner' :key='index' v-bind:class="{active: counter == index + 1}">{{item}}</li>
         </ul>
       </div>
       <div class="page-detail-wrapper">
@@ -135,7 +135,7 @@ export default {
       content: '';
       display: block;
       position: absolute;
-      bottom: .4rem;
+      bottom: .75rem;
       left: 0;
       width: 100vw;
       height: .2rem;
