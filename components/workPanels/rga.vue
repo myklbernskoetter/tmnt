@@ -29,7 +29,7 @@
       </div>
       <p class="content-two">
         RGA needed a new internal tool and landing site to help with the workload of their
-        insurance underwriters. This prototype streamlined a lot of the pain points from the currentl
+        insurance underwriters. This prototype streamlined a lot of the pain points from their existing
         system, as well as giving everything a fresh, sleek coat of paint.
       </p>
     </div>

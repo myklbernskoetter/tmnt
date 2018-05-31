@@ -28,7 +28,7 @@
       <div class="image-split-container">
         <span class="split-image image-right"><img src="/images/mulu/mulu-grid-1.jpg"/></span>
       </div>
-      <p class="content-two">
+      <p class="content-two description">
         The key piece of this site is that it needed a 'reveal' function to trigger on
         World Milk Day. This seemed a perfect job for Vue. By checking the date, on load,
         and using a single boolean, we achieved a simple solution for this problem.

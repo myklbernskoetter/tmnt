@@ -87,6 +87,7 @@ export default {
       ]
     }
   },
+    transition: 'fadeOpacity',
   components: {
     c3Panel,
     experimentsPanel,
@@ -174,7 +175,7 @@ export default {
 }
 
 .moved-aside {
-  transition: all 1000ms;
+  transition: transform 1000ms;
   transform: translateX(-100%);
 }
 

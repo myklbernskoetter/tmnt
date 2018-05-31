@@ -61,9 +61,9 @@ export default {
     return {
       counter: 0,
       wordSpinner: [
+        'Positivity and good humor can do amazing things',
         'Always be learning',
         'Be humble and approachable',
-        'Positivity and good humor can do amazing things',
         'Balance in all things',
         'We don\'t know what we don\'t know'
       ]
