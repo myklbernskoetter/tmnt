@@ -2,8 +2,8 @@
   <div class="container">
     <div class="split-page" v-bind:class="{movedAside: active === true}">
       <h1 class="page-title">
-        Production<br>
-        Work
+        <span class="title-line">Production</span>
+        <span class="title-line">Work</span>
       </h1>
       <div class="title-wrapper">
       </div>
@@ -84,8 +84,6 @@ export default {
         {name: 'C3', alt: 'alt text', blurb: 'blurb', image: 'c3-item-image-1.jpg'},
         {name: 'Pizza Patrón', alt: 'alt text', blurb: 'blurb', image: 'pizza-patron-image-1.jpg'},
         {name: 'quahogbay', alt: 'alt text', blurb: 'blurb', image: 'quahogbay-image-1.jpg'},
-        // {name: 'Barkley KesselRun UI', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
-        // {name: 'Experiments', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
       ]
     }
   },
@@ -137,19 +135,41 @@ export default {
 
 <style lang="scss" scoped>
 
+.container {
+  padding-top: 20rem;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 15rem;
+  }
+
+  @media screen and (min-width: 1020px) {
+    padding-top: 0rem;
+  }
+}
+
 .page-title {
   padding-bottom: 2rem;
   transform: translateX(-100%) translateY(-50%);
   animation: split-in2 1000ms ease-out forwards;
   opacity: 0;
+  text-align: center;
+  max-width: 75%;
+  margin: 0 auto;
 
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1020px) {
     position: fixed;
     top: 50%;
-    left: 10%;
+    left: 8%;
     transform: translateX(-15%) translateY(-50%);
-    text-align: center;
+  }
+
+  .title-line {
+    display: inline-block;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
   }
 }
 
@@ -324,18 +344,18 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding: 5rem 5rem 5rem 0;
+    padding: 3rem 5rem 3rem 0;
     transform: translateY(-1rem);
     opacity: 0;
     animation: fade-in-list-items 250ms linear forwards;
     animation-delay: inherit;
 
     @media screen and (min-width: 768px) {
-      padding:7rem 5rem 7rem 0;
+      padding:5rem 5rem 5rem 0;
     }
 
     @media screen and (min-width: 1020px) {
-      padding: 10rem 5rem 10rem 0;
+      padding: 7rem 5rem 7rem 0;
     }
   }
 

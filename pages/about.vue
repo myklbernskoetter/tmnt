@@ -143,7 +143,7 @@ export default {
   top: 1rem;
   width: 100%;
   z-index: 2;
-  opacity: 0;
+  opacity: .75;
   animation: fade-in 500ms linear forwards;
   background-color: var(--color-dark-grey);
 
