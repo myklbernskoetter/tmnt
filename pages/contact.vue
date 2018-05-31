@@ -66,7 +66,7 @@ export default {
     width: 100%;
     height: 10rem;
     padding: 2.5rem;
-    color: var(--color-black);
-    background-color: var(--color-white);
+    color: var(--color-white);
+    background-color: var(--color-dark-grey);
   }
 </style>

@@ -318,17 +318,25 @@ export default {
 }
 
 .list-item {
-  @include increment-animation(500, 9);
+  @include increment-animation(250, 9);
 
   .item-toggle {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-right: 10rem;
+    padding: 5rem 5rem 5rem 0;
     transform: translateY(-1rem);
     opacity: 0;
     animation: fade-in-list-items 250ms linear forwards;
     animation-delay: inherit;
+
+    @media screen and (min-width: 768px) {
+      padding:7rem 5rem 7rem 0;
+    }
+
+    @media screen and (min-width: 1020px) {
+      padding: 10rem 5rem 10rem 0;
+    }
   }
 
   .item-title {
