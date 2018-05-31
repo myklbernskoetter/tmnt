@@ -84,8 +84,8 @@ export default {
         {name: 'C3', alt: 'alt text', blurb: 'blurb', image: 'c3-item-image-1.jpg'},
         {name: 'Pizza Patrón', alt: 'alt text', blurb: 'blurb', image: 'pizza-patron-image-1.jpg'},
         {name: 'quahogbay', alt: 'alt text', blurb: 'blurb', image: 'quahogbay-image-1.jpg'},
-        {name: 'Barkley KesselRun UI', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
-        {name: 'Experiments', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
+        // {name: 'Barkley KesselRun UI', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
+        // {name: 'Experiments', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
       ]
     }
   },
@@ -147,7 +147,7 @@ export default {
   @media screen and (min-width: 768px) {
     position: fixed;
     top: 50%;
-    left: 15%;
+    left: 10%;
     transform: translateX(-15%) translateY(-50%);
     text-align: center;
   }

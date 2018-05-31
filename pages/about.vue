@@ -43,8 +43,8 @@
         </ul>
       </div>
       <div class="column about-block">
-        <p class="about-blurb">I'm a front-end web developer that's interesting in building beautiful,
-        fluid, and functional web interfaces. I've learned Vue this year, but I'm also
+        <p class="about-blurb">I'm a front-end web developer that's interested in building beautiful,
+        fluid, and functional web interfaces. I've taught myself Vue this year, but I'm also
         fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
         <p class="about-blurb">
           Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
@@ -77,7 +77,7 @@ export default {
        } else {
          clearInterval(this.intervalid1);
        }
- }, 1000);
+ }, 750);
   }
 }
 </script>
@@ -86,6 +86,7 @@ export default {
 
 .about-container {
   margin-top: 12rem;
+  border-bottom: 3rem solid var(--color-dark-grey);
   overflow-x: hidden;
 
   @media screen and (min-width: 768px) {
@@ -98,8 +99,8 @@ export default {
     right: 0;
     top: 5.5rem;
     display: block;
-    width: 50vw;
-    min-height: 130vh;
+    width: 50%;
+    min-height: 160vh;
     z-index: 1;
 
     @media screen and (min-width: 768px) {
@@ -119,7 +120,7 @@ export default {
 }
 
 .about-section-one {
-  padding: 5rem 0;
+  padding: 7rem 0 0;
 
   .headline-3 {
     margin: 0;
@@ -136,20 +137,6 @@ export default {
   max-width: 150rem;
   margin-top: -5rem;
   padding-top: 5rem;
-
-  // &::after {
-  //   content: '';
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   display: block;
-  //   width: 50%;
-  //   min-height: 100vh;
-  //   z-index: 1;
-  //
-  //   @media screen and (min-width: 768px) {
-  //   }
-  // }
 }
 
 .about-hero {
@@ -181,7 +168,7 @@ export default {
   opacity: 0;
   transform: translateY(-3rem);
   animation: fade-in-list-items 1000ms ease-out forwards;
-  animation-delay: 1000ms;
+  animation-delay: 500ms;
 }
 
 .spinner-wrapper,
@@ -302,7 +289,7 @@ export default {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 5rem;
+  padding: 0rem 3rem 5rem 3rem;
   background-color: var(--color-dark-grey);
   z-index: 5;
 }

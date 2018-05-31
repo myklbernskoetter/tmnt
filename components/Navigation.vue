@@ -3,7 +3,6 @@
     <ul class="site-nav-container">
       <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Home</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" to="/about">About</nuxt-link></li>
-      <!-- <li class="menu-item"><nuxt-link class="menu-link" to="/experiments">Show</nuxt-link></li> -->
       <li class="menu-item"><nuxt-link class="menu-link" to="/production">Work</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" to="/contact">Contact</nuxt-link></li>
     </ul>
@@ -95,11 +94,10 @@ export default {
     text-align: center;
     display: inline-block;
     padding: 1rem 1rem;
-    font-size: 1.6rem;
     overflow: hidden;
     transition: all 250ms;
     font-family: var(--font-kollektif);
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-decoration: none;
 
     &:hover,

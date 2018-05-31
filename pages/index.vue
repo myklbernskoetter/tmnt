@@ -9,6 +9,9 @@
       </div>
       <div class="page-detail-wrapper">
         <div key="page-detail" class="home-image-wrapper"><img class="home-image" src="~/assets/images/frylord.jpg" alt=""></div>
+        <div class="copyright">
+          &copy; {{year}} Mykl Bernskoetter
+        </div>
       </div>
     </div>
   </div>
@@ -20,6 +23,7 @@ export default {
   data() {
     return {
       counter: 0,
+      year: '',
       wordSpinner: [
         'Thinker',
         'Partner',
@@ -40,6 +44,10 @@ export default {
          clearInterval(this.intervalid1);
        }
  }, 2000);
+
+  const date = new Date();
+  const year = date.getFullYear();
+  this.year = year;
   }
 }
 </script>
@@ -67,6 +75,10 @@ export default {
   align-items: flex-end;
   margin-bottom: 0;
   padding: 0 2rem;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 7rem;
+  }
 
   &::before {
     content: '';
@@ -103,6 +115,7 @@ export default {
   justify-content: center;
   align-items: flex-start;
   margin: 1rem 0 0 0;
+  min-height: 10rem;
   padding-top: 2rem;
   list-style: none;
 
@@ -116,12 +129,16 @@ export default {
     transform: translateY(100%);
     transition: all 500ms;
     font-family: var(--font-kollektif);
-    font-size: 5.5rem;
+    font-size: 3.5rem;
     opacity: 0;
+
+    @media screen and (min-width: 1020px) {
+      font-size: 4.5rem;
+    }
+
 
     &.active {
       transform: translateY(0);
-      font-size: 4.5rem;
       opacity: 1;
     }
   }
@@ -129,7 +146,7 @@ export default {
 
 .home-image {
   margin-left: .1rem;
-  max-width: 108rem;
+  max-width: 65rem;
   animation: fade-in 500ms linear forwards;
   animation-delay: 1250ms;
   opacity: 0;
@@ -137,8 +154,14 @@ export default {
 }
 
 .home-image-wrapper {
-  max-width: 60rem;
   margin: auto;
+  max-width: 60rem;
+  background-color: var(--color-white);
+  text-align: center;
+
+  @media screen and (min-width: 1020px) {
+    text-align: left;
+  }
 
   &::before {
     @media screen and (min-width: 768px) {
@@ -160,6 +183,17 @@ export default {
 
   @media screen and (min-width: 1020px) {
     max-width: none;
+  }
+}
+
+.copyright {
+  text-align: center;
+  z-index: 10;
+  font-size: 1.6rem;
+
+  @media screen and (min-width: 1020px) {
+    text-align: right;
+    padding-right: 5rem;
   }
 }
 </style>
