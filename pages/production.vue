@@ -9,7 +9,7 @@
       </div>
       <div class="page-detail-wrapper">
         <div class="page-detail">
-          <!-- <div class="featured-project">
+          <div class="featured-project">
             <div class="featured-image-wrapper"><img class="featured-image" src="~/assets/images/mulu-bottle-1.png" alt=""></div>
             <h2 class="featured-title">DFA: World Milk Day</h2>
             <button class="featured-button" type="button" v-on:click="featuredActive()" name="button">Explore</button>
@@ -18,7 +18,7 @@
             Dairy Farmer's of America wanted to have a little fun with
             World Milk Day on June 1, 2018. Together with Barkley they developed
             the idea for a 'new' power-drink. Mülü was born.
-          </p> -->
+          </p>
           <ul class="projects-list">
             <li class="list-item" v-for='(item, index) in projects' :key='index' v-bind:class="{'item-open': openListItem == index}">
               <button class="item-toggle" v-on:click="populatePanel(index)" type="button" name="button">
@@ -192,13 +192,13 @@ export default {
   overflow-X: hidden;
 }
 
-.featured-image {
-  transition: transform 5000ms;
-  &:hover,
-  &:focus {
-    transform: scale(1.2);
-  }
-}
+// .featured-image {
+//   transition: transform 5000ms;
+//   &:hover,
+//   &:focus {
+//     transform: scale(1.2);
+//   }
+// }
 
 .featured-title {
   padding: 0 2.5rem 0;
