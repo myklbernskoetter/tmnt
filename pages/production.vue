@@ -1,10 +1,10 @@
 <template lang="html">
   <div class="container">
-    <div class="split-page" v-bind:class="{movedAside: active === true}">
-      <h1 class="page-title">
+    <div class="split-page">
+      <!-- <h1 class="page-title">
         Production
         Work
-      </h1>
+      </h1> -->
       <div class="title-wrapper">
       </div>
       <div class="page-detail-wrapper">
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="project-panels" v-bind:class="{active: active}">
+    <div class="project-panels" v-bind:class="{active: active}">
       <span class="close-icon">
         <button class="close-button" type="button" @click="closePanel()">
           <svg viewBox="0 0 100 100" class="svg-1">
@@ -55,7 +55,7 @@
       <pizzapatronPanel v-if="activeProject === 'Pizza Patrón'" />
       <quahogbayPanel v-if="activeProject === 'quahogbay'" />
       <rgaPanel v-if="activeProject === 'rga'" />
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -177,10 +177,10 @@ export default {
   }
 }
 
-.moved-aside {
-  transition: transform 1000ms;
-  transform: translateX(-100%);
-}
+// .moved-aside {
+//   transition: transform 1000ms;
+//   transform: translateX(-100%);
+// }
 
 .close-button {
   z-index: 1;
