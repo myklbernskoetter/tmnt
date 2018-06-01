@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="project-panels" v-bind:class="{active: active}">
+    <!-- <div class="project-panels" v-bind:class="{active: active}">
       <span class="close-icon">
         <button class="close-button" type="button" @click="closePanel()">
           <svg viewBox="0 0 100 100" class="svg-1">
@@ -55,7 +55,7 @@
       <pizzapatronPanel v-if="activeProject === 'Pizza Patrón'" />
       <quahogbayPanel v-if="activeProject === 'quahogbay'" />
       <rgaPanel v-if="activeProject === 'rga'" />
-    </div>
+    </div> -->
   </div>
 </template>
 
