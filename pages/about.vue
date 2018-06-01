@@ -143,8 +143,6 @@ export default {
   top: 1rem;
   width: 100%;
   z-index: 2;
-  opacity: .75;
-  animation: fade-in 500ms linear forwards;
   background-color: var(--color-dark-grey);
 
   @media screen and (min-width: 768px) {
@@ -183,7 +181,6 @@ export default {
   margin-bottom: 0;
   height: auto;
   padding: 2rem;
-  font-size: 5.5rem;
   color: var(--color-black);
   background-color: var(--color-white);
   z-index: 3;
@@ -191,7 +188,6 @@ export default {
   @media screen and (min-width: 768px) {
     position: absolute;
     bottom: -.2rem;
-    font-size: 7.5rem;
   }
 
   &::before {

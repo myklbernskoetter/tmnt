@@ -146,7 +146,7 @@ export default {
 
 .home-image {
   margin-left: .1rem;
-  max-width: 65rem;
+  max-width: 55rem;
   animation: fade-in 500ms linear forwards;
   animation-delay: 1250ms;
   opacity: 0;

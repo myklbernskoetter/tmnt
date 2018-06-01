@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Mykl Bernskoetter: Web Developer' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon2.ico' }
     ]
   },
   css: [

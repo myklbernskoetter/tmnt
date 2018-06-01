@@ -2,8 +2,8 @@
   <div class="container">
     <div class="split-page" v-bind:class="{movedAside: active === true}">
       <h1 class="page-title">
-        <span class="title-line">Production</span>
-        <span class="title-line">Work</span>
+        Production
+        Work
       </h1>
       <div class="title-wrapper">
       </div>
@@ -149,13 +149,15 @@ export default {
 }
 
 .page-title {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  margin: 0 auto;
   padding-bottom: 2rem;
   transform: translateX(-100%) translateY(-50%);
   animation: split-in2 1000ms ease-out forwards;
-  opacity: 0;
   text-align: center;
-  max-width: 75%;
-  margin: 0 auto;
+  opacity: 0;
 
 
   @media screen and (min-width: 1020px) {
@@ -163,6 +165,7 @@ export default {
     top: 50%;
     left: 8%;
     transform: translateX(-15%) translateY(-50%);
+    max-width: 32rem;
   }
 
   .title-line {
@@ -265,7 +268,7 @@ export default {
   width: 100%;
   border: none;
   margin-bottom: .2rem;
-  padding: 12rem;
+  padding: 10rem;
   color: var(--color-black);
   background-color: white;
 
