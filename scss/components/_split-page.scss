@@ -14,7 +14,7 @@
     overflow: visible;
 
     @media screen and (min-width: 1020px) {
-      height: 100vh;
+      height: 100%;
       overflow: hidden;
     }
 
@@ -22,7 +22,7 @@
     .word-spinner {
 
       @media screen and (min-width: 1020px) {
-        height: 50vh;
+        height: 50%;
       }
     }
   }
