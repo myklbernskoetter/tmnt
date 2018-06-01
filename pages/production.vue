@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="work-container">
+  <div class="container">
     <div class="split-page">
       <h1 class="page-title">
         Production
@@ -192,14 +192,6 @@ export default {
   overflow-X: hidden;
 }
 
-// .featured-image {
-//   transition: transform 5000ms;
-//   &:hover,
-//   &:focus {
-//     transform: scale(1.2);
-//   }
-// }
-
 .featured-title {
   padding: 0 2.5rem 0;
 
@@ -386,7 +378,7 @@ export default {
   right: 2.5rem;
   width: 3rem;
   height: 3rem;
-  transform: rotate(90deg) translateY(1.5rem);
+  transform: rotate(90deg) translateY(1rem);
   transition: all 500ms;
 }
 
@@ -426,7 +418,7 @@ export default {
     &:focus {
       color: var(--color-dark-grey);
       svg {
-        transform: rotate(-90deg) translateY(-1rem);
+        transform: rotate(-90deg) translateY(0rem);
       }
     }
   }

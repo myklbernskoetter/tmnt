@@ -77,10 +77,9 @@ export default {
   }
 
   .menu-item {
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 768px) {
       &:hover,
       &:focus {
-
         .menu-link {
           transform: translateY(2rem);
         }
