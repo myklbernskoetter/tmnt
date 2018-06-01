@@ -297,25 +297,6 @@ export default {
       background-color: var(--color-white);
     }
   }
-
-  .item-open & {
-    .path-1 {
-      d: path("M10 10 L90 90");
-    }
-    .path-2 {
-      d: path("M90 10 L10 90");
-    }
-
-    &:hover,
-    &:focus {
-      .path-1 {
-        d: path("M10 70 L50 10");
-      }
-      .path-2 {
-        d: path("M90 70 L50 10");
-      }
-    }
-  }
 }
 
 @mixin increment-animation($time-default:250, $loops:1) {
