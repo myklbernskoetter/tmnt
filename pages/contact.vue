@@ -15,7 +15,7 @@
       </div>
       <div class="page-detail-wrapper">
         <div key="page-detail" class="contact-image-wrapper">
-          <img class="contact-image" src="~/assets/images/about-image1.jpg" alt="Mykl with a very suspicious glass of Sprite">
+          <img class="contact-image" src="/images/about-image1.jpg" alt="Mykl with a very suspicious glass of Sprite">
         </div>
       </div>
     </div>
