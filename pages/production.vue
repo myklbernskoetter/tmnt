@@ -1,15 +1,15 @@
 <template lang="html">
-  <div class="container">
+  <div class="work-container">
     <div class="split-page">
-      <!-- <h1 class="page-title">
+      <h1 class="page-title">
         Production
         Work
-      </h1> -->
+      </h1>
       <div class="title-wrapper">
       </div>
       <div class="page-detail-wrapper">
         <div class="page-detail">
-          <div class="featured-project">
+          <!-- <div class="featured-project">
             <div class="featured-image-wrapper"><img class="featured-image" src="~/assets/images/mulu-bottle-1.png" alt=""></div>
             <h2 class="featured-title">DFA: World Milk Day</h2>
             <button class="featured-button" type="button" v-on:click="featuredActive()" name="button">Explore</button>
@@ -18,20 +18,18 @@
             Dairy Farmer's of America wanted to have a little fun with
             World Milk Day on June 1, 2018. Together with Barkley they developed
             the idea for a 'new' power-drink. Mülü was born.
-          </p>
+          </p> -->
           <ul class="projects-list">
-            <transition-group name="fadeOpacity">
-              <li class="list-item" v-for='(item, index) in projects' :key='index' v-bind:class="{'item-open': openListItem == index}">
-                <button class="item-toggle" v-on:click="populatePanel(index)" type="button" name="button">
-                  <span class="item-background" v-bind:style="{ backgroundImage: `url(/images/list-items/${item.image})` }"></span>
-                  <span class="item-title">{{item.name}}</span>
-                  <svg viewBox="0 0 100 100" class="svg-1">
-                    <path class="path-1" stroke-width="13" fill="none" d="M10 70 L50 10" />
-                    <path class="path-2" stroke-width="13" fill="none" d="M90 70 L50 10" />
-                  </svg>
-                </button>
-              </li>
-            </transition-group>
+            <li class="list-item" v-for='(item, index) in projects' :key='index' v-bind:class="{'item-open': openListItem == index}">
+              <button class="item-toggle" v-on:click="populatePanel(index)" type="button" name="button">
+                <span class="item-background" v-bind:style="{ backgroundImage: `url(/images/list-items/${item.image})` }"></span>
+                <span class="item-title">{{item.name}}</span>
+                <svg viewBox="0 0 100 100" class="svg-1">
+                  <path class="path-1" stroke-width="13" fill="none" d="M10 70 L50 10" />
+                  <path class="path-2" stroke-width="13" fill="none" d="M90 70 L50 10" />
+                </svg>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -176,11 +174,6 @@ export default {
     }
   }
 }
-
-// .moved-aside {
-//   transition: transform 1000ms;
-//   transform: translateX(-100%);
-// }
 
 .close-button {
   z-index: 1;
