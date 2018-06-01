@@ -263,7 +263,7 @@ export default {
   font-weight: 600;
   background-color: white;
   z-index: 2;
-  list-style: none;
+  // list-style: none;
 
   @media screen and (min-width: 768px) {
     background-color: transparent;
@@ -342,8 +342,7 @@ export default {
 .skills-list {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0;
   padding: 2.5rem;
   list-style: none;

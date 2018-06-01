@@ -348,6 +348,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     padding: 3rem 5rem 3rem 0;
     transform: translateY(-1rem);
     opacity: 0;
@@ -370,8 +371,12 @@ export default {
     animation-delay: inherit;
     transform: translateY(-1rem);
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     opacity: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.2rem;
+    }
   }
 }
 

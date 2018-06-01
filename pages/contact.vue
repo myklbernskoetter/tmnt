@@ -15,7 +15,7 @@
       </div>
       <div class="page-detail-wrapper">
         <div key="page-detail" class="contact-image-wrapper">
-          <img class="contact-image" src="/images/about-image1.jpg" alt="Mykl with a very suspicious glass of Sprite">
+          <img class="contact-image" src="/images/mykl-illustration.png" alt="Mykl with a very suspicious glass of Sprite">
         </div>
       </div>
     </div>
@@ -30,6 +30,7 @@
           <span class="icon-attribution"><a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
           <span class="icon-attribution"><a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></span>
         </div>
+        <div>Illustration by <a href="https://www.instagram.com/artimos/">Art Ramirez</a></div>
       </div>
       <div class="copyright">
         &copy; {{year}} Mykl Bernskoetter
@@ -370,15 +371,16 @@ export default {
   .contact-image-wrapper {
     text-align: center;
     background-color: var(--color-white);
+    overflow: hidden;
+
     @media screen and (min-width: 768px) {
-      text-align: left;
     }
     &::before {
       @media screen and (min-width: 768px) {
         content: '';
         display: block;
         position: absolute;
-        bottom: .75rem;
+        bottom: 0;
         left: 0;
         width: 100vw;
         height: .2rem;
@@ -393,9 +395,10 @@ export default {
   }
 
   .contact-image {
+    top: 3rem;
     margin: 0 auto;
       @media screen and (min-width: 768px) {
-        max-width: 70rem;
+        max-width: 40rem;
       }
   }
 
@@ -414,7 +417,6 @@ export default {
   }
 
   .word-spinner {
-    padding: 0;
     list-style: none;
   }
 
@@ -471,7 +473,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0 auto 2.5rem;
+    padding: 3rem 0;
     width: 50%;
     height: 4rem;
     color: var(--color-black);
