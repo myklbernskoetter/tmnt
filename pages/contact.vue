@@ -46,7 +46,7 @@ export default {
       counter: 0,
       year: '',
       contacts: [
-        {name: 'Resume', link: 'Mykl Bernskoetter Resume.pdf', target: '_blank', symbol: `<?xml version="1.0" encoding="iso-8859-1"?>
+        {name: 'Resume', link: 'Mykl-Bernskoetter-Resume.pdf', target: '_blank', symbol: `<?xml version="1.0" encoding="iso-8859-1"?>
         <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px"
         	 viewBox="0 0 299.994 299.994" style="enable-background:new 0 0 299.994 299.994;" xml:space="preserve">
