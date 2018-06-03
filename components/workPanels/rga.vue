@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="panel-container">
-    <img class="panel-featured-image featured-desktop" src="/images/rga/rga-item-1.jpg" alt="">
-    <img class="panel-featured-image featured-mobile" src="/images/rga/rga-item-5.jpg" alt="">
+    <img class="panel-featured-image featured-desktop" src="/images/rga/rga-item-1.jpg" alt="GUM homepage example. Showing navigation, the hero and page content, and the worksheet functionality.">
+    <img class="panel-featured-image featured-mobile" src="/images/rga/rga-item-5.jpg" alt="GUM homepage example. Showing navigation, the hero and page content, and the worksheet functionality.">
     <div class="panel-header">
       <h2 class="panel-title">RGA</h2>
       <div class="close-wrapper">
@@ -15,7 +15,7 @@
       during an agile sprint process over several months.
     </p>
     <div class="image-split-container">
-      <span class="split-image image-right"><img src="/images/rga/rga-item-3.jpg"/></span>
+      <span class="split-image image-right"><img src="/images/rga/rga-item-3.jpg" alt="RGA page content example showing navigation and the subpage content."/></span>
     </div>
     <ul class="tools">
       <li>Twig Templates</li>
@@ -25,7 +25,7 @@
     </ul>
     <div class="panel-content">
       <div class="image-split-container">
-        <span class="split-image image-right"><img src="/images/rga/rga-item-2.png"/></span>
+        <span class="split-image image-right"><img src="/images/rga/rga-item-2.png" alt="RGA example showing the mobile table layouts as well as the subpage tabbed content structure."/></span>
       </div>
       <p class="content-two">
         RGA needed a new internal tool and landing site to help with the workload of their

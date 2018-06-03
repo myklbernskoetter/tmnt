@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="panel-container">
-    <img class="panel-featured-image" src="/images/mulu/mulu-bottle-1.jpg" alt="">
+    <img class="panel-featured-image" src="/images/mulu/mulu-bottle-1.jpg" alt="Mulu bottle image">
     <div class="panel-header">
       <h2 class="panel-title">Mülü</h2>
       <div class="close-wrapper">
@@ -16,7 +16,7 @@
       <a class="live-link" href="http://www.drinkmulu.com/">Visit the Mülü site</a>
     </p>
     <div class="image-split-container">
-      <span class="split-image image-right"><img src="/images/mulu/mulu-hero-reveal2.jpg"/></span>
+      <span class="split-image image-right"><img src="/images/mulu/mulu-hero-reveal2.jpg" alt="celebrating world milk day with mulu"/></span>
     </div>
     <ul class="tools">
       <li>Static HTML</li>
@@ -26,7 +26,7 @@
     </ul>
     <div class="panel-content">
       <div class="image-split-container">
-        <span class="split-image image-right"><img src="/images/mulu/mulu-grid-1.jpg"/></span>
+        <span class="split-image image-right"><img src="/images/mulu/mulu-grid-1.jpg" alt="instagram grid for mulu"/></span>
       </div>
       <p class="content-two description">
         The key piece of this site is that it needed a 'reveal' function to trigger on

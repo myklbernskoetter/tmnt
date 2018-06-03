@@ -10,7 +10,7 @@
       <div class="page-detail-wrapper">
         <div class="page-detail">
           <div class="featured-project">
-            <div class="featured-image-wrapper"><img class="featured-image" src="~/assets/images/mulu-bottle-1.png" alt=""></div>
+            <div class="featured-image-wrapper"><img class="featured-image" src="~/assets/images/mulu-bottle-1.png" alt="mulu bottle. The great new drink that's new but not and not milk but is milk."></div>
             <h2 class="featured-title">DFA: World Milk Day</h2>
             <button class="featured-button" type="button" v-on:click="featuredActive()" name="button">Explore</button>
           </div>

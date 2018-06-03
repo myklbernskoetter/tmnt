@@ -1,7 +1,7 @@
 <template>
   <div class="about-container">
     <header class="page-header">
-      <img class="about-hero" src="/images/about-1.jpg" alt="comptemplative ">
+      <img class="about-hero" src="/images/about-1.jpg" alt="Mykl being comptemplative at the top of a mountain after a 10 mile hike">
       <h1 class="headline-1 page-title" key="title"><span class="load-wrapper">About</span></h1>
     </header>
     <section class="about-section about-section-one">
@@ -19,27 +19,19 @@
           to #shipit!"<br/>
         </p>
         <p class="quote-author">
-          - CK Hicks, Lead Developer at Barkley Interactive
+          - CK Hicks, Lead Developer at Barkley
         </p>
       </div>
     </section>
     <figure class="image-split-container">
-        <img class="split-image" src="/images/about-image-5.jpg"/>
+        <img class="split-image" alt="Just some things I've collected - including my values and quality work awards from 40Digits" src="/images/about-image-5.jpg"/>
     </figure>
     <section class="about-section about-section-two">
       <div class="column skills">
         <h2 class="headline-3">Skills</h2>
         <ul class="skills-list">
-          <li>Atom / Sublime 3</li>
-          <li>HTML</li>
-          <li>SCSS</li>
-          <li>Javascript: ES6</li>
-          <li>jQuery</li>
-          <li>Vue</li>
-          <li>npm</li>
-          <li>Webpack</li>
-          <li>Drupal</li>
-          <li>Wordpress</li>
+          <li v-for='(skill, index) in skills' :key='index'>{{skill}}</li>
+
         </ul>
       </div>
       <div class="column about-block">
@@ -60,6 +52,19 @@ export default {
   data() {
     return {
       counter: 0,
+      skills: [
+        'Atom/Sublime',
+        'Photoshop',
+        'HTML',
+        'SCSS',
+        'Javascript',
+        'jQuery',
+        'Vue',
+        'npm',
+        'Webpack',
+        'Drupal',
+        'Wordpress'
+      ],
       wordSpinner: [
         'Positivity and good humor can do amazing things',
         'Always be learning',

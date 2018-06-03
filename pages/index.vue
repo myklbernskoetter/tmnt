@@ -8,7 +8,7 @@
         </ul>
       </div>
       <div class="page-detail-wrapper">
-        <div key="page-detail" class="home-image-wrapper"><img class="home-image" src="~/assets/images/frylord.jpg" alt=""></div>
+        <div key="page-detail" class="home-image-wrapper"><img class="home-image" src="~/assets/images/frylord.jpg" alt="I found a very large curly fry and pronounced myself FryLord for a day."></div>
         <div class="copyright">
           &copy; {{year}} Mykl Bernskoetter
         </div>

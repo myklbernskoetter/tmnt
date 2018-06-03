@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="panel-container">
-    <img class="panel-featured-image" src="/images/nbh/nbh-item-image-2.jpg" alt="">
+    <img class="panel-featured-image" src="/images/nbh/nbh-item-image-2.jpg" alt="NBH hero image example">
     <div class="panel-header">
       <h2 class="panel-title">NBH Bank</h2>
       <div class="close-wrapper">
@@ -19,7 +19,7 @@
       <a class="live-link" href="https://www.bankmw.com/"> Visit Bank Midwest</a>
     </p>
     <div class="image-split-container">
-      <span class="split-image image-right"><img src="/images/nbh/nbh-nav-1.jpg"/></span>
+      <span class="split-image image-right"><img src="/images/nbh/nbh-nav-1.jpg" alt="bank midwest hero and navigation example"/></span>
     </div>
     <ul class="tools">
       <li>Wordpress</li>xw
@@ -30,7 +30,7 @@
     </ul>
     <div class="panel-content">
       <div class="image-split-container">
-        <span class="split-image image-right"><img src="/images/nbh/nbh-mobile-1.jpg"/></span>
+        <span class="split-image image-right"><img src="/images/nbh/nbh-mobile-1.jpg" alt="nbh mobile hero and navigation"/></span>
       </div>
     </div>
   </div>
