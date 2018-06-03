@@ -24,7 +24,7 @@
       </div>
     </section>
     <figure class="image-split-container">
-        <img class="split-image" src="/images/about-image-4.jpg"/>
+        <img class="split-image" src="/images/about-image-5.jpg"/>
     </figure>
     <section class="about-section about-section-two">
       <div class="column skills">
@@ -366,7 +366,6 @@ export default {
 .split-image {
   right: 0;
   margin: auto;
-  // max-width: 85rem;
   padding: 0;
 }
 
