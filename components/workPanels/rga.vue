@@ -2,18 +2,20 @@
   <div class="panel-container">
     <img class="panel-featured-image featured-desktop" src="/images/rga/rga-item-1.jpg" alt="GUM homepage example. Showing navigation, the hero and page content, and the worksheet functionality.">
     <img class="panel-featured-image featured-mobile" src="/images/rga/rga-item-5.jpg" alt="GUM homepage example. Showing navigation, the hero and page content, and the worksheet functionality.">
-    <div class="panel-header">
-      <h2 class="panel-title">RGA</h2>
-      <div class="close-wrapper">
-        <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
+    <div class="row-container">
+      <div class="panel-header">
+        <h2 class="panel-title">RGA</h2>
+        <div class="close-wrapper">
+          <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
+        </div>
+        <div class="logo-wrapper"><img class="logo" src="/images/rga/rga-logo.jpg" alt="RGA logo"></div>
       </div>
-      <div class="logo-wrapper"><img class="logo" src="/images/rga/rga-logo.jpg" alt="RGA logo"></div>
+      <p class="description">
+        This project was a pleasure to work on and be a part of. 40Digits assembled an awesome team to handle this one.
+        We built a functional prototype from designs
+        during an agile sprint process over several months.
+      </p>
     </div>
-    <p class="description">
-      This project was a pleasure to work on and be a part of. 40Digits assembled an awesome team to handle this one.
-      We built a functional prototype from designs
-      during an agile sprint process over several months.
-    </p>
     <div class="image-split-container">
       <span class="split-image image-right"><img src="/images/rga/rga-item-3.jpg" alt="RGA page content example showing navigation and the subpage content."/></span>
     </div>
@@ -57,8 +59,6 @@ export default {
 }
 
 .logo-wrapper {
-  top: 20rem;
-  left: 0rem;
   width: 35rem;
 }
 

@@ -12,7 +12,13 @@
           <div class="featured-project">
             <div class="featured-image-wrapper"><img class="featured-image" src="~/assets/images/mulu-bottle-1.png" alt="mulu bottle. The great new drink that's new but not and not milk but is milk."></div>
             <h2 class="featured-title">DFA: World Milk Day</h2>
-            <button class="featured-button" type="button" v-on:click="featuredActive()" name="button">Explore</button>
+            <button class="featured-button" type="button" v-on:click="featuredActive()" name="button">
+              Explore
+              <svg viewBox="0 0 100 100" class="svg-1">
+                <path class="path-1" stroke-width="13" d="M10 70 L50 10" />
+                <path class="path-2" stroke-width="13" d="M90 70 L50 10" />
+              </svg>
+            </button>
           </div>
           <p class="featured-blurb">
             Dairy Farmer's of America wanted to have a little fun with
@@ -194,23 +200,49 @@ export default {
 
 .featured-title {
   padding: 0 2.5rem 0;
+  font-size: 2.5rem;
 
   @media screen and (min-width: 728px) {
     position: absolute;
-    bottom: 0;
+    bottom: 1.5rem;
     left: 2.5rem;
     border-top: .2rem solid black;
     border-bottom: .2rem solid black;
+  }
+
+  @media screen and (min-width: 1230px) {
+    font-size: 3.5rem;
+    bottom: 0;
   }
 }
 
 .featured-button {
   margin-left: 2.5rem;
+  padding-right: 4rem;
+
+  &:hover,
+  &:focus {
+    .svg-1 {
+      transform: translateX(0) rotate(90deg) translateY(1rem);
+    }
+  }
+
+  .svg-1 {
+    position: absolute;
+    top: .85rem;
+    right: -.5rem;
+    width: 2rem;
+    height: 2rem;
+    transform: translateX(-.75rem) rotate(90deg) translateY(1rem);
+    path {
+      stroke: var(--color-white);
+    }
+  }
 
   @media screen and (min-width: 728px) {
     position: absolute;
-    right: 2.5rem;
-    bottom: 3rem;
+    right: 3.5rem;
+    bottom: 3.5rem;
   }
 }
 
@@ -243,10 +275,6 @@ export default {
       border: none;
     }
   }
-}
-
-.item-open {
-  padding-bottom: 2.5rem;
 }
 
 .item-toggle {

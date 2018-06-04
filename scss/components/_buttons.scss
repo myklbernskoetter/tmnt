@@ -20,7 +20,11 @@ button,
 .close-button {
   &:hover,
   &:focus {
-    color: var(--color-black);
+    fill: var(--color-magenta);
     background-color: var(--color-white);
+
+    span {
+      color: var(--color-magenta);
+    }
   }
 }

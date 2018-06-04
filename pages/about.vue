@@ -55,6 +55,7 @@ export default {
       skills: [
         'Atom/Sublime',
         'Photoshop',
+        'PHP',
         'HTML',
         'SCSS',
         'Javascript',

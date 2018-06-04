@@ -1,33 +1,45 @@
 <template lang="html">
   <div class="panel-container">
     <img class="panel-featured-image" src="/images/nbh/nbh-item-image-2.jpg" alt="NBH hero image example">
-    <div class="panel-header">
-      <h2 class="panel-title">NBH Bank</h2>
-      <div class="close-wrapper">
-        <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
+    <div class="row-container">
+      <div class="panel-header">
+        <h2 class="panel-title">NBH Bank</h2>
+        <div class="close-wrapper">
+          <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
+        </div>
+        <div class="logo-wrapper"><img class="logo" src="/images/nbh/bmw-logo.jpg" alt="NBH: Bank Midwest Logo"></div>
       </div>
-      <div class="logo-wrapper"><img class="logo" src="/images/nbh/bmw-logo.jpg" alt="NBH: Bank Midwest Logo"></div>
+      <p class="description">
+        NBH needed to rebrand their entire family of websites- 40Digits devised a way to allow the content authors
+        to use a single Wordpress admin-interface to build content across all their brands.
+        <span class="links-wrapper">
+          <span class="link-wrapper"><a class="live-link" href="https://www.nbhbank.com/">Visit NBH</a></span>
+          <span class="link-wrapper"><a class="live-link" href="https://www.bankmw.com/"> Visit Bank Midwest</a></span>
+        </span>
+      </p>
     </div>
-    <p class="description">
+    <div class="image-split-container">
+      <span class="split-image image-right"><img src="/images/nbh/nbh-nav-1.jpg" alt="bank midwest hero and navigation example"/></span>
+    </div>
+    <div class="tools-wrapper">
+    <h3 class="headline-2 tools-headline">Tools Used</h3>
+    <ul class="tools">
+      <li>Wordpress</li>
+      <li>PHP</li>
+      <li>Custom Site Switcher</li>
+      <li>Flexbox</li>
+      <li>Javascript</li>
+      <li>jQuery</li>
+    </ul>
+    <p class="content-two">
       This represents the largest project I was a part of in 2017.
       We built a custom multi-site with a single admin
       for NBH bank and all of its holding branches
       such as Bank Midwest, and Hillcrest Bank.
       This project also focused heavily on ensuring that accesibility was front
       of mind when building out the navigation, components, and other interactive elements.
-      <a class="live-link" href="https://www.nbhbank.com/">Visit the NBH</a>
-      <a class="live-link" href="https://www.bankmw.com/"> Visit Bank Midwest</a>
     </p>
-    <div class="image-split-container">
-      <span class="split-image image-right"><img src="/images/nbh/nbh-nav-1.jpg" alt="bank midwest hero and navigation example"/></span>
-    </div>
-    <ul class="tools">
-      <li>Wordpress</li>xw
-      <li>Custom Site Switcher</li>
-      <li>Flexbox</li>
-      <li>Javascript</li>
-      <li>jQuery</li>
-    </ul>
+  </div>
     <div class="panel-content">
       <div class="image-split-container">
         <span class="split-image image-right"><img src="/images/nbh/nbh-mobile-1.jpg" alt="nbh mobile hero and navigation"/></span>
@@ -49,8 +61,16 @@ export default {
 <style lang="scss" scoped>
 
 .logo-wrapper {
-  top: 20rem;
-  left: 2rem;
-  width: 40rem;
+  margin-top: 5rem;
+  width: 30rem;
+}
+
+.panel-header {
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.links-wrapper {
+  display: block;
 }
 </style>
