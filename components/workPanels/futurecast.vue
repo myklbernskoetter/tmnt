@@ -9,7 +9,6 @@
       <p class="description">
         A shakeup in the FutureCast company structure also meant that it was time for a
         rebrand of their website. With a short project time frame, they opted for a single splash page to begin the rebrand.
-        Using Wordpress, this site is ready for the future.
         <span class="link-wrapper"><a class="live-link" rel="noopener" target="_blank" href="http://www.thefuturecast.com/">Visit the FutureCast site</a></span>
       </p>
     </div>
@@ -26,8 +25,10 @@
         <li>ACF Pro Plugin</li>
       </ul>
       <p class="content-two">
-        The new site is built on Wordpress, and was built with expansion in mind.
-
+        The new site is built on Wordpress, and it was built with expansion in mind. With a company that sees itself as always looking forward,
+        I wanted to make sure that what we built wasn't just okay for today, but that it was easy to add, remove, or change content, and to be
+        ready when the company was ready to expand the site.  By using Advanced Custom Fields, Custom Post Types, and by taking a little time to plan
+        out the admin structure, we were confident we had created something that's useful for today, and that is adaptable for future needs.
       </p>
     </div>
     <div class="panel-content">

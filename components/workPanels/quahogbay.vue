@@ -7,7 +7,9 @@
         <div class="logo-wrapper"><img class="logo" src="/images/quahogbay/qb-logo.png" alt="Pizza Patron logo"></div>
       </div>
       <p class="description">
-        Quahog Bay About
+        The Quahog Bay Conservancy is a non-profit operating in Maine.  Their goal is to not only clean up
+        the Quahog Bay, but to educate boaters, and recreational users of their local waters on the effects
+        of pollution. In 2015 they approached 40Digits about creating an informational site that would help them achieve these goals.
         <span class="link-wrapper"><a class="live-link" rel="noopener" target="_blank" href="http://quahogbay.org/">Visit Quahog Bay Site</a></span>
       </p>
     </div>
@@ -22,7 +24,8 @@
         <li>jQuery</li>
       </ul>
       <p class="content-two">
-        Bay Content 2
+        After a year of building html emails, this was my first break into full Wordpress development. I'm proud that it's still going strong
+        and expanding as the Conservancy grows and expands its projects and deepens it's impact on the local Bay area.
       </p>
     </div>
     <div class="panel-content">

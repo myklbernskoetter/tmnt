@@ -65,7 +65,6 @@
 
 <script>
 import c3Panel from '~/components/workPanels/c3.vue';
-import experimentsPanel from '~/components/workPanels/experiments.vue';
 import futurecastPanel from '~/components/workPanels/futurecast.vue';
 import kesselrunPanel from '~/components/workPanels/kesselrun.vue';
 import muluPanel from '~/components/workPanels/mulu.vue';
@@ -94,7 +93,6 @@ export default {
   transition: 'fadeOpacity',
   components: {
     c3Panel,
-    experimentsPanel,
     futurecastPanel,
     kesselrunPanel,
     muluPanel,
@@ -345,11 +343,6 @@ export default {
 }
 
 .list-item {
-  // @include increment-animation(750, 9);
-  // transform: translateY(-1rem);
-  // opacity: 0;
-  // animation: fade-in-list-items 250ms linear forwards;
-
   .item-toggle {
     display: flex;
     flex-direction: row;

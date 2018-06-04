@@ -7,7 +7,9 @@
         <div class="logo-wrapper"><img class="logo" src="/images/pizza/pizza-logo.jpg" alt="Pizza Patron logo"></div>
       </div>
       <p class="description">
-        Pizza Patron About
+        Pizza Patron is a pizza franchise located predominantly in the American Southwest.
+        Earlier this year they required a full brand overhaul and needed
+        a fresh new website to go with it.
         <span class="link-wrapper"><a class="live-link" rel="noopener" target="_blank" href="https://pizzapatron.com">Visit Pizza Patron</a></span>
       </p>
     </div>
@@ -23,7 +25,12 @@
         <li>CSS Grid</li>
       </ul>
       <p class="content-two">
-        Pizza Content 2
+        The page layouts for this new site lent themselves very well to using CSS Grid as the basis for much of the page structure.
+        We did need to provide some fallbacks for IE 10 and 11 users, but we found it simple enough to provide those while providing
+        more current browsers with the grid styles.
+
+        In addition, the templates for several parts of the site were made very customizable by using ACF's Flex fields to provide the
+        content authors great freedom to arrange and create their page layouts without hard-coding rigid template frameworks.
       </p>
     </div>
     <div class="panel-content">
