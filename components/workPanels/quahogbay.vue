@@ -19,12 +19,12 @@
     <div class="tools-wrapper">
       <h3 class="headline-two tools-headline">Tools Used</h3>
       <ul class="tools">
-        <li>Wordpress</li>
+        <li>WordPress</li>
         <li>PHP</li>
         <li>jQuery</li>
       </ul>
       <p class="content-two">
-        After a year of building html emails, this was my first break into full Wordpress development. I'm proud that it's still going strong
+        After a year of building html emails, this was my first break into full WordPress development. I'm proud that it's still going strong
         and expanding as the Conservancy grows and expands its projects and deepens it's impact on the local Bay area.
       </p>
     </div>

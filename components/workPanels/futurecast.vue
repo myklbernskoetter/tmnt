@@ -18,14 +18,14 @@
     <div class="tools-wrapper">
       <h3 class="headline-2 tools-headline">Tools Used</h3>
       <ul class="tools">
-        <li>Wordpress</li>
+        <li>WordPress</li>
         <li>PHP</li>
         <li>Jquery</li>
         <li>CSS Grid</li>
         <li>ACF Pro Plugin</li>
       </ul>
       <p class="content-two">
-        The new site is built on Wordpress, and it was built with expansion in mind. With a company that sees itself as always looking forward,
+        The new site is built on WordPress, and it was built with expansion in mind. With a company that sees itself as always looking forward,
         I wanted to make sure that what we built wasn't just okay for today, but that it was easy to add, remove, or change content, and to be
         ready when the company was ready to expand the site.  By using Advanced Custom Fields, Custom Post Types, and by taking a little time to plan
         out the admin structure, we were confident we had created something that's useful for today, and that is adaptable for future needs.

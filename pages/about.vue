@@ -64,7 +64,7 @@ export default {
         'npm',
         'Webpack',
         'Drupal',
-        'Wordpress'
+        'WordPress'
       ],
       wordSpinner: [
         'Positivity and good humor can do amazing things',

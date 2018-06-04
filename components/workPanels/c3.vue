@@ -20,7 +20,7 @@
     <div class="tools-wrapper">
       <h3 class="headline-two tools-headline">Tools Used</h3>
       <ul class="tools">
-        <li>Wordpress</li>
+        <li>WordPress</li>
         <li>CSS Flexbox</li>
         <li>jQuery</li>
         <li>BEM CSS structure</li>

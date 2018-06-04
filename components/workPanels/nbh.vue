@@ -8,7 +8,7 @@
       </div>
       <p class="description">
         NBH needed to rebrand their entire family of websites- 40Digits devised a way to allow the content authors
-        to use a single Wordpress admin-interface to build content across all their brands.
+        to use a single WordPress admin-interface to build content across all their brands.
         <span class="links-wrapper">
           <span class="link-wrapper"><a class="live-link" href="https://www.nbhbank.com/">Visit NBH</a></span>
           <span class="link-wrapper"><a class="live-link" href="https://www.bankmw.com/"> Visit Bank Midwest</a></span>
@@ -21,7 +21,7 @@
     <div class="tools-wrapper">
     <h3 class="headline-2 tools-headline">Tools Used</h3>
     <ul class="tools">
-      <li>Wordpress</li>
+      <li>WordPress</li>
       <li>PHP</li>
       <li>Custom Site Switcher</li>
       <li>Flexbox</li>
