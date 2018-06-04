@@ -1,9 +1,10 @@
 <template lang="html">
-  <div class="work-container" v-bind:class="{'panel-open': openListItem != ''}">
+  <div class="work-container" v-bind:class="{'panel-open': openListItem != null}">
     <div class="split-page" >
       <h1 class="page-title">
         Production
         Work
+        {{openListItem}}
       </h1>
       <div class="title-wrapper">
       </div>
@@ -80,7 +81,7 @@ export default {
       active: false,
       activeProject: '',
       indexActive: 0,
-      openListItem: '',
+      openListItem: null,
       projects: [
         {name: 'FutureCast', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg', color: '#0093d3'},
         {name: 'nbh', alt: 'alt text', blurb: 'blurb', image: 'bmw-item-image-1.jpg'},
@@ -114,6 +115,7 @@ export default {
     populatePanel(index) {
       const setIndex = index;
       this.activeProject = this.projects[setIndex].name;
+      this.openListItem = this.projects[setIndex].name;
       this.active = true;
       this.indexActive = setIndex;
     },
