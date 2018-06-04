@@ -106,6 +106,7 @@ export default {
   },
   methods: {
     closePanel() {
+      this.activeProject = null;
       this.openListItem = '';
       this.active = false;
       setTimeout(function(){

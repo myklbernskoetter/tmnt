@@ -98,7 +98,7 @@ export default {
         <g>
         </g>
         </svg>`},
-        {name: 'Email', link: 'mailto:mbernskoetter5@gmail.com', target: '_self', symbol: `<?xml version="1.0" encoding="iso-8859-1"?>
+        {name: 'mbernskoetter5@gmail.com', link: 'mailto:mbernskoetter5@gmail.com', target: '_self', symbol: `<?xml version="1.0" encoding="iso-8859-1"?>
         <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
         <svg version="1.1" id="Layer_1" width="40px" height="40px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         	 viewBox="0 0 299.997 299.997" style="enable-background:new 0 0 299.997 299.997;" xml:space="preserve">
@@ -145,7 +145,7 @@ export default {
         <g>
         </g>
         </svg>`},
-        {name: 'Phone', link: 'tel:14178490082', target: '_self', symbol: `<?xml version="1.0" encoding="iso-8859-1"?>
+        {name: '417-849-0082', link: 'tel:14178490082', target: '_self', symbol: `<?xml version="1.0" encoding="iso-8859-1"?>
         <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
         <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
