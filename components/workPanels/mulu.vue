@@ -4,9 +4,6 @@
     <div class="row-container">
       <div class="panel-header">
         <h2 class="panel-title">Mülü</h2>
-        <div class="close-wrapper">
-          <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
-        </div>
         <div class="logo-wrapper"><img class="logo" src="/images/mulu/mulu-logo.png" alt="dfa mulu logo"></div>
       </div>
       <p class="description">
