@@ -345,10 +345,10 @@ export default {
 }
 
 .list-item {
-  @include increment-animation(750, 9);
-  transform: translateY(-1rem);
-  opacity: 0;
-  animation: fade-in-list-items 250ms linear forwards;
+  // @include increment-animation(750, 9);
+  // transform: translateY(-1rem);
+  // opacity: 0;
+  // animation: fade-in-list-items 250ms linear forwards;
 
   .item-toggle {
     display: flex;
