@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="container">
+  <div class="work-container">
     <div class="split-page">
       <h1 class="page-title">
         Production
@@ -140,7 +140,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.container {
+.work-container {
   padding-top: 20rem;
 
   @media screen and (min-width: 768px) {

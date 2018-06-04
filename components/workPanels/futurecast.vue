@@ -4,9 +4,6 @@
     <div class="row-container">
       <div class="panel-header">
         <h2 class="panel-title">FutureCast</h2>
-        <div class="close-wrapper">
-          <button class="close-button" type="button" name="button" @click="closePanel()">Close</button>
-        </div>
         <div class="logo-wrapper"><img class="logo" src="/images/futurecast/futurecast-logo.png" alt="The Futurecast logo"></div>
       </div>
       <p class="description">

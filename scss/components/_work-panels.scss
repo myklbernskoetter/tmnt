@@ -49,6 +49,7 @@
 
 .panel-featured-image {
   padding-top: 0;
+  /* min-height: 26rem; */
 
   @media screen and (min-width: 728px) {
     width: 85%;
@@ -128,6 +129,7 @@
 }
 
 .description {
+  width: 100%;
   padding-top: 5rem;
   padding-bottom: 3rem;
   color: var(--color-white);
@@ -144,7 +146,8 @@
 }
 
 .split-image {
-  padding-top: 2.5rem;
+  display: block;
+  padding-top: 5rem;
 }
 
 .tools-wrapper {
@@ -198,10 +201,6 @@
       font-size: inherit;
     }
   }
-}
-
-.close-wrapper {
-  display: none;
 }
 
 .content-two {
