@@ -1,6 +1,6 @@
 <template lang="html">
-  <div class="work-container">
-    <div class="split-page">
+  <div class="work-container" v-bind:class="{'panel-open': openListItem != ''}">
+    <div class="split-page" >
       <h1 class="page-title">
         Production
         Work
@@ -91,7 +91,7 @@ export default {
       ]
     }
   },
-    transition: 'fadeOpacity',
+  transition: 'fadeOpacity',
   components: {
     c3Panel,
     experimentsPanel,
@@ -105,6 +105,7 @@ export default {
   },
   methods: {
     closePanel() {
+      this.openListItem = '';
       this.active = false;
       setTimeout(function(){
         this.activeProject = '';
@@ -149,6 +150,11 @@ export default {
 
   @media screen and (min-width: 1020px) {
     padding-top: 0rem;
+  }
+
+  &.panel-open {
+    height: 100vh;
+    overflow: hidden;
   }
 }
 
