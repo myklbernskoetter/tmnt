@@ -1,3 +1,10 @@
+//==================
+// SPLIT-PAGES
+//==================
+
+//------------------
+// Page Defaults
+//------------------
 .split-page {
   display: grid;
   grid-template-columns: 1fr;
@@ -28,6 +35,9 @@
   }
 }
 
+//------------------
+// Title
+//------------------
 .title-wrapper {
   display: flex;
   flex-direction: column;
@@ -45,6 +55,9 @@
   margin: 0;
 }
 
+//------------------
+// Page Content
+//------------------
 .page-detail-wrapper {
   opacity: 0;
   animation: fade-in 750ms ease-in forwards;

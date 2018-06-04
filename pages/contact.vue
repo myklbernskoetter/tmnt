@@ -306,6 +306,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//============================
+// CONTACT
+//============================
+
   @mixin increment-animation($time-default:250, $loops:1) {
     @for $i from 1 through $loops {
       &:nth-child(#{$i}) {
@@ -313,6 +317,10 @@ export default {
       }
     }
   }
+
+  //------------------
+  // Split Page Overrides
+  //------------------
   .split-page {
     @media screen and (min-width: 1020px) {
       margin-top: 5rem;
@@ -320,6 +328,9 @@ export default {
     }
   }
 
+  //------------------
+  // Contact Page Defaults
+  //------------------
   .contact-container {
     margin-top: 12rem;
     overflow-x: hidden;
@@ -333,6 +344,7 @@ export default {
     }
   }
 
+  // Title
   .title-wrapper {
     transform: translateX(-10%);
   }
@@ -354,6 +366,7 @@ export default {
     }
   }
 
+  // Hero
   .contact-hero {
     top: 1rem;
     width: 100%;
@@ -368,6 +381,7 @@ export default {
     }
   }
 
+  //Illustration
   .contact-image-wrapper {
     text-align: center;
     background-color: var(--color-white);
@@ -402,33 +416,9 @@ export default {
       }
   }
 
-  .contact-link {
-    font-weight: 600;
-  }
 
-  .word {
-    opacity: 0;
-    transform: translateX(-10%);
 
-    &.active {
-      animation: split-in 500ms ease-out forwards;
-      animation-delay: 250ms;
-    }
-  }
-
-  .word-spinner {
-    list-style: none;
-  }
-
-  .resume-link-wrapper {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  .resume-link {
-    color: var(--color-white);
-  }
-
+  // Footer
   .site-footer {
     display: flex;
     flex-direction: column;
@@ -469,6 +459,30 @@ export default {
     }
   }
 
+  // Contact Links/ Spinner
+  .word {
+    opacity: 0;
+    transform: translateX(-10%);
+
+    &.active {
+      animation: split-in 500ms ease-out forwards;
+      animation-delay: 250ms;
+    }
+  }
+
+  .word-spinner {
+    list-style: none;
+  }
+
+  .resume-link-wrapper {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .resume-link {
+    color: var(--color-white);
+  }
+
   .contact-link {
     display: flex;
     flex-direction: row;
@@ -476,6 +490,7 @@ export default {
     padding: 3rem 0;
     width: 50%;
     height: 4rem;
+    font-weight: 600;
     color: var(--color-black);
     text-decoration: none;
     transition: all 125ms;

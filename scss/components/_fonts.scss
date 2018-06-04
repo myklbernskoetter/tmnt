@@ -1,3 +1,10 @@
+//============================
+// FONTS
+//============================
+
+//--------------
+// Font Families
+//--------------
 @font-face {
   font-family: 'montserrat';
   src: url('/assets/fonts/Montserrat/Montserrat-Light.ttf');
@@ -26,6 +33,9 @@
   font-style: normal;
 }
 
+//--------------
+// Headline Settings
+//--------------
 h1,
 .headline-1 {
   font-size: 3.5rem;

@@ -46,7 +46,7 @@ export default {
          clearInterval(this.intervalid1);
        }
  }, 2000);
-
+// Keep the copyright year uptodate by updating the variable before Vue mounts the app to the page.
   const date = new Date();
   const year = date.getFullYear();
   this.year = year;
@@ -66,6 +66,14 @@ export default {
 
 <style lang="scss" scoped>
 // All styles here are scoped to the home page
+
+//============================
+// HOME
+//============================
+
+//--------------
+// Title / Name
+//--------------
 .site-title,
 .word-spinner {
   height: 50%;
@@ -112,6 +120,9 @@ export default {
   opacity: 0;
 }
 
+//--------------
+// Word Spinner
+//--------------
 .word-spinner {
   display: flex;
   justify-content: center;
@@ -145,6 +156,10 @@ export default {
     }
   }
 }
+
+//--------------
+// Home Image
+//--------------
 
 .home-image {
   margin-left: .1rem;
@@ -188,6 +203,9 @@ export default {
   }
 }
 
+//--------------
+// Copyright
+//--------------
 .copyright {
   text-align: center;
   z-index: 10;

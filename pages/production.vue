@@ -82,7 +82,7 @@ export default {
       indexActive: 0,
       openListItem: null,
       projects: [
-        {name: 'FutureCast', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg', color: '#0093d3'},
+        {name: 'FutureCast', alt: 'alt text', blurb: 'blurb', image: 'futurecast-hero-1.jpg'},
         {name: 'nbh', alt: 'alt text', blurb: 'blurb', image: 'bmw-item-image-1.jpg'},
         {name: 'rga', alt: 'alt text', blurb: 'blurb', image: 'rga-item-image-1.jpg'},
         {name: 'C3', alt: 'alt text', blurb: 'blurb', image: 'c3-item-image-1.jpg'},
@@ -141,6 +141,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//============================
+// PRODUCTION
+//============================
 
 .work-container {
   padding-top: 20rem;

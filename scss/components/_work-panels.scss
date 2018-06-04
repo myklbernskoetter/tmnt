@@ -1,3 +1,10 @@
+//============================
+// WORK PANEL
+//============================
+
+//------------------
+// Panel Defaults
+//------------------
 .project-panels {
   position: absolute;
   top: 0;
@@ -38,6 +45,20 @@
   z-index: 2;
 }
 
+//------------------
+// Panel Hero Image
+//------------------
+.panel-featured-image {
+  padding-top: 0;
+
+  @media screen and (min-width: 728px) {
+    width: 85%;
+  }
+}
+
+//------------------
+// Section one container
+//------------------
 .row-container {
   display: flex;
   flex-direction: column;
@@ -47,14 +68,7 @@
   }
 }
 
-.panel-featured-image {
-  padding-top: 0;
-
-  @media screen and (min-width: 728px) {
-    width: 85%;
-  }
-}
-
+// Section one title / logo
 .panel-header {
   display: flex;
   justify-content: space-between;
@@ -102,24 +116,9 @@
   }
 }
 
-.link-wrapper {
-  display: block;
-}
-
-.live-link {
-  display: inline-block;
-  padding-top: 2.5rem;
-  color: var(--color-yellow);
-  font-weight: bold;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: var(--color-white);
-    text-decoration: underline;
-  }
-}
-
+//------------------
+// Section One Content
+//------------------
 .panel-content,
 .description {
   padding: 0 2.5rem 5rem;
@@ -147,11 +146,35 @@
   }
 }
 
+.link-wrapper {
+  display: block;
+}
+
+.live-link {
+  display: inline-block;
+  padding-top: 2.5rem;
+  color: var(--color-yellow);
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+}
+
+//------------------
+// Full Width Image (middle)
+//------------------
 .split-image {
   display: block;
   padding-top: 5rem;
 }
 
+//------------------
+// Skills
+//------------------
 .tools-wrapper {
   margin-top: -2rem;
   padding: 2.5rem 0;

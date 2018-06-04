@@ -89,7 +89,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//============================
+// ABOUT
+//============================
 
+//------------------
+// About Page Defaults
+//------------------
 .about-container {
   margin-top: 12rem;
   border-bottom: 3rem solid var(--color-dark-grey);
@@ -115,6 +121,20 @@ export default {
   }
 }
 
+// Hero
+.about-hero {
+  top: 1rem;
+  width: 100%;
+  z-index: 2;
+  background-color: var(--color-dark-grey);
+
+  @media screen and (min-width: 768px) {
+    margin-top: 14rem;
+    width: 70%;
+  }
+}
+
+// Section Contents
 .about-section {
   @media screen and (min-width: 768px) {
     display: flex;
@@ -145,18 +165,9 @@ export default {
   padding-top: 5rem;
 }
 
-.about-hero {
-  top: 1rem;
-  width: 100%;
-  z-index: 2;
-  background-color: var(--color-dark-grey);
-
-  @media screen and (min-width: 768px) {
-    margin-top: 14rem;
-    width: 70%;
-  }
-}
-
+//------------------
+// title
+//------------------
 .page-title {
   width: 100%;
   text-align: center;
@@ -216,6 +227,9 @@ export default {
   }
 }
 
+//------------------
+// Spinner
+//------------------
 .spinner-wrapper {
   @media screen and (min-width: 1020px) {
     background-color: var(--color-white);
@@ -263,13 +277,13 @@ export default {
   }
 }
 
+// Values - Spinner rows
 .values {
   margin: 0;
   padding: 3.5rem;
   font-weight: 600;
   background-color: white;
   z-index: 2;
-  // list-style: none;
 
   @media screen and (min-width: 768px) {
     background-color: transparent;
@@ -286,6 +300,9 @@ export default {
   }
 }
 
+//------------------
+// Quote
+//------------------
 .quote-wrapper {
   display: flex;
   flex-direction: column;
@@ -316,6 +333,9 @@ export default {
   background-color: var(--color-dark-grey);
 }
 
+//------------------
+// Skills
+//------------------
 .skills {
   width: 100%;
   margin-top: -5rem;
@@ -362,6 +382,9 @@ export default {
   }
 }
 
+//------------------
+// Full Width Image
+//------------------
 .image-split-container {
   display: flex;
   align-items: flex-end;
@@ -375,6 +398,7 @@ export default {
   padding: 0;
 }
 
+// Final Section
 .about-block {
   width: 100%;
   padding: 2.5rem;
