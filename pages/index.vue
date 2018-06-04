@@ -36,6 +36,8 @@ export default {
     }
   },
    beforeMount() {
+     // Using Vue, 'this' changes context within loops and intervals, so we set 'self'
+     // to reference the Vue data properties inside our interval that runs the word spinner.
      const self = this;
      this.intervalid1 = setInterval(function(){
        if (self.counter < 8) {
@@ -63,7 +65,7 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-
+// All styles here are scoped to the home page
 .site-title,
 .word-spinner {
   height: 50%;

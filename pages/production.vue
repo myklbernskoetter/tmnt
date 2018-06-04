@@ -4,7 +4,6 @@
       <h1 class="page-title">
         Production
         Work
-        {{openListItem}}
       </h1>
       <div class="title-wrapper">
       </div>
@@ -303,7 +302,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0% 0%;
-    filter: grayscale(45%);
+    filter: grayscale(55%);
     transition: all 500ms;
     box-shadow: inset -49px 2px 30px 0px rgba(255,255,255,1);
   }
@@ -322,7 +321,6 @@ export default {
     }
 
     .item-background {
-      width: 50%;
       filter: grayscale(0%);
     }
   }
@@ -344,7 +342,10 @@ export default {
 }
 
 .list-item {
-  @include increment-animation(250, 9);
+  @include increment-animation(750, 9);
+  transform: translateY(-1rem);
+  opacity: 0;
+  animation: fade-in-list-items 250ms linear forwards;
 
   .item-toggle {
     display: flex;
@@ -352,10 +353,6 @@ export default {
     justify-content: flex-end;
     align-items: center;
     padding: 3rem 5rem 3rem 0;
-    transform: translateY(-1rem);
-    opacity: 0;
-    animation: fade-in-list-items 250ms linear forwards;
-    animation-delay: inherit;
 
     @media screen and (min-width: 768px) {
       padding:5rem 5rem 5rem 0;
