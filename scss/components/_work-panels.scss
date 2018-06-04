@@ -1,22 +1,24 @@
 .project-panels {
-  position: fixed;
+  position: absolute;
   top: 0;
   border-left: .1rem solid var(--color-black);
   box-shadow: -5px 0px 8px -1px rgba(0,0,0,0.75);
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   transform: translateX(110%);
   transition: transform 1000ms;
   background-color: var(--color-white);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   z-index: 9;
 
   &.active {
-    overflow-x: hidden;
     transform: translateX(0);
   }
 }
 
-/* .project-panels::after {
+.project-panels::after {
   content: '';
   position: absolute;
   right: 0;
@@ -30,7 +32,7 @@
   @media screen and (min-width: 728px) {
     display: block;
   }
-} */
+}
 
 .panel-container {
   z-index: 2;
