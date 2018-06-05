@@ -16,8 +16,7 @@ export default {
   computed: mapState(['page']),
     methods: {
       panelClose() {
-        console.log('clicked');
-        this.$root.$emit('panelClose');
+        this.$nuxt.$emit('panelClose');
       },
     }
 }
