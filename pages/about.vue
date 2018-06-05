@@ -39,7 +39,7 @@
         fluid, and functional web interfaces. I've taught myself Vue this year, but I'm also
         fluid in jQuery and adaptable to anything.  I love learning and adding new tools to my skillset.</p>
         <p class="about-blurb">
-          Outside of work I enjoy reading, gaming,the occasional float-trip, and spending time with my family.
+          Outside of work I enjoy reading, gaming, the occasional float-trip, and spending time with my family.
         </p>
       </div>
     </section>
@@ -256,7 +256,7 @@ export default {
     margin-bottom: 2.5rem;
     transform: translateX(-10%);
     transition: all 500ms;
-    font-family: var(--font-kollektif);
+    font-family: var(--font-karla);
     font-size: 2rem;
     opacity: 0;
 

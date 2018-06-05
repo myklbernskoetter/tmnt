@@ -95,7 +95,7 @@ export default {
     padding: 1rem 1rem;
     overflow: hidden;
     transition: all 250ms;
-    font-family: var(--font-kollektif);
+    font-family: var(--font-opensans);
     font-size: 2rem;
     text-decoration: none;
 

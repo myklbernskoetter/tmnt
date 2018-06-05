@@ -141,7 +141,7 @@ export default {
     position: absolute;
     transform: translateY(100%);
     transition: all 500ms;
-    font-family: var(--font-kollektif);
+    font-family: var(--font-opensans);
     font-size: 3.5rem;
     opacity: 0;
 
