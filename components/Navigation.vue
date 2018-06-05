@@ -3,7 +3,7 @@
     <ul class="site-nav-container">
       <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Home</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" to="/about">About</nuxt-link></li>
-      <li class="menu-item"><nuxt-link class="menu-link" to="/production">Work</nuxt-link></li>
+      <li class="menu-item" v-on:click="panelClose()"><nuxt-link class="menu-link" to="/production">Work</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" to="/contact">Contact</nuxt-link></li>
     </ul>
   </nav>
@@ -13,7 +13,13 @@
 import { mapState } from 'vuex'
 
 export default {
-  computed: mapState(['page'])
+  computed: mapState(['page']),
+    methods: {
+      panelClose() {
+        console.log('clicked');
+        this.$root.$emit('panelClose');
+      },
+    }
 }
 </script>
 

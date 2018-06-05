@@ -132,9 +132,20 @@ export default {
       }
     }
   },
+  created() {
+    // $on method will receive the updated count value from the sender component
+    this.$nuxt.$on('panelClose', data => {
+      this.closePanel();
+    });
+  },
   beforeMount() {
     this.openListItem = null;
-  }
+  },
+  mounted() {
+    this.$root.$on('eventing', data => {
+        this.closePanel();
+    });
+}
 }
 </script>
 
