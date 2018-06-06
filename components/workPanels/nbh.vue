@@ -32,8 +32,8 @@
       This represents the largest project I was a part of in 2017.
       We built a custom multi-site with a single admin
       for NBH bank and all of its holding branches
-      such as Bank Midwest, and Hillcrest Bank.
-      This project also focused heavily on ensuring that accesibility was front
+      such as Bank Midwest and Hillcrest Bank.
+      This project also focused heavily on ensuring that accessibility was front
       of mind when building out the navigation, components, and other interactive elements.
     </p>
   </div>
