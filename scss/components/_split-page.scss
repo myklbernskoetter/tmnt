@@ -9,7 +9,8 @@
   display: grid;
   grid-template-columns: 1fr;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
+  overflow-y: scroll;
 
   @media screen and (min-width: 1020px) {
     grid-template-columns: 1.5fr 2fr;
@@ -59,8 +60,6 @@
 // Page Content
 //------------------
 .page-detail-wrapper {
-  height: 100vh;
-  overflow-y: scroll;
   opacity: 0;
   animation: fade-in 750ms ease-in forwards;
   animation-delay: 750ms;
