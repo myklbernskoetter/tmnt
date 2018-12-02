@@ -2,12 +2,8 @@
   <div
   :class="{
     'home-active active'      : (page === 'index'),
-    'one-active active'       : (page === 'about'),
-    'two-active active'       : (page === 'contact'),
-    'four-active active'     : (page === 'production'),
-    'three-active active'      : (page === 'experiments'),
   }">
-    <navigation></navigation>
+    <!-- <navigation></navigation> -->
     <nuxt/>
   </div>
 </template>
@@ -17,27 +13,27 @@ import navigation from '~/components/Navigation.vue';
 import { mapState } from 'vuex';
 
 export default {
-  components: {
-    navigation,
-  },
+  // components: {
+  //   navigation
+  // },
   computed: mapState(['page'])
-}
+};
 </script>
 
 <style lang="scss">
-  .fadeOpacity-enter-active {
-    transition: all 500ms ease-out;
-  }
+.fadeOpacity-enter-active {
+  transition: all 500ms ease-out;
+}
 
-  .fadeOpacity-enter {
-    opacity: 0;
-  }
+.fadeOpacity-enter {
+  opacity: 0;
+}
 
-  .fadeOpacity-leave-active {
-    transition: all 250ms ease-out;
-  }
+.fadeOpacity-leave-active {
+  transition: all 250ms ease-out;
+}
 
-  .fadeOpacity-leave-active {
-    opacity: 0;
-  }
+.fadeOpacity-leave-active {
+  opacity: 0;
+}
 </style>

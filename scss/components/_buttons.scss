@@ -5,23 +5,16 @@
 //------------------
 // Primary Buttons
 //------------------
-button,
 .button {
   font-size: 2rem;
-  background-color: var(--color-magenta);
-  color: var(--color-white);
+  background-color: none;
   border-radius: 10px;
-  border: .1rem solid var(--color-black);
+  border: none;
   padding: 1rem 2rem;
   text-transform: uppercase;
   font-family: var(--font-oswald);
   transition: all 250ms;
   cursor: pointer;
-
-  &:hover,
-  &:focus {
-  background-color: var(--color-magentadark);
-  }
 }
 
 //--------------

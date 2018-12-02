@@ -3,7 +3,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   box-sizing: border-box;
   margin: 0;
   width: 100%;
@@ -12,13 +13,18 @@ html, body {
   line-height: 1.5;
 }
 
-html { font-size: 62.5%; }
-body { font-size: 2rem; }
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 2rem;
+}
 
 body {
   --font-rubik: 'rubik', sans-serif;
   --font-karla: 'karla', sans-serif;
   --font-opensans: 'opensans', sans-serif;
+
   @include font-smoothing;
   font-family: var(--font-karla);
 }
@@ -33,7 +39,8 @@ img {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   padding-top: 14rem;
   color: var(--color-black);
   background-color: var(--color-white);
@@ -45,5 +52,5 @@ img {
 
 a:hover,
 a:focus {
-  color: var(--color-magenta)
+  color: var(--color-magenta);
 }
