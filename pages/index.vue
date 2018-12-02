@@ -303,6 +303,7 @@ export default {
   justify-content: center;
   list-style: none;
   padding-bottom: 5rem;
+  padding-left: 0;
 
   li {
     display: flex;
