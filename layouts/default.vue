@@ -3,7 +3,7 @@
   :class="{
     'home-active active'      : (page === 'index'),
   }">
-    <!-- <navigation></navigation> -->
+    <navigation></navigation>
     <nuxt/>
   </div>
 </template>
@@ -13,9 +13,9 @@ import navigation from '~/components/Navigation.vue';
 import { mapState } from 'vuex';
 
 export default {
-  // components: {
-  //   navigation
-  // },
+  components: {
+    navigation
+  },
   computed: mapState(['page'])
 };
 </script>

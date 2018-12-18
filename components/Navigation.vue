@@ -1,7 +1,8 @@
 <template>
   <nav class="site-nav">
     <ul class="site-nav-container">
-      <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Home</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Heroes</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" exact to="/villians">Villians</nuxt-link></li>
     </ul>
   </nav>
 </template>
@@ -29,7 +30,8 @@ export default {
   transform: translateY(-100%);
   animation: drop-in-mobile 500ms linear forwards;
   animation-delay: 1000ms;
-  background-color: var(--color-black);
+  color: white;
+  background-color: black;
   z-index: 10;
 
   &::after {
