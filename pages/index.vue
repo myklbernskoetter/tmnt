@@ -14,22 +14,22 @@
               <span class="h2"><b>Stats</b></span>
               <span class="attribute-wrapper">
                 <span>Move:</span> <span>{{ item.move }}</span>
-                <img src="~assets/images/icons/move.png" class="icon move-icon" />
+                <img src="/images/icons/move.png" class="icon move-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Attack:</span> <span>{{ item.attack }}</span>
-                <img src="~assets/images/icons/attack.png" class="icon attack-icon" />
+                <img src="/images/icons/attack.png" class="icon attack-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Defend:</span> <span>{{ item.defend }}</span>
-                <img src="~assets/images/icons/defend.png" class="icon defend-icon" />
+                <img src="/images/icons/defend.png" class="icon defend-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Skills:</span> <span>{{ item.skill }}</span>
-                <img src="~assets/images/icons/chi.png" class="icon chi-icon" />
+                <img src="/images/icons/chi.png" class="icon chi-icon" />
               </span>
               <span class="attribute-wrapper">
-                <img src="~assets/images/icons/focus.png" class="icon focus-icon" />
+                <img src="/images/icons/focus.png" class="icon focus-icon" />
                 <span>Focus: </span>
                 <span class="attribute-totals">{{ item.currentFocus }}/ {{item.maxFocus}}</span>
                 <span>
@@ -38,7 +38,7 @@
                 </span>
               </span>
               <span class="attribute-wrapper">
-                <img src="~assets/images/icons/pizza.png" class="icon pizza-icon" />
+                <img src="/images/icons/pizza.png" class="icon pizza-icon" />
                 <span>Health: </span>
                 <span class="attribute-totals">{{ item.currentHealth }}/ {{item.maxHealth}}</span>
                 <span>
@@ -50,10 +50,10 @@
           </span>
           <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
           <span class="stop">
-            <img src="~assets/images/icons/stop.png" alt="stop, your turn is over" />
+            <img src="/images/icons/stop.png" alt="stop, your turn is over" />
           </span>
           <span class="ko" v-if="item.currentHealth === 0">
-            <img src="~assets/images/icons/ko.png" alt="stop, you're knocked out!" />
+            <img src="/images/icons/ko.png" alt="stop, you're knocked out!" />
           </span>
       </li>
     </ul>
@@ -72,7 +72,7 @@ export default {
       goodGuys: [
         {
           name: 'Leonardo',
-          image1: '~assets/images/leo-1.jpg',
+          image1: '/images/leo-1.jpg',
           color: '#4aa9e0',
           imageSelected: '',
           status: false,
@@ -92,7 +92,7 @@ export default {
         {
           name: 'Donatello',
           description: 'text',
-          image1: '~assets/images/donatello-1.jpg',
+          image1: '/images/donatello-1.jpg',
           color: '#905f9c',
           imageSelected: '',
           status: false,
@@ -112,7 +112,7 @@ export default {
         {
           name: 'Raphael',
           description: 'text',
-          image1: '~assets/images/raphael-1.jpg',
+          image1: '/images/raphael-1.jpg',
           color: '#d1432d',
           imageSelected: '',
           status: false,
@@ -132,7 +132,7 @@ export default {
         {
           name: 'Michaelangelo',
           description: 'text',
-          image1: '~assets/images/mikey-1.jpg',
+          image1: '/images/mikey-1.jpg',
           color: '#de9835',
           imageSelected: '',
           status: false,
@@ -152,7 +152,7 @@ export default {
         {
           name: 'Splinter',
           description: 'text',
-          image1: '~assets/images/splinter-1.jpg',
+          image1: '/images/splinter-1.jpg',
           color: 'brown',
           imageSelected: '',
           status: false,
@@ -170,7 +170,7 @@ export default {
         {
           name: 'April',
           description: 'text',
-          image1: '~assets/images/april-1.jpg',
+          image1: '/images/april-1.jpg',
           color: 'yellow',
           imageSelected: '',
           status: false,
@@ -190,7 +190,7 @@ export default {
         {
           name: 'Casey Jones',
           description: 'text',
-          image1: '~assets/images/casey-1.jpg',
+          image1: '/images/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
