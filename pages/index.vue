@@ -5,8 +5,8 @@
     </div>
     <ul class="character-list">
       <li class="character" v-for="(item, key) in goodGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
+        <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
         <button class="character-view" type="button" @click="selectStatus(item)">
-          <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
           <span class="image-wrapper"><img v-bind:src="item.image1"/></span>
         </button>
           <span class="data-panel">
@@ -49,9 +49,9 @@
             </span>
           </span>
           <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
-          <span class="stop">
+          <button class="stop" @click="selectStatus(item)">
             <img src="/images/icons/stop.png" alt="stop, your turn is over" />
-          </span>
+          </button>
           <span class="ko" v-if="item.currentHealth === 0">
             <img src="/images/icons/ko.png" alt="stop, you're knocked out!" />
           </span>
@@ -315,7 +315,7 @@ export default {
     background-color: #fff;
 
     .image-wrapper {
-      filter: grayscale(85%);
+      filter: grayscale(100%);
     }
 
     &:hover {
@@ -346,9 +346,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 3rem;
   font-size: 2rem;
@@ -358,9 +355,10 @@ export default {
 }
 
 .character-view {
+  min-height: 29rem;
+  padding: 0;
   background-color: none;
   cursor: pointer;
-  padding: 0;
 }
 
 .image-wrapper {

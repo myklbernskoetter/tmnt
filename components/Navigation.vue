@@ -79,17 +79,6 @@ export default {
   }
 }
 
-.menu-item {
-  @media screen and (min-width: 768px) {
-    &:hover,
-    &:focus {
-      .menu-link {
-        transform: translateY(2rem);
-      }
-    }
-  }
-}
-
 a.menu-link {
   flex-grow: 1;
   min-width: 12rem;
@@ -113,7 +102,6 @@ a.menu-link {
     &:hover,
     &:focus {
       color: var(--color-yellow);
-      transform: translateY(2rem);
     }
   }
 }

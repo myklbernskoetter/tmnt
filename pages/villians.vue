@@ -39,7 +39,7 @@
               </span>
               <span class="attribute-wrapper">
                 <img src="/images/icons/pizza.png" class="icon pizza-icon" />
-                <span>Health: </span>
+                <span>Max-Health: </span>
                 <span class="attribute-totals">{{item.maxHealth}}</span>
               </span>
             </span>
@@ -265,14 +265,14 @@ export default {
   },
   methods: {
     selectStatus: function(item) {
-      if (this.selected < 4) {
+      if (this.selected < 6) {
         item.status = !item.status;
         if (item.status) {
           this.selected++;
         } else {
           this.selected--;
         }
-      } else if (this.selected === 4) {
+      } else if (this.selected === 6) {
         if (item.status) {
           this.selected--;
           item.status = false;
