@@ -14,8 +14,8 @@
     </div>
     <ul class="character-list">
       <li class="character" v-for="(item, key) in badGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
+        <span class="character-name"><span>{{ item.name }}</span></span>
         <button class="character-view" type="button" @click="selectStatus(item)">
-          <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
           <span class="image-wrapper"><img v-bind:src="item.image1"/></span>
         </button>
           <span class="data-panel">
@@ -34,10 +34,6 @@
                 <img src="/images/icons/defend.png" class="icon defend-icon" />
               </span>
               <span class="attribute-wrapper">
-                <span>Skills:</span> <span>{{ item.skill }}</span>
-                <img src="/images/icons/chi.png" class="icon chi-icon" />
-              </span>
-              <span class="attribute-wrapper">
                 <img src="/images/icons/pizza.png" class="icon pizza-icon" />
                 <span>Max-Health: </span>
                 <span class="attribute-totals">{{item.maxHealth}}</span>
@@ -45,9 +41,6 @@
             </span>
           </span>
           <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
-          <span class="stop">
-            <img src="/images/icons/stop.png" alt="stop, your turn is over" />
-          </span>
       </li>
     </ul>
     <div class="start-button" v-if="!started && selected > 0">
@@ -66,49 +59,46 @@ export default {
       currentFocus: 3,
       badGuys: [
         {
-          name: 'Shredder',
-          image1: '/images/casey-1.jpg',
+          name: 'Master Shredder',
+          image1: '/images/shredder-2.png',
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          maxHealth: '16 (11 to awaken)',
+          attack: 3,
+          defend: 4,
+          move: 3,
           specialAbility: `
-            <b>Master: </b></br>Shredder Ability.`
+            <b>Commanding: </b></br>
+            The Villain players' hand size is increaed by 1 card while Shredder is in play.`
         },
         {
-          name: 'Thug Gunner',
+          name: 'Street Thug Gunner',
           image1: '/images/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
+          maxHealth: 1,
           attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          defend: 2,
+          move: 3,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Gunner: </b></br>
+            Street Thug Gunner's ranged strikes do not weaken for the first 4 spaces.`
         },
         {
-          name: 'Thug Bruiser',
+          name: 'Street Thug Brawler',
           image1: '/images/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
+          maxHealth: 3,
           attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          defend: 2,
+          move: 3,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Sure-Footed: </b></br>
+            Street Thug Brawlers ignore slow and rough terrain.`
         },
         {
           name: 'Aloplex',
@@ -116,14 +106,13 @@ export default {
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
+          maxHealth: '9 (9 to awaken)',
           attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          defend: 3,
+          move: 5,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Agile: </b></br>
+            Alopex does not lose her remaining Move points when she begins a new action.`
         },
         {
           name: 'Old Hob',
@@ -131,14 +120,13 @@ export default {
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
+          maxHealth: '11 (8 to awaken)',
           attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          defend: 3,
+          move: 3,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Cunning: </b></br>
+            Allied minions within 3 spaces of Old Hob roll +1 die each time they roll dice.`
         },
         {
           name: 'Rocksteady',
@@ -146,14 +134,16 @@ export default {
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          maxHealth: 8,
+          attack: 3,
+          defend: 5,
+          move: 3,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+          Cost: 2 Focus (Enhanced Foot Clan Bruiser)
+          <b>Rhino Charge: </b></br>
+          For 1 melee icon and 1 move icon,Rockstead may make a charge action.
+          He receives 6 move points but must move in a straight line. At the end of his move,
+          Rocksteady may make an Attack +2 melee strike.`
         },
         {
           name: 'Bebop',
@@ -161,17 +151,19 @@ export default {
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          maxHealth: 8,
+          attack: 3,
+          defend: 4,
+          move: 4,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            Cost: 2 Focus (Enhanced Foot Clan Bruiser)
+            <b>Roberta: </b></br>
+            Bebop's chainsaw, Roberta, cuts easily through armor.
+            Any defense rolls made against Bebop's attacks are made at
+            Defend - 2 penalty`
         },
         {
-          name: 'Foot Ninja',
+          name: 'Foot Clan Ninja',
           image1: '/images/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
@@ -181,12 +173,62 @@ export default {
           attack: 1,
           defend: 1,
           move: 1,
-          skill: 1,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Numerous: </b></br>
+            You may spend 1 focus at the start of your turn to add 2
+            Foot Clan Ninjas to your figure pool and immediately spawn 1.`
         },
         {
           name: 'Mouser',
+          image1: '/images/mousers-1.jpg',
+          color: 'grey',
+          imageSelected: '',
+          status: false,
+          maxHealth: 3,
+          attack: '*',
+          defend: 0,
+          move: 1,
+          specialAbility: `
+            <b>Machine Minion</b></br>
+            <b>Automatons: </b></br>
+            All mousers activate at the end of each Villain player's turn and move towards
+            the nearest non-KO'ed hero with the lowest Life plus Defend stat.
+            After movement, each hero adjacent to a Mouser suffers a melee strike with strength
+            equal to the number of Mousers adjacent to that hero.`
+        },
+        {
+          name: 'Foot Clan Elite',
+          image1: '/images/casey-1.jpg',
+          color: 'grey',
+          imageSelected: '',
+          status: false,
+          maxHealth: 4,
+          attack: 2,
+          defend: 3,
+          move: 4,
+          specialAbility: `
+            <b>Skilled: </b></br>
+            For Foot Clan Elites, double hit results count as triple hits when
+            attacking and as single blocks when defending.`
+        },
+        {
+          name: 'Foot Clan Bruiser',
+          image1: '/images/casey-1.jpg',
+          color: 'grey',
+          imageSelected: '',
+          status: false,
+          maxHealth: 6,
+          attack: 3,
+          defend: 4,
+          move: 2,
+          specialAbility: `
+            <b>Big</b></br>
+            Figures adjacent to Foot Clan Bruiser treat him as
+            2 figures when breaking away or awakening
+            `
+        },
+        {
+          name: 'Foot Clan Mystic',
           image1: '/images/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
@@ -201,64 +243,32 @@ export default {
             <b>Title: </b></br>Ability.`
         },
         {
-          name: 'Elite Foot',
+          name: 'Karai',
           image1: '/images/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          maxHealth: '10 (7 to awaken)',
+          attack: 2,
+          defend: 3,
+          move: 4,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
-        },
-        {
-          name: 'Foot Bruiser',
-          image1: '/images/casey-1.jpg',
-          color: 'grey',
-          imageSelected: '',
-          status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
-          specialAbility: `
-            <b>Title: </b></br>Ability.`
-        },
-        {
-          name: 'Foot Mystic',
-          image1: '/images/casey-1.jpg',
-          color: 'grey',
-          imageSelected: '',
-          status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
-          specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Archer: </b></br>
+            Karai's ranged strikes do not weaken for the first 5 spaces.`
         },
         {
           name: 'Super-Shredder',
-          image1: '/images/casey-1.jpg',
+          image1: '/images/shredder-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
-          attack: 1,
-          defend: 1,
-          move: 1,
-          skill: 1,
+          maxHealth: '16 (11 to awaken)',
+          attack: 4,
+          defend: 5,
+          move: 4,
           specialAbility: `
-            <b>Title: </b></br>Ability.`
+            <b>Bown Down to his Evil: </b></br>
+            Ultimate Shredder may activate more than once on the Villain player's turn.`
         }
       ]
     };
@@ -400,15 +410,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 3rem;
   font-size: 2rem;
   font-weight: bold;
   z-index: 1;
   text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
 }
 
 .character-view {
