@@ -46,14 +46,29 @@ export const select = {
       }
     },
     addFocus: function() {
+      console.log('add focus');
       if (this.currentFocus < this.maxFocus) {
         this.currentFocus++;
       }
     },
     removeFocus: function(item) {
+      console.log('remove focus');
       if (this.currentFocus > 0) {
         this.currentFocus--;
       }
-    }
+    },
+
+    addHeroFocus: function(item) {
+      console.log('add focus');
+      if (item.currentFocus < item.maxFocus) {
+        item.currentFocus++;
+      }
+    },
+    removeHeroFocus: function(item) {
+      console.log('remove focus');
+      if (item.currentFocus > 0) {
+        item.currentFocus--;
+      }
+    },
   },
 };

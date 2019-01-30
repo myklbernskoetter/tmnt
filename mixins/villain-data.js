@@ -48,7 +48,7 @@ export const villainData = {
         },
         {
           name: 'Alopex',
-          image1: '/images/casey-1.jpg',
+          image1: '/images/alopex-1.png',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -62,7 +62,7 @@ export const villainData = {
         },
         {
           name: 'Old Hob',
-          image1: '/images/casey-1.jpg',
+          image1: '/images/old-hob-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -76,7 +76,7 @@ export const villainData = {
         },
         {
           name: 'Rocksteady',
-          image1: '/images/casey-1.jpg',
+          image1: '/images/rocksteady-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -93,7 +93,7 @@ export const villainData = {
         },
         {
           name: 'Bebop',
-          image1: '/images/casey-1.jpg',
+          image1: '/images/bebop-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -114,11 +114,10 @@ export const villainData = {
           color: 'grey',
           imageSelected: '',
           status: false,
-          maxHealth: 10,
-          currentHealth: 10,
+          currentHealth: 2,
           attack: 1,
-          defend: 1,
-          move: 1,
+          defend: 2,
+          move: 3,
           specialAbility: `
             <b>Numerous: </b></br>
             You may spend 1 focus at the start of your turn to add 2
@@ -175,7 +174,7 @@ export const villainData = {
         },
         {
           name: 'Karai',
-          image1: '/images/casey-1.jpg',
+          image1: '/images/karai-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,

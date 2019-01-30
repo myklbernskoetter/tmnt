@@ -5,16 +5,19 @@
   }">
     <navigation></navigation>
     <nuxt/>
+    <terrain></terrain>
   </div>
 </template>
 
 <script>
 import navigation from '~/components/Navigation.vue';
+import terrain from '~/components/Terrain.vue';
 import { mapState } from 'vuex';
 
 export default {
   components: {
-    navigation
+    navigation,
+    terrain
   },
   computed: mapState(['page'])
 };

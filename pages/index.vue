@@ -3,60 +3,60 @@
     <div v-if="!started">
       <h1>Hero Select</h1>
     </div>
-    <ul class="character-list">
-      <li class="character" v-for="(item, key) in goodGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
-        <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
-        <button class="character-view" type="button" @click="selectStatus(item, 4)">
-          <span class="image-wrapper"><img v-bind:src="item.image1"/></span>
-        </button>
-          <span class="data-panel">
-            <span class="character-meta">
-              <span class="h2"><b>Stats</b></span>
-              <span class="attribute-wrapper">
-                <span>Move:</span> <span>{{ item.move }}</span>
-                <img src="/images/icons/move.png" class="icon move-icon" />
-              </span>
-              <span class="attribute-wrapper">
-                <span>Attack:</span> <span>{{ item.attack }}</span>
-                <img src="/images/icons/attack.png" class="icon attack-icon" />
-              </span>
-              <span class="attribute-wrapper">
-                <span>Defend:</span> <span>{{ item.defend }}</span>
-                <img src="/images/icons/defend.png" class="icon defend-icon" />
-              </span>
-              <span class="attribute-wrapper">
-                <span>Skills:</span> <span>{{ item.skill }}</span>
-                <img src="/images/icons/chi.png" class="icon chi-icon" />
-              </span>
-              <span class="attribute-wrapper">
-                <img src="/images/icons/focus.png" class="icon focus-icon" />
-                <span>Focus: </span>
-                <span class="attribute-totals">{{ item.currentFocus }}/ {{item.maxFocus}}</span>
-                <span>
-                  <button class="add-remove-button add-focus" @click="addFocus(item)">+</button>
-                  <button class="add-remove-button remove-focus" @click="removeFocus(item)">-</button>
+      <transition-group tag="ul" class="character-list" name="heroes-selected" mode="out-in">
+        <li class="character" v-if="item.status != 'disabled'" v-for="(item, key) in goodGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
+          <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
+          <button class="character-view" type="button" @click="selectStatus(item, 4)">
+            <span class="image-wrapper"><img v-bind:src="item.image1"/></span>
+          </button>
+            <span class="data-panel">
+              <span class="character-meta">
+                <span class="h2"><b>Stats</b></span>
+                <span class="attribute-wrapper">
+                  <span>Move:</span> <span>{{ item.move }}</span>
+                  <img src="/move.png" class="icon move-icon" />
                 </span>
-              </span>
-              <span class="attribute-wrapper">
-                <img src="/images/icons/pizza.png" class="icon pizza-icon" />
-                <span>Health: </span>
-                <span class="attribute-totals">{{ item.currentHealth }}/ {{item.maxHealth}}</span>
-                <span>
-                  <button class="add-remove-button add-health" @click="addHealth(item)">+</button>
-                  <button class="add-remove-button remove-health" @click="removeHealth(item)">-</button>
+                <span class="attribute-wrapper">
+                  <span>Attack:</span> <span>{{ item.attack }}</span>
+                  <img src="/attack.png" class="icon attack-icon" />
+                </span>
+                <span class="attribute-wrapper">
+                  <span>Defend:</span> <span>{{ item.defend }}</span>
+                  <img src="/defend.png" class="icon defend-icon" />
+                </span>
+                <span class="attribute-wrapper">
+                  <span>Skills:</span> <span>{{ item.skill }}</span>
+                  <img src="/chi.png" class="icon chi-icon" />
+                </span>
+                <span class="attribute-wrapper">
+                  <img src="/focus.png" class="icon focus-icon" />
+                  <span>Focus: </span>
+                  <span class="attribute-totals">{{ item.currentFocus }}/ {{item.maxFocus}}</span>
+                  <span>
+                    <button class="add-remove-button add-focus" @click="addHeroFocus(item)">+</button>
+                    <button class="add-remove-button remove-focus" @click="removeHeroFocus(item)">-</button>
+                  </span>
+                </span>
+                <span class="attribute-wrapper">
+                  <img src="/pizza.png" class="icon pizza-icon" />
+                  <span>Health: </span>
+                  <span class="attribute-totals">{{ item.currentHealth }}/ {{item.maxHealth}}</span>
+                  <span>
+                    <button class="add-remove-button add-health" @click="addHealth(item)">+</button>
+                    <button class="add-remove-button remove-health" @click="removeHealth(item)">-</button>
+                  </span>
                 </span>
               </span>
             </span>
-          </span>
-          <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
-          <button class="stop" @click="selectStatus(item, 4)">
-            <img src="/images/icons/stop.png" alt="stop, your turn is over" />
-          </button>
-          <span class="ko" v-if="item.currentHealth === 0">
-            <img src="/images/icons/ko.png" alt="stop, you're knocked out!" />
-          </span>
-      </li>
-    </ul>
+            <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
+            <button class="stop" @click="selectStatus(item, 4)">
+              <img src="/stop.png" alt="stop, your turn is over" />
+            </button>
+            <span class="ko" v-if="item.currentHealth === 0">
+              <img src="/ko.png" alt="stop, you're knocked out!" />
+            </span>
+        </li>
+      </transition-group>
     <div class="start-button" v-if="!started && selected > 0">
       <button class="button" type="button" @click="startGame('heroes')">Start</button>
     </div>
@@ -75,9 +75,9 @@ export default {
 <style lang="scss">
 .container {
   max-width: 150rem;
+  margin: 0 auto;
   padding: 2rem;
   padding-bottom: 10rem;
-  background-color: lightgrey;
 }
 
 .stop {
@@ -113,20 +113,31 @@ export default {
 }
 
 .character-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(350px, 1fr);
   justify-content: center;
+  grid-gap: 2.5rem;
   list-style: none;
   padding-bottom: 5rem;
   padding-left: 0;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 35rem);
+  }
+
+  @media (min-width: 1020px) {
+    grid-template-columns: repeat(3, 35rem);
+  }
+
+  @media (min-width: 1640px) {
+    grid-template-columns: repeat(4, 35rem);
+  }
 
   li {
     display: flex;
     flex-direction: column;
     border: 0.1rem solid black;
     overflow: hidden;
-    min-width: 25%;
-    max-width: 28rem;
     background-color: #fff;
 
     .image-wrapper {
@@ -142,6 +153,8 @@ export default {
     &.selected {
       border: 0.1rem solid green;
       box-shadow: 0.1rem 0.1rem 0.1rem 0.2rem green;
+      background-image: radial-gradient(black 50%, transparent 50%);
+      background-size: 4px 4px;
       .image-wrapper {
         filter: grayscale(0);
       }
@@ -170,9 +183,9 @@ export default {
 }
 
 .character-view {
-  min-height: 29rem;
   padding: 0;
   background-color: none;
+  border: none;
   cursor: pointer;
 }
 
@@ -238,13 +251,14 @@ export default {
     flex-wrap: wrap;
     margin: 2rem;
 
-    @media (min-width: 720px) {
+    @media (min-width: 1020px) {
       flex-direction: row;
     }
   }
 
   .character-name {
     height: 5rem;
+    grid-area: title;
   }
 
   .character-meta {
@@ -255,7 +269,7 @@ export default {
       padding-top: 1rem;
       padding-bottom: 1rem;
       border-bottom: 0.1rem solid lightgrey;
-      max-width: 35rem;
+      max-width: 30rem;
     }
   }
 
@@ -267,9 +281,9 @@ export default {
   .data-panel {
     display: flex;
     flex-direction: column;
-    padding: 6rem 4rem 4rem;
+    padding: 6rem 2rem 4rem;
 
-    @media (min-width: 720px) {
+    @media (min-width: 1020px) {
       border-left: 0.2rem solid black;
     }
   }
@@ -279,34 +293,40 @@ export default {
     border-top: 0.2rem solid black;
     padding: 2rem;
 
-    @media (min-width: 720px) {
+    @media (min-width: 1020px) {
       width: 100%;
       flex-basis: 100%;
     }
   }
 
   .character-list {
+    grid-gap: 2.5rem;
     padding: 0;
+
+    @media (min-width: 1020px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     li {
       width: 100%;
       max-width: none;
 
-      @media (min-width: 720px) {
-        min-width: 100%;
-        max-width: 25rem;
-        width: auto;
-      }
-
       @media (min-width: 1020px) {
-        min-width: 45%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: auto;
+        grid-template-areas:
+          'title title'
+          'image info'
+          'ability ability';
       }
     }
 
     .image-wrapper {
       filter: grayscale(0);
 
-      @media (min-width: 720px) {
+      @media (min-width: 1020px) {
         max-width: 35rem;
       }
     }
@@ -316,12 +336,19 @@ export default {
     position: static;
     padding: 0;
     width: 100%;
+    grid-area: image;
 
     @media (min-width: 720px) {
-      padding-top: 5rem;
-      max-width: 40%;
-      background-color: #000;
+      background-color: transparent;
     }
+  }
+
+  .data-panel {
+    grid-area: info;
+  }
+
+  .special-ability {
+    grid-area: ability;
   }
 }
 
@@ -366,5 +393,32 @@ export default {
 .attribute-totals {
   font-weight: bold;
   font-size: 2rem;
+}
+
+.heroes-selected-enter-active {
+  animation: homeHeroFadeIn 500ms linear forwards;
+}
+
+.heroes-selected-leave-active {
+  animation: homeHeroFadeOut 500ms linear forwards;
+}
+@keyframes homeHeroFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes homeHeroFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 </style>

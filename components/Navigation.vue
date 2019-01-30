@@ -90,6 +90,7 @@ a.menu-link {
   font-family: var(--font-opensans);
   font-size: 2rem;
   text-decoration: none;
+  color: white;
 
   &:hover,
   &:focus {

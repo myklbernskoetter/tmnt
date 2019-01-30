@@ -79,7 +79,7 @@ export const heroData = {
           specialAbility: `
             <b>Nimble:</b></br>Once per turn, Mikey may move 1 space for free,
             ignoring terrain and break away rules. Also, terrain moves cost
-            Mikey 1 lewss icon of your choice to use.`
+            Mikey 1 less icon of your choice to use.`
         },
         {
           name: 'Splinter',

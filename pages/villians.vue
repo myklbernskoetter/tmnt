@@ -23,18 +23,18 @@
               <span class="h2"><b>Stats</b></span>
               <span class="attribute-wrapper">
                 <span>Move:</span> <span>{{ item.move }}</span>
-                <img src="/images/icons/move.png" class="icon move-icon" />
+                <img src="/move.png" class="icon move-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Attack:</span> <span>{{ item.attack }}</span>
-                <img src="/images/icons/attack.png" class="icon attack-icon" />
+                <img src="/attack.png" class="icon attack-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Defend:</span> <span>{{ item.defend }}</span>
-                <img src="/images/icons/defend.png" class="icon defend-icon" />
+                <img src="/defend.png" class="icon defend-icon" />
               </span>
               <span class="attribute-wrapper">
-                <img src="/images/icons/pizza.png" class="icon pizza-icon" />
+                <img src="/pizza.png" class="icon pizza-icon" />
                 <span>Max-Health: </span>
                 <span class="attribute-totals">{{item.maxHealth}}</span>
               </span>
@@ -111,7 +111,9 @@ export default {
     overflow: hidden;
     min-width: 15%;
     max-width: 18rem;
-    background-color: #fff;
+    // background-color: #fff;
+    background-color: #000;
+    margin: 1rem;
 
     .image-wrapper {
       filter: grayscale(85%);
@@ -146,13 +148,14 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 3rem;
+  padding: 1rem;
+  text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  z-index: 1;
   text-transform: uppercase;
   background-color: #000;
   color: #fff;
+  z-index: 1;
 }
 
 .character-view {
@@ -242,6 +245,12 @@ export default {
       padding-bottom: 1rem;
       border-bottom: 0.1rem solid lightgrey;
       max-width: 35rem;
+    }
+  }
+
+  .character-list {
+    li {
+      background-color: #fff;
     }
   }
 
