@@ -1,7 +1,7 @@
 <template>
   <div class="terrain-panel">
   <h3 class="h3"><button type="button" @click="active = !active">Terrain</button></h3>
-    <ul class="card-list" v-if="active">
+    <transition-group name="card-fade" tag="ul" class="card-list" v-if="active">
       <li class="card" v-for="(item, key) in terrain" :key="key">
         <span class="h2">{{item.name}}</span>
         <span class="terrain-image">{{item.image}}</span>
@@ -10,7 +10,7 @@
         <span class="terrain-icon">{{item.icon}}</span>
         <button class="remove-button" type="button" @click="removeCard(key)">X</button>
       </li>
-    </ul>
+    </transition-group>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     removeCard(index) {
-      this.terrainData.splice(index, 1);
+      this.terrain.splice(index, 1);
     }
   }
 };
@@ -94,5 +94,13 @@ export default {
     color: green;
     text-decoration: underline;
   }
+}
+
+.card-fade-enter-active,
+.card-fade-leave-active {
+  transition: opacity 0.5s;
+}
+.card-fade-enter, .card-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
