@@ -4,7 +4,7 @@
       <h1>Villian Select</h1>
     </div>
     <div class="attribute-wrapper">
-      <img src="/images/icons/focus.png" class="icon focus-icon" />
+      <img src="/images/symbols/focus.png" class="icon focus-icon" />
       <span><b>Villian Focus: {{currentFocus}} </b></span>
       <span>/ <b>{{maxFocus}}</b></span>
       <span>
