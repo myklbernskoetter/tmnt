@@ -23,15 +23,15 @@
               <span class="h2"><b>Stats</b></span>
               <span class="attribute-wrapper">
                 <span>Move:</span> <span>{{ item.move }}</span>
-                <img src="/move.png" class="icon move-icon" />
+                <img src="~/assets/images/icons/move.png" class="icon move-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Attack:</span> <span>{{ item.attack }}</span>
-                <img src="/attack.png" class="icon attack-icon" />
+                <img src="~/assets/images/icons/attack.png" class="icon attack-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Defend:</span> <span>{{ item.defend }}</span>
-                <img src="/defend.png" class="icon defend-icon" />
+                <img src="~/assets/images/icons/defend.png" class="icon defend-icon" />
               </span>
               <span class="attribute-wrapper">
                 <img src="/pizza.png" class="icon pizza-icon" />
