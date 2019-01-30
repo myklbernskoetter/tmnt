@@ -100,7 +100,8 @@ export default {
 .card-fade-leave-active {
   transition: opacity 0.5s;
 }
-.card-fade-enter, .card-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.card-fade-enter,
+.card-fade-leave-to {
   opacity: 0;
 }
 </style>
