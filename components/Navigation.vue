@@ -1,7 +1,7 @@
 <template>
   <nav class="site-nav">
     <ul class="site-nav-container">
-      <li class="menu-item"><nuxt-link class="menu-link" exact to="/">Heroes</nuxt-link></li>
+      <li class="menu-item"><nuxt-link class="menu-link" exact to="/heroes">Heroes</nuxt-link></li>
       <li class="menu-item"><nuxt-link class="menu-link" exact to="/villians">Villians</nuxt-link></li>
     </ul>
   </nav>

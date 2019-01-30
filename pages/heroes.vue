@@ -14,22 +14,22 @@
                 <span class="h2"><b>Stats</b></span>
                 <span class="attribute-wrapper">
                   <span>Move:</span> <span>{{ item.move }}</span>
-                  <img src="~/assets/symbols/move.png" class="icon move-icon" />
+                  <img src="~/assets/images/icons/move.png" class="icon move-icon" />
                 </span>
                 <span class="attribute-wrapper">
                   <span>Attack:</span> <span>{{ item.attack }}</span>
-                  <img src="~/assets/symbols/attack.png" class="icon attack-icon" />
+                  <img src="~/assets/images/icons/attack.png" class="icon attack-icon" />
                 </span>
                 <span class="attribute-wrapper">
                   <span>Defend:</span> <span>{{ item.defend }}</span>
-                  <img src="~/assets/symbols/defend.png" class="icon defend-icon" />
+                  <img src="~/assets/images/icons/defend.png" class="icon defend-icon" />
                 </span>
                 <span class="attribute-wrapper">
                   <span>Skills:</span> <span>{{ item.skill }}</span>
-                  <img src="~/assets/symbols/chi.png" class="icon chi-icon" />
+                  <img src="~/assets/images/icons/chi.png" class="icon chi-icon" />
                 </span>
                 <span class="attribute-wrapper">
-                  <img src="~/assets/symbols/focus.png" class="icon focus-icon" />
+                  <img src="~/assets/images/icons/focus.png" class="icon focus-icon" />
                   <span>Focus: </span>
                   <span class="attribute-totals">{{ item.currentFocus }}/ {{item.maxFocus}}</span>
                   <span>
@@ -38,7 +38,7 @@
                   </span>
                 </span>
                 <span class="attribute-wrapper">
-                  <img src="~/assets/symbols/pizza.png" class="icon pizza-icon" />
+                  <img src="~/assets/images/icons/pizza.png" class="icon pizza-icon" />
                   <span>Health: </span>
                   <span class="attribute-totals">{{ item.currentHealth }}/ {{item.maxHealth}}</span>
                   <span>
@@ -50,10 +50,10 @@
             </span>
             <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
             <button class="stop" @click="selectStatus(item, 4)">
-              <img src="~/assets/symbols/stop.png" alt="stop, your turn is over" />
+              <img src="~/assets/images/icons/stop.png" alt="stop, your turn is over" />
             </button>
             <span class="ko" v-if="item.currentHealth === 0">
-              <img src="~/assets/symbols/ko.png" alt="stop, you're knocked out!" />
+              <img src="~/assets/images/icons/ko.png" alt="stop, you're knocked out!" />
             </span>
         </li>
       </transition-group>
