@@ -1,8 +1,17 @@
 <template>
   <nav class="site-nav">
     <ul class="site-nav-container">
-      <li class="menu-item"><nuxt-link class="menu-link" exact to="/heroes">Heroes</nuxt-link></li>
-      <li class="menu-item"><nuxt-link class="menu-link" exact to="/villians">Villians</nuxt-link></li>
+      <li class="menu-item first"
+      >
+        <nuxt-link class="menu-link" exact to="/heroes" >
+          <span class="nuxt-text">Heroes</span>
+        </nuxt-link>
+      </li>
+      <li class="menu-item second">
+        <nuxt-link class="menu-link" exact to="/villains">
+          <span class="nuxt-text">Villians</span>
+        </nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -12,6 +21,12 @@ import { mapState } from 'vuex';
 
 export default {
   computed: mapState(['page']),
+  data: function() {
+    return {
+      selected: null,
+      heroesImg: '/images/tmnt1.jpg'
+    };
+  },
   methods: {
     panelClose() {
       this.$nuxt.$emit('panelClose');
@@ -22,93 +37,92 @@ export default {
 
 <style lang="scss">
 .site-nav {
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  transform: translateY(-100%);
-  animation: drop-in-mobile 500ms linear forwards;
-  animation-delay: 1000ms;
-  color: white;
-  background-color: black;
-  z-index: 10;
+  display: none;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  .home-active & {
     display: block;
-    width: 100%;
-    height: 0.2rem;
-    background-color: var(--color-black);
-  }
-
-  @media screen and (min-width: 640px) {
-    transform: translateY(0);
-    animation: none;
-
-    &::after {
-      display: none;
-    }
   }
 }
-
-.nav-close-button {
-  width: var(--block);
-  height: var(--block);
-}
-
 .site-nav-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  max-width: 107rem;
-  margin: auto;
+  display: grid;
+  grid-template-rows: 5rem 1fr 1fr;
+  grid-template-areas:
+    'main1'
+    'main2'
+    'footer';
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
   padding: 0;
   list-style: none;
-  background-color: var(--color-white);
+  z-index: 10;
 
-  @media screen and (min-width: 640px) {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    background-color: var(--color-black);
-    box-shadow: none;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'main1 main2'
+      'footer footer';
   }
+}
+
+.h1 {
+  grid-area: title;
+}
+
+.first {
+  grid-area: main1;
+  background-color: green;
+  background-image: url('~/assets/images/tmnt2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .menu-link {
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.second {
+  grid-area: main2;
+  background-color: black;
+  background-image: url('~/assets/images/shredder.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .menu-link {
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.start-button {
+  grid-area: footer;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a.menu-link {
-  flex-grow: 1;
-  min-width: 12rem;
-  text-align: center;
-  display: inline-block;
-  padding: 1rem 1rem;
-  overflow: hidden;
-  transition: all 250ms;
-  font-family: var(--font-opensans);
-  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-self: stretch;
   text-decoration: none;
-  color: white;
 
   &:hover,
   &:focus {
-    color: var(--color-yellow);
+    text-decoration: underline;
+    color: white;
   }
-
-  @media screen and (min-width: 640px) {
-    color: var(--color-white);
-    background-color: var(--color-black);
-    &:hover,
-    &:focus {
-      color: var(--color-yellow);
-    }
-  }
-}
-
-.menu-wrapper {
-  display: flex;
-  align-items: flex-end;
 }
 </style>

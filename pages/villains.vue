@@ -1,10 +1,11 @@
 <template>
-  <div class="container" :class="{started : started}">
+  <div class="wrapper">
+      <div class="container" :class="{started : started}">
     <div v-if="!started">
-      <h1>Villian Select</h1>
+      <h1 class="h1">Villian Select</h1>
     </div>
-    <div class="attribute-wrapper">
-      <img src="/images/symbols/focus.png" class="icon focus-icon" />
+    <div class="attribute-wrapper villain-header">
+      <img :src="focus" class="icon focus-icon" />
       <span><b>Villian Focus: {{currentFocus}} </b></span>
       <span>/ <b>{{maxFocus}}</b></span>
       <span>
@@ -23,18 +24,18 @@
               <span class="h2"><b>Stats</b></span>
               <span class="attribute-wrapper">
                 <span>Move:</span> <span>{{ item.move }}</span>
-                <img src="~/assets/images/symbols/move.png" class="icon move-icon" />
+                <img :src="move" class="icon move-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Attack:</span> <span>{{ item.attack }}</span>
-                <img src="~/assets/images/symbols/attack.png" class="icon attack-icon" />
+                <img :src="attack" class="icon attack-icon" />
               </span>
               <span class="attribute-wrapper">
                 <span>Defend:</span> <span>{{ item.defend }}</span>
-                <img src="~/assets/images/symbols/defend.png" class="icon defend-icon" />
+                <img :src="defend" class="icon defend-icon" />
               </span>
               <span class="attribute-wrapper">
-                <img src="~/assets/images/symbols/pizza.png" class="icon pizza-icon" />
+                <img :src="pizza" class="icon pizza-icon" />
                 <span>Max-Health: </span>
                 <span class="attribute-totals">{{item.maxHealth}}</span>
               </span>
@@ -43,57 +44,55 @@
           <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
       </li>
     </ul>
-    <div class="start-button" v-if="!started && selected > 0">
-      <button class="button" type="button" @click="startGame('villains')">Start</button>
-    </div>
   </div>
+  <div class="start-button" v-if="!started && selected > 0">
+    <button class="button" type="button" @click="startGame('villains')">Start</button>
+  </div>
+  <div class="">
+    <terrain></terrain>
+  </div>
+</div>
+
 </template>
 
 <script>
 import { select } from '../mixins/select';
 import { villainData } from '../mixins/villain-data';
+import { icons } from '../mixins/icons';
+import terrain from '~/components/Terrain.vue';
 
 export default {
-  mixins: [select, villainData]
+  mixins: [select, villainData, icons],
+  components: {
+    terrain
+  }
 };
 </script>
 
 <style lang="scss">
+.h1 {
+  color: #fff;
+}
+
+.h2 b {
+  color: #000;
+}
+
+.villain-header {
+  color: #fff;
+}
+
+.wrapper {
+  background-color: #231f20;
+}
 .container {
-  max-width: 150rem;
   padding: 2rem;
   padding-bottom: 10rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: transparent;
 }
 
 .stop {
   display: none;
-}
-
-.start-button {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateY(-50%);
-  margin-bottom: 5rem;
-
-  button {
-    background-color: #619939;
-    color: white;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 2.6rem;
-    font-weight: bold;
-    margin: 1rem;
-
-    &:hover,
-    &:focus {
-      background-color: darken(#619939, 15%);
-    }
-    &:active {
-      background-color: darken(#619939, 35%);
-    }
-  }
 }
 
 .character-list {
@@ -111,7 +110,6 @@ export default {
     overflow: hidden;
     min-width: 15%;
     max-width: 18rem;
-    // background-color: #fff;
     background-color: #000;
     margin: 1rem;
 

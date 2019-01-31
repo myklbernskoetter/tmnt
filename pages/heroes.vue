@@ -1,64 +1,69 @@
 <template>
-  <div class="container" :class="{started : started}">
-    <div v-if="!started">
-      <h1>Hero Select</h1>
-    </div>
-      <transition-group tag="ul" class="character-list" name="heroes-selected" mode="out-in">
-        <li class="character" v-if="item.status != 'disabled'" v-for="(item, key) in goodGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
-          <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
-          <button class="character-view" type="button" @click="selectStatus(item, 4)">
-            <span class="image-wrapper"><img v-bind:src="item.image1"/></span>
-          </button>
-            <span class="data-panel">
-              <span class="character-meta">
-                <span class="h2"><b>Stats</b></span>
-                <span class="attribute-wrapper">
-                  <span>Move:</span> <span>{{ item.move }}</span>
-                  <img src="~/assets/images/symbols/move.png" class="icon move-icon" />
-                </span>
-                <span class="attribute-wrapper">
-                  <span>Attack:</span> <span>{{ item.attack }}</span>
-                  <img src="~/assets/images/symbols/attack.png" class="icon attack-icon" />
-                </span>
-                <span class="attribute-wrapper">
-                  <span>Defend:</span> <span>{{ item.defend }}</span>
-                  <img src="~/assets/images/symbols/defend.png" class="icon defend-icon" />
-                </span>
-                <span class="attribute-wrapper">
-                  <span>Skills:</span> <span>{{ item.skill }}</span>
-                  <img src="~/assets/images/symbols/chi.png" class="icon chi-icon" />
-                </span>
-                <span class="attribute-wrapper">
-                  <img src="~/assets/images/symbols/focus.png" class="icon focus-icon" />
-                  <span>Focus: </span>
-                  <span class="attribute-totals">{{ item.currentFocus }}/ {{item.maxFocus}}</span>
-                  <span>
-                    <button class="add-remove-button add-focus" @click="addHeroFocus(item)">+</button>
-                    <button class="add-remove-button remove-focus" @click="removeHeroFocus(item)">-</button>
+  <div class="wrapper">
+    <div class="container" :class="{started : started}">
+      <div v-if="!started">
+        <h1>Hero Select</h1>
+      </div>
+        <transition-group tag="ul" class="character-list" name="heroes-selected" mode="out-in">
+          <li class="character" v-if="item.status != 'disabled'" v-for="(item, key) in goodGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
+            <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
+            <button class="character-view" type="button" @click="selectStatus(item, 4)">
+              <span class="image-wrapper"><img :src="item.image1"/></span>
+            </button>
+              <span class="data-panel">
+                <span class="character-meta">
+                  <span class="h2"><b>Stats</b></span>
+                  <span class="attribute-wrapper">
+                    <span>Move:</span> <span>{{ item.move }}</span>
+                    <img :src="move" class="icon move-icon" />
                   </span>
-                </span>
-                <span class="attribute-wrapper">
-                  <img src="~/assets/images/symbols/pizza.png" class="icon pizza-icon" />
-                  <span>Health: </span>
-                  <span class="attribute-totals">{{ item.currentHealth }}/ {{item.maxHealth}}</span>
-                  <span>
-                    <button class="add-remove-button add-health" @click="addHealth(item)">+</button>
-                    <button class="add-remove-button remove-health" @click="removeHealth(item)">-</button>
+                  <span class="attribute-wrapper">
+                    <span>Attack:</span> <span>{{ item.attack }}</span>
+                    <img :src="attack" class="icon attack-icon" />
+                  </span>
+                  <span class="attribute-wrapper">
+                    <span>Defend:</span> <span>{{ item.defend }}</span>
+                    <img :src="defend" class="icon defend-icon" />
+                  </span>
+                  <span class="attribute-wrapper">
+                    <span>Skills:</span> <span>{{ item.skill }}</span>
+                    <img :src="chi" class="icon chi-icon" />
+                  </span>
+                  <span class="attribute-wrapper">
+                    <img :src="focus" class="icon focus-icon" />
+                    <span>Focus: </span>
+                    <span class="attribute-totals">{{ item.currentFocus }}/ {{item.maxFocus}}</span>
+                    <span>
+                      <button class="add-remove-button add-focus" @click="addHeroFocus(item)">+</button>
+                      <button class="add-remove-button remove-focus" @click="removeHeroFocus(item)">-</button>
+                    </span>
+                  </span>
+                  <span class="attribute-wrapper">
+                    <img :src="pizza" class="icon pizza-icon" />
+                    <span>Health: </span>
+                    <span class="attribute-totals">{{ item.currentHealth }}/ {{item.maxHealth}}</span>
+                    <span>
+                      <button class="add-remove-button add-health" @click="addHealth(item)">+</button>
+                      <button class="add-remove-button remove-health" @click="removeHealth(item)">-</button>
+                    </span>
                   </span>
                 </span>
               </span>
-            </span>
-            <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
-            <button class="stop" @click="selectStatus(item, 4)">
-              <img src="~/assets/images/symbols/stop.png" alt="stop, your turn is over" />
-            </button>
-            <span class="ko" v-if="item.currentHealth === 0">
-              <img src="~/assets/images/symbols/ko.png" alt="stop, you're knocked out!" />
-            </span>
-        </li>
-      </transition-group>
+              <span class="full-width special-ability" v-html="item.specialAbility"><b>Special Ability: </b><br />{{ item.specialAbility }}</span>
+              <button class="stop" @click="selectStatus(item, 4)">
+                <img :src="stop" alt="stop, your turn is over" />
+              </button>
+              <span class="ko" v-if="item.currentHealth === 0">
+                <img :src="ko" alt="stop, you're knocked out!" />
+              </span>
+          </li>
+        </transition-group>
+    </div>
     <div class="start-button" v-if="!started && selected > 0">
       <button class="button" type="button" @click="startGame('heroes')">Start</button>
+    </div>
+    <div class="">
+      <terrain></terrain>
     </div>
   </div>
 </template>
@@ -66,50 +71,37 @@
 <script>
 import { select } from '../mixins/select';
 import { heroData } from '../mixins/hero-data';
+import { icons } from '../mixins/icons';
+import terrain from '~/components/Terrain.vue';
 
 export default {
-  mixins: [select, heroData]
+  mixins: [select, heroData, icons],
+  components: {
+    terrain
+  }
 };
 </script>
 
 <style lang="scss">
+.wrapper {
+  background-color: #231f20;
+}
+
 .container {
-  max-width: 150rem;
   margin: 0 auto;
   padding: 2rem;
   padding-bottom: 10rem;
+  background-image: url('~/assets/images/rooftop1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #231f20;
+  background-position: center 0;
 }
 
 .stop {
   display: none;
   padding: 0;
   cursor: pointer;
-}
-
-.start-button {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateY(-50%);
-  margin-bottom: 5rem;
-
-  button {
-    background-color: #619939;
-    color: white;
-    border-radius: 0.5rem;
-    border: none;
-    font-size: 2.6rem;
-    font-weight: bold;
-    margin: 1rem;
-
-    &:hover,
-    &:focus {
-      background-color: darken(#619939, 15%);
-    }
-    &:active {
-      background-color: darken(#619939, 35%);
-    }
-  }
 }
 
 .character-list {
@@ -122,15 +114,15 @@ export default {
   padding-left: 0;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 35rem);
+    grid-template-columns: repeat(1, 35rem);
   }
 
   @media (min-width: 1020px) {
-    grid-template-columns: repeat(3, 35rem);
+    grid-template-columns: repeat(2, 35rem);
   }
 
   @media (min-width: 1640px) {
-    grid-template-columns: repeat(4, 35rem);
+    grid-template-columns: repeat(3, 35rem);
   }
 
   li {

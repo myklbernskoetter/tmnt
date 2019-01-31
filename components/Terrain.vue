@@ -1,13 +1,13 @@
 <template>
   <div class="terrain-panel">
-  <h3 class="h3"><button type="button" @click="active = !active">Terrain</button></h3>
+    <h3 class="h3 start-button"><button class="button" type="button" @click="active = !active">Terrain</button></h3>
     <transition-group name="card-fade" tag="ul" class="card-list" v-if="active">
-      <li class="card" v-for="(item, key) in terrain" :key="key">
-        <span class="h2">{{item.name}}</span>
-        <span class="terrain-image">{{item.image}}</span>
-        <span class="description">{{item.text}}</span>
-        <span class="example">{{item.example}}</span>
-        <span class="terrain-icon">{{item.icon}}</span>
+      <li class="card" v-for="(item, key) in terrain" :key="key" :style="{ borderColor: item.color}">
+        <span class="h2" :style="{ backgroundColor: item.color}">{{item.name}}</span>
+        <!-- <span class="terrain-image">{{item.image}}</span> -->
+        <span class="description" v-html="item.text">{{item.text}}</span>
+        <!-- <span class="example">{{item.example}}</span> -->
+        <!-- <span class="terrain-icon">{{item.icon}}</span> -->
         <button class="remove-button" type="button" @click="removeCard(key)">X</button>
       </li>
     </transition-group>
@@ -34,14 +34,19 @@ export default {
 
 <style lang="scss">
 .h3 {
+  position: relative;
+  top: 0;
   display: flex;
 }
 
 .h2 {
+  align-self: stretch;
+  text-align: center;
   font-size: 2.4rem;
-  align-self: flex-start;
   border-bottom: 0.2rem solid #666;
   margin-bottom: 2.5rem;
+  color: #fff;
+  margin-top: 1rem;
 }
 
 .card-list {
@@ -69,9 +74,10 @@ export default {
   border: 0.1rem solid #666;
   padding: 3rem 1rem 1rem;
   margin-bottom: 2.5rem;
-  background-color: #fff;
-  box-shadow: 0.1rem 0.2rem 0.2rem 0.1rem #666;
+  background-color: #fdfdfd;
   min-height: 400px;
+  font-size: 1.6rem;
+  border: 0.3rem solid #000;
 
   @media (min-width: 600px) {
     margin-bottom: 0;
