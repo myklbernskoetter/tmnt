@@ -48,9 +48,6 @@
   <div class="start-button" v-if="!started && selected > 0">
     <button class="button" type="button" @click="startGame('villains')">Start</button>
   </div>
-  <div class="">
-    <terrain></terrain>
-  </div>
 </div>
 
 </template>
@@ -59,13 +56,9 @@
 import { select } from '../mixins/select';
 import { villainData } from '../mixins/villain-data';
 import { icons } from '../mixins/icons';
-import terrain from '~/components/Terrain.vue';
 
 export default {
-  mixins: [select, villainData, icons],
-  components: {
-    terrain
-  }
+  mixins: [select, villainData, icons]
 };
 </script>
 

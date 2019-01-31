@@ -47,10 +47,12 @@ export default {
   margin-bottom: 2.5rem;
   color: #fff;
   margin-top: 1rem;
+  margin-right: 3rem;
 }
 
 .card-list {
   padding: 2rem;
+  margin-bottom: 0;
 
   @media (min-width: 600px) {
     display: grid;
@@ -72,7 +74,7 @@ export default {
   display: flex;
   flex-direction: column;
   border: 0.1rem solid #666;
-  padding: 3rem 1rem 1rem;
+  padding: 1rem;
   margin-bottom: 2.5rem;
   background-color: #fdfdfd;
   min-height: 400px;
@@ -84,30 +86,9 @@ export default {
   }
 }
 
-.remove-button {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  padding: 1rem;
-  background-color: transparent;
-  font-size: 1.8rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    color: green;
-    text-decoration: underline;
+.terrain-panel {
+  .home-active & {
+    display: none;
   }
-}
-
-.card-fade-enter-active,
-.card-fade-leave-active {
-  transition: opacity 0.5s;
-}
-.card-fade-enter,
-.card-fade-leave-to {
-  opacity: 0;
 }
 </style>

@@ -73,7 +73,7 @@ export default {
 .first {
   grid-area: main1;
   background-color: green;
-  background-image: url('~/assets/images/tmnt2.jpg');
+  background-image: url('~assets/tmnt2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -88,7 +88,7 @@ export default {
 .second {
   grid-area: main2;
   background-color: black;
-  background-image: url('~/assets/images/shredder.jpg');
+  background-image: url('~assets/shredder.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 

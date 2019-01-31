@@ -6,7 +6,7 @@ export const villainData = {
       badGuys: [
         {
           name: 'Master Shredder',
-          image1: '/images/shredder-2.png',
+          image1: '/shredder-2.png',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -20,7 +20,7 @@ export const villainData = {
         },
         {
           name: 'Street Thug Gunner',
-          image1: '/images/casey-1.jpg',
+          image1: '/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -34,7 +34,7 @@ export const villainData = {
         },
         {
           name: 'Street Thug Brawler',
-          image1: '/images/casey-1.jpg',
+          image1: '/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -48,7 +48,7 @@ export const villainData = {
         },
         {
           name: 'Alopex',
-          image1: '/images/alopex-1.png',
+          image1: '/alopex-1.png',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -62,7 +62,7 @@ export const villainData = {
         },
         {
           name: 'Old Hob',
-          image1: '/images/old-hob-1.jpg',
+          image1: '/old-hob-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -76,7 +76,7 @@ export const villainData = {
         },
         {
           name: 'Rocksteady',
-          image1: '/images/rocksteady-1.jpg',
+          image1: '/rocksteady-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -93,7 +93,7 @@ export const villainData = {
         },
         {
           name: 'Bebop',
-          image1: '/images/bebop-1.jpg',
+          image1: '/bebop-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -110,7 +110,7 @@ export const villainData = {
         },
         {
           name: 'Foot Clan Ninja',
-          image1: '/images/casey-1.jpg',
+          image1: '/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -125,7 +125,7 @@ export const villainData = {
         },
         {
           name: 'Mouser',
-          image1: '/images/mousers-1.jpg',
+          image1: '/mousers-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -143,7 +143,7 @@ export const villainData = {
         },
         {
           name: 'Foot Clan Elite',
-          image1: '/images/casey-1.jpg',
+          image1: '/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -158,7 +158,7 @@ export const villainData = {
         },
         {
           name: 'Foot Clan Bruiser',
-          image1: '/images/casey-1.jpg',
+          image1: '/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -174,7 +174,7 @@ export const villainData = {
         },
         {
           name: 'Karai',
-          image1: '/images/karai-1.jpg',
+          image1: '/karai-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -188,7 +188,7 @@ export const villainData = {
         },
         {
           name: 'Super-Shredder',
-          image1: '/images/shredder-1.jpg',
+          image1: '/shredder-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,

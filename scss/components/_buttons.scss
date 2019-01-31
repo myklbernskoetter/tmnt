@@ -30,3 +30,47 @@
     }
   }
 }
+
+.start-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+  margin: 0;
+
+  button {
+    background-color: #619939;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin: 1rem;
+
+    &:hover,
+    &:focus {
+      background-color: darken(#619939, 15%);
+    }
+    &:active {
+      background-color: darken(#619939, 35%);
+    }
+  }
+}
+
+.remove-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 0.5rem;
+  padding: 1rem;
+  background-color: transparent;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: green;
+    text-decoration: underline;
+  }
+}

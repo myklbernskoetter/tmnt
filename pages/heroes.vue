@@ -62,9 +62,6 @@
     <div class="start-button" v-if="!started && selected > 0">
       <button class="button" type="button" @click="startGame('heroes')">Start</button>
     </div>
-    <div class="">
-      <terrain></terrain>
-    </div>
   </div>
 </template>
 
@@ -72,13 +69,9 @@
 import { select } from '../mixins/select';
 import { heroData } from '../mixins/hero-data';
 import { icons } from '../mixins/icons';
-import terrain from '~/components/Terrain.vue';
 
 export default {
-  mixins: [select, heroData, icons],
-  components: {
-    terrain
-  }
+  mixins: [select, heroData, icons]
 };
 </script>
 
@@ -91,7 +84,7 @@ export default {
   margin: 0 auto;
   padding: 2rem;
   padding-bottom: 10rem;
-  background-image: url('~/assets/images/rooftop1.png');
+  background-image: url('~assets/rooftop1.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #231f20;

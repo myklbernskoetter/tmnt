@@ -4,7 +4,7 @@ export const heroData = {
       goodGuys: [
         {
           name: 'Leonardo',
-          image1: '/images/leo-1.jpg',
+          image1: '/leo-1.jpg',
           color: '#4aa9e0',
           imageSelected: '',
           status: false,
@@ -24,7 +24,7 @@ export const heroData = {
         {
           name: 'Donatello',
           description: 'text',
-          image1: '/images/donatello-1.jpg',
+          image1: '/donatello-1.jpg',
           color: '#905f9c',
           imageSelected: '',
           status: false,
@@ -44,7 +44,7 @@ export const heroData = {
         {
           name: 'Raphael',
           description: 'text',
-          image1: '/images/raphael-1.jpg',
+          image1: '/raphael-1.jpg',
           color: '#d1432d',
           imageSelected: '',
           status: false,
@@ -64,7 +64,7 @@ export const heroData = {
         {
           name: 'Michaelangelo',
           description: 'text',
-          image1: '/images/mikey-1.jpg',
+          image1: '/mikey-1.jpg',
           color: '#de9835',
           imageSelected: '',
           status: false,
@@ -84,7 +84,7 @@ export const heroData = {
         {
           name: 'Splinter',
           description: 'text',
-          image1: '/images/splinter-1.jpg',
+          image1: '/splinter-1.jpg',
           color: 'brown',
           imageSelected: '',
           status: false,
@@ -102,7 +102,7 @@ export const heroData = {
         {
           name: 'April',
           description: 'text',
-          image1: '/images/april-1.jpg',
+          image1: '/april-1.jpg',
           color: 'yellow',
           imageSelected: '',
           status: false,
@@ -122,7 +122,7 @@ export const heroData = {
         {
           name: 'Casey Jones',
           description: 'text',
-          image1: '/images/casey-1.jpg',
+          image1: '/casey-1.jpg',
           color: 'grey',
           imageSelected: '',
           status: false,
