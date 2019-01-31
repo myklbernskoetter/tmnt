@@ -1,18 +1,18 @@
 export const icons = {
   data() {
     return {
-      attack: '/images/icons/attack.png',
-      block: '/images/icons/block.png',
-      chi: '/images/icons/chi.png',
-      close: '/images/icons/close.svg',
-      defend: '/images/icons/defend.png',
-      focus: '/images/icons/focus.png',
-      hit: '/images/icons/hit.png',
-      ko: '/images/icons/ko.png',
-      move: '/images/icons/move.png',
-      pizza: '/images/icons/pizza.png',
-      shuriken: '/images/icons/shuriken.png',
-      stop: '/images/icons/stop.png',
+      attack: '/images/attack.png',
+      block: '/images/block.png',
+      chi: '/images/chi.png',
+      close: '/images/close.svg',
+      defend: '/images/defend.png',
+      focus: '/images/focus.png',
+      hit: '/images/hit.png',
+      ko: '/images/ko.png',
+      move: '/images/move.png',
+      pizza: '/images/pizza.png',
+      shuriken: '/images/shuriken.png',
+      stop: '/images/stop.png',
     };
   }
 };
