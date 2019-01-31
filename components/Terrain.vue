@@ -44,10 +44,11 @@ export default {
   text-align: center;
   font-size: 2.4rem;
   border-bottom: 0.2rem solid #666;
-  margin-bottom: 2.5rem;
-  color: #fff;
   margin-top: 1rem;
   margin-right: 3rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
 .card-list {
