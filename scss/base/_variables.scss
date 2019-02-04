@@ -3,13 +3,17 @@
   --color-main-text: #483c46;
   --color-black: #000;
   --color-white: #fff;
+  --color-offwhite: #fdfdfd;
   --color-yellow: #e8d181;
   --color-pale-yellow: rgba(232, 209, 129, 0.2);
   --color-orange: #d36b00;
   --color-grey: #b0b0b0;
+  --color-background-grey: #231f20;
   --color-dark-grey: #434344;
+  --color-light-grey: lightgrey;
   --color-magenta: #8b008b;
   --color-magentadark: #4f2f4f;
+  --color-button-green: #619939;
   --color-palegreen: rgba(194, 255, 137, 0.3);
 
   --gradient-green-white: linear-gradient(
@@ -28,13 +32,4 @@
   --light-glow: 4px 25px 67px 25px rgba(255, 215, 0, 0.77);
 
   --block: 2.5rem;
-
-  --mq-tiny: 0;
-  --mq-mini: 480px;
-  --mq-small: 600px;
-  --mq-medium: 768px;
-  --mq-large: 1020px;
-  --mq-xlarge: 1230px;
-  --mq-xxlarge: 1320px;
-  --mq-xxxlarge: 1640px;
 }

@@ -36,13 +36,49 @@ export default {
 </script>
 
 <style lang="scss">
+$mq-tiny: 0;
+$mq-mini: 480px;
+$mq-small: 600px;
+$mq-medium: 768px;
+$mq-large: 1020px;
+$mq-xlarge: 1230px;
+$mq-xxlarge: 1320px;
+$mq-xxxlarge: 1640px;
+
 .site-nav {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  transition: all 500ms linear;
+  transition-delay: 500ms;
+
+  .first {
+    transform: translateX(-100%);
+    transition: transform 500ms linear;
+  }
+
+  .second {
+    transform: translateX(100%);
+    transition: transform 500ms linear;
+  }
 
   .home-active & {
     display: block;
+    opacity: 1;
+    z-index: 1;
+    transition: all 500ms linear;
+    transition-delay: 0;
+
+    .first {
+      transform: translateX(0);
+    }
+
+    .second {
+      transform: translateX(0);
+    }
   }
 }
+
 .site-nav-container {
   display: grid;
   grid-template-rows: 5rem 1fr 1fr;
@@ -57,7 +93,7 @@ export default {
   list-style: none;
   z-index: 10;
 
-  @media (min-width: 768px) {
+  @media (min-width: $mq-medium) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas:
@@ -72,7 +108,7 @@ export default {
 
 .first {
   grid-area: main1;
-  background-color: green;
+  background-color: var(--color-button-green);
   background-image: url('~assets/tmnt2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,13 +117,13 @@ export default {
     color: white;
     font-size: 5rem;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 
 .second {
   grid-area: main2;
-  background-color: black;
+  background-color: var(--color-black);
   background-image: url('~assets/shredder.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,7 +158,7 @@ a.menu-link {
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: white;
+    color: var(--color-white);
   }
 }
 </style>

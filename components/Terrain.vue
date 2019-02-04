@@ -1,7 +1,7 @@
 <template>
   <div class="terrain-panel">
     <h3 class="h3 start-button"><button class="button" type="button" @click="active = !active">Terrain</button></h3>
-    <transition-group name="card-fade" tag="ul" class="card-list" v-if="active">
+    <ul name="card-fade" class="card-list" v-if="active">
       <li class="card" v-for="(item, key) in terrain" :key="key" :style="{ borderColor: item.color}">
         <span class="h2" :style="{ backgroundColor: item.color}">{{item.name}}</span>
         <!-- <span class="terrain-image">{{item.image}}</span> -->
@@ -10,7 +10,7 @@
         <!-- <span class="terrain-icon">{{item.icon}}</span> -->
         <button class="remove-button" type="button" @click="removeCard(key)">X</button>
       </li>
-    </transition-group>
+    </ul>
   </div>
 </template>
 
@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style lang="scss">
+$mq-small: 600px;
+$mq-medium: 768px;
+$mq-large: 1020px;
 .h3 {
   position: relative;
   top: 0;
@@ -43,30 +46,26 @@ export default {
   align-self: stretch;
   text-align: center;
   font-size: 2.4rem;
-  border-bottom: 0.2rem solid #666;
+  border-bottom: 0.2rem solid var(--color-dark-grey);
   margin-top: 1rem;
   margin-right: 3rem;
   margin-bottom: 2.5rem;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .card-list {
   padding: 2rem;
   margin-bottom: 0;
 
-  @media (min-width: 600px) {
+  @media (min-width: $mq-small) {
     display: grid;
     grid-gap: 2.5rem;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 728px) {
+  @media (min-width: $mq-large) {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 1020px) {
-    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -74,16 +73,27 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 0.1rem solid #666;
+  border: 0.1rem solid var(--color-dark-grey);
   padding: 1rem;
   margin-bottom: 2.5rem;
   background-color: #fdfdfd;
-  min-height: 400px;
+  min-height: 40rem;
   font-size: 1.6rem;
-  border: 0.3rem solid #000;
+  animation: gridDropIn 125ms linear forwards;
+  overflow: hidden;
+  opacity: 0;
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
 
-  @media (min-width: 600px) {
+  @media (min-width: $mq-small) {
     margin-bottom: 0;
+  }
+
+  .h2 {
+    color: #fff;
   }
 }
 

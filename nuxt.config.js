@@ -40,6 +40,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
+    },
+  },
+
+  // plugins: [
+  //   { src: '~/plugins/global.js', ssr: false },
+  // ]
 }

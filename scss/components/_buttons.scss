@@ -74,3 +74,44 @@
     text-decoration: underline;
   }
 }
+
+.add-remove-button {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.villain-add-remove-button {
+  background-color: var(--color-button-green);
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin: 1rem;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#619939, 15%);
+  }
+  &:active {
+    background-color: darken(#619939, 35%);
+  }
+}
+
+.hero-add-remove-button {
+  background-color: #619939;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin: 1rem;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#619939, 15%);
+  }
+  &:active {
+    background-color: darken(#619939, 35%);
+  }
+}
