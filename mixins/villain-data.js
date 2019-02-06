@@ -197,7 +197,7 @@ export const villainData = {
           defend: 5,
           move: 4,
           specialAbility: `
-            <b>Bown Down to his Evil: </b></br>
+            <b>Bow Down to his Evil: </b></br>
             Ultimate Shredder may activate more than once on the Villain player's turn.`
         }
       ]

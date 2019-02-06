@@ -36,68 +36,69 @@ export default {
 $mq-small: 600px;
 $mq-medium: 768px;
 $mq-large: 1020px;
-.h3 {
-  position: relative;
-  top: 0;
-  display: flex;
-}
 
-.h2 {
-  align-self: stretch;
-  text-align: center;
-  font-size: 2.4rem;
-  border-bottom: 0.2rem solid var(--color-dark-grey);
-  margin-top: 1rem;
-  margin-right: 3rem;
-  margin-bottom: 2.5rem;
-  font-weight: bold;
-  color: var(--color-white);
-}
-
-.card-list {
-  padding: 2rem;
-  margin-bottom: 0;
-
-  @media (min-width: $mq-small) {
-    display: grid;
-    grid-gap: 2.5rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: $mq-large) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border: 0.1rem solid var(--color-dark-grey);
-  padding: 1rem;
-  margin-bottom: 2.5rem;
-  background-color: #fdfdfd;
-  min-height: 40rem;
-  font-size: 1.6rem;
-  animation: gridDropIn 125ms linear forwards;
-  overflow: hidden;
-  opacity: 0;
-  @for $i from 1 through 12 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{$i * 100}ms;
-    }
-  }
-
-  @media (min-width: $mq-small) {
-    margin-bottom: 0;
+.terrain-panel {
+  .h3 {
+    position: relative;
+    top: 0;
+    display: flex;
   }
 
   .h2 {
-    color: #fff;
+    align-self: stretch;
+    text-align: center;
+    font-size: 2.4rem;
+    border-bottom: 0.2rem solid var(--color-dark-grey);
+    margin-top: 1rem;
+    margin-right: 3rem;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+    color: var(--color-white);
   }
-}
 
-.terrain-panel {
+  .card-list {
+    padding: 2rem;
+    margin-bottom: 0;
+
+    @media (min-width: $mq-small) {
+      display: grid;
+      grid-gap: 2.5rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $mq-large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 0.1rem solid var(--color-dark-grey);
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    background-color: #fdfdfd;
+    min-height: 40rem;
+    font-size: 1.6rem;
+    animation: gridDropIn 125ms linear forwards;
+    overflow: hidden;
+    opacity: 0;
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 100}ms;
+      }
+    }
+
+    @media (min-width: $mq-small) {
+      margin-bottom: 0;
+    }
+
+    .h2 {
+      color: #fff;
+    }
+  }
+
   .home-active & {
     display: none;
   }

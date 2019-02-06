@@ -13,7 +13,7 @@
           <button class="villain-add-remove-button remove-focus" @click="removeFocus()">-</button>
         </span>
       </div>
-        <ul class="villain-character-list">
+        <ul class="character-list">
           <li class="character" v-for="(item, key) in badGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
             <span class="character-name"><span>{{ item.name }}</span></span>
             <button class="character-view" type="button" @click="selectStatus(item, 6)">
@@ -80,286 +80,286 @@ $mq-xxxlarge: 1640px;
     display: block;
     transform: translateX(0);
   }
-}
 
-.h1 {
-  color: var(--color-white);
-}
+  .h1 {
+    color: var(--color-white);
+  }
 
-.h2 b {
-  color: var(--color-black);
-}
+  .h2 b {
+    color: var(--color-black);
+  }
 
-.villain-header {
-  color: var(--color-white);
-}
+  .villain-header {
+    color: var(--color-white);
+  }
 
-.wrapper {
-  background-color: var(--color-background-grey);
-}
-.container {
-  padding: 2rem;
-  padding-bottom: 10rem;
-  background: transparent;
-}
+  .wrapper {
+    background-color: var(--color-background-grey);
+  }
+  .container {
+    padding: 2rem;
+    padding-bottom: 10rem;
+    background: transparent;
+  }
 
-.stop {
-  display: none;
-}
+  .stop {
+    display: none;
+  }
 
-.villain-character-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding-bottom: 5rem;
-  padding-left: 0;
+  .character-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding-bottom: 5rem;
+    padding-left: 0;
 
-  li {
+    li {
+      display: flex;
+      flex-direction: column;
+      border: 0.1rem solid black;
+      overflow: hidden;
+      min-width: 15%;
+      max-width: 18rem;
+      margin: 1rem;
+      background-color: var(--color-black);
+      animation: gridDropIn 200ms linear forwards;
+      overflow: hidden;
+      opacity: 0;
+      @for $i from 1 through 25 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 150}ms;
+        }
+      }
+
+      .image-wrapper {
+        filter: grayscale(85%);
+      }
+
+      &:hover {
+        .image-wrapper {
+          filter: grayscale(0);
+        }
+      }
+
+      &.selected {
+        border: 0.1rem solid green;
+        box-shadow: 0.1rem 0.1rem 0.1rem 0.2rem green;
+        .image-wrapper {
+          filter: grayscale(0);
+        }
+      }
+
+      &.active {
+        filter: grayscale(0);
+      }
+
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+
+  .character-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--color-black);
+    color: #fff;
+    z-index: 1;
+  }
+
+  .character-view {
+    background-color: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .image-wrapper {
+    display: block;
+    max-height: 39rem;
+    overflow: hidden;
+  }
+
+  .character-select {
+    background-color: transparent;
+  }
+
+  .data-panel {
+    display: none;
+    flex-grow: 1;
+  }
+
+  .character-meta {
     display: flex;
     flex-direction: column;
-    border: 0.1rem solid black;
-    overflow: hidden;
-    min-width: 15%;
-    max-width: 18rem;
-    margin: 1rem;
-    background-color: var(--color-black);
-    animation: gridDropIn 200ms linear forwards;
-    overflow: hidden;
-    opacity: 0;
-    @for $i from 1 through 25 {
-      &:nth-child(#{$i}) {
-        animation-delay: #{$i * 150}ms;
-      }
-    }
-
-    .image-wrapper {
-      filter: grayscale(85%);
-    }
-
-    &:hover {
-      .image-wrapper {
-        filter: grayscale(0);
-      }
-    }
-
-    &.selected {
-      border: 0.1rem solid green;
-      box-shadow: 0.1rem 0.1rem 0.1rem 0.2rem green;
-      .image-wrapper {
-        filter: grayscale(0);
-      }
-    }
-
-    &.active {
-      filter: grayscale(0);
-    }
-
-    &.disabled {
-      display: none;
-    }
-  }
-}
-
-.character-name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: var(--color-black);
-  color: #fff;
-  z-index: 1;
-}
-
-.character-view {
-  background-color: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.image-wrapper {
-  display: block;
-  max-height: 39rem;
-  overflow: hidden;
-}
-
-.character-select {
-  background-color: transparent;
-}
-
-.data-panel {
-  display: none;
-  flex-grow: 1;
-}
-
-.character-meta {
-  display: flex;
-  flex-direction: column;
-}
-
-.full-width {
-  display: none;
-}
-
-// Ater starting the Game
-.started {
-  margin: 0 auto;
-  padding-top: 12rem;
-
-  .h2 {
-    border-bottom: 0.2rem solid black;
-    text-align: center;
   }
 
-  .selected {
-    .stop {
-      display: block;
+  .full-width {
+    display: none;
+  }
+
+  // Ater starting the Game
+  .started {
+    margin: 0 auto;
+    padding-top: 12rem;
+
+    .h2 {
+      border-bottom: 0.2rem solid black;
+      text-align: center;
+    }
+
+    .selected {
+      .stop {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+
+    .ko {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
       opacity: 1;
-      z-index: 2;
+      width: 30rem;
+      height: 30rem;
+      z-index: 3;
     }
-  }
 
-  .ko {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    opacity: 1;
-    width: 30rem;
-    height: 30rem;
-    z-index: 3;
-  }
-
-  .character {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 2rem;
-
-    @media (min-width: $mq-medium) {
-      flex-direction: row;
-    }
-  }
-
-  .character-name {
-    height: 5rem;
-  }
-
-  .character-meta {
-    > span {
+    .character {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 0.1rem solid lightgrey;
-      max-width: 35rem;
-    }
-  }
-
-  .character-list {
-    li {
-      background-color: #fff;
-    }
-  }
-
-  .image-wrapper {
-    margin-top: -1.5rem;
-    background-color: #000;
-  }
-
-  .data-panel {
-    display: flex;
-    flex-direction: column;
-    padding: 6rem 4rem 4rem;
-
-    @media (min-width: $mq-medium) {
-      border-left: 0.2rem solid black;
-    }
-  }
-
-  .full-width {
-    display: block;
-    border-top: 0.2rem solid black;
-    padding: 2rem;
-
-    @media (min-width: $mq-medium) {
-      width: 100%;
-      flex-basis: 100%;
-    }
-  }
-
-  .character-list {
-    padding: 0;
-
-    li {
-      width: 100%;
-      max-width: none;
+      flex-direction: column;
+      flex-wrap: wrap;
+      margin: 2rem;
 
       @media (min-width: $mq-medium) {
-        min-width: 100%;
-        max-width: 25rem;
-        width: auto;
+        flex-direction: row;
       }
+    }
 
-      @media (min-width: $mq-large) {
-        min-width: 45%;
+    .character-name {
+      height: 5rem;
+    }
+
+    .character-meta {
+      > span {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 0.1rem solid lightgrey;
+        max-width: 35rem;
+      }
+    }
+
+    .character-list {
+      li {
+        background-color: #fff;
       }
     }
 
     .image-wrapper {
-      filter: grayscale(0);
+      margin-top: -1.5rem;
+      background-color: #000;
+    }
+
+    .data-panel {
+      display: flex;
+      flex-direction: column;
+      padding: 6rem 4rem 4rem;
 
       @media (min-width: $mq-medium) {
-        max-width: 35rem;
+        border-left: 0.2rem solid black;
+      }
+    }
+
+    .full-width {
+      display: block;
+      border-top: 0.2rem solid black;
+      padding: 2rem;
+
+      @media (min-width: $mq-medium) {
+        width: 100%;
+        flex-basis: 100%;
+      }
+    }
+
+    .character-list {
+      padding: 0;
+
+      li {
+        width: 100%;
+        max-width: none;
+
+        @media (min-width: $mq-medium) {
+          min-width: 100%;
+          max-width: 25rem;
+          width: auto;
+        }
+
+        @media (min-width: $mq-large) {
+          min-width: 45%;
+        }
+      }
+
+      .image-wrapper {
+        filter: grayscale(0);
+
+        @media (min-width: $mq-medium) {
+          max-width: 35rem;
+        }
+      }
+    }
+
+    .character-view {
+      position: static;
+      padding: 0;
+      width: 100%;
+
+      @media (min-width: $mq-medium) {
+        padding-top: 5rem;
+        max-width: 40%;
+        background-color: #000;
       }
     }
   }
 
-  .character-view {
-    position: static;
-    padding: 0;
-    width: 100%;
-
-    @media (min-width: $mq-medium) {
-      padding-top: 5rem;
-      max-width: 40%;
-      background-color: #000;
-    }
+  .attribute-wrapper {
+    display: block;
+    padding-left: 8rem;
   }
-}
 
-.attribute-wrapper {
-  display: block;
-  padding-left: 8rem;
-}
+  .icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3rem;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
 
-.icon {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 3rem;
-  transform: translateY(-50%);
-  z-index: 1;
-}
+  .focus-icon,
+  .pizza-icon {
+    width: 5rem;
+    height: 5rem;
+  }
 
-.focus-icon,
-.pizza-icon {
-  width: 5rem;
-  height: 5rem;
-}
-
-.attribute-totals {
-  font-weight: bold;
-  font-size: 2rem;
+  .attribute-totals {
+    font-weight: bold;
+    font-size: 2rem;
+  }
 }
 </style>

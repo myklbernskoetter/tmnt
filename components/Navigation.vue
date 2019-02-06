@@ -158,7 +158,7 @@ a.menu-link {
   &:hover,
   &:focus {
     text-decoration: underline;
-    color: var(--color-white);
+    color: #fff;
   }
 }
 </style>
