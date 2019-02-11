@@ -84,7 +84,7 @@ export const heroData = {
         {
           name: 'Splinter',
           description: 'text',
-          image1: '/splinter-1.jpg',
+          image1: '/splinter2.png',
           color: 'brown',
           imageSelected: '',
           status: false,
@@ -122,7 +122,7 @@ export const heroData = {
         {
           name: 'Casey Jones',
           description: 'text',
-          image1: '/casey-1.jpg',
+          image1: '/casey2.png',
           color: 'grey',
           imageSelected: '',
           status: false,
