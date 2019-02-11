@@ -102,7 +102,7 @@ export const heroData = {
         {
           name: 'April',
           description: 'text',
-          image1: '/april-1.jpg',
+          image1: '/april2.png',
           color: 'yellow',
           imageSelected: '',
           status: false,
