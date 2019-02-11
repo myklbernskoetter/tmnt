@@ -4,7 +4,7 @@ export const heroData = {
       goodGuys: [
         {
           name: 'Leonardo',
-          image1: '/leo-1.jpg',
+          image1: '/leo2.png',
           color: '#4aa9e0',
           imageSelected: '',
           status: false,
@@ -24,7 +24,7 @@ export const heroData = {
         {
           name: 'Donatello',
           description: 'text',
-          image1: '/donatello-1.jpg',
+          image1: '/donnie2.png',
           color: '#905f9c',
           imageSelected: '',
           status: false,
@@ -44,7 +44,7 @@ export const heroData = {
         {
           name: 'Raphael',
           description: 'text',
-          image1: '/raphael-1.jpg',
+          image1: '/raph3.png',
           color: '#d1432d',
           imageSelected: '',
           status: false,
@@ -64,7 +64,7 @@ export const heroData = {
         {
           name: 'Michaelangelo',
           description: 'text',
-          image1: '/mikey-1.jpg',
+          image1: '/mikey2.png',
           color: '#de9835',
           imageSelected: '',
           status: false,

@@ -2,11 +2,20 @@
   <div class="wrapper heroes-wrapper">
     <div class="container" :class="{started : started}">
       <div v-if="!started">
-        <h1>Hero Select</h1>
+        <h1 class="h1">Select Your Hero</h1>
       </div>
         <ul class="character-list">
-          <li class="character" v-if="item.status != 'disabled'" v-for="(item, key) in goodGuys" :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
-            <span class="character-name" v-bind:style="{ backgroundColor: item.color}"><span>{{ item.name }}</span></span>
+          <li class="character hero"
+            v-if="item.status != 'disabled'"
+            v-for="(item, key) in goodGuys"
+            :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
+            <span class="color-splash" v-bind:style="{ backgroundColor: item.color}"></span>
+            <span class="select-box-wrapper">
+              <span class="select-box">
+                <span><b>1</b>UP</span>
+                <span class="arrow"></span>
+              </span>
+            </span>
             <button class="character-view" type="button" @click="selectStatus(item, 4)">
               <span class="image-wrapper"><img :src="item.image1"/></span>
             </button>
@@ -75,7 +84,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $mq-tiny: 0;
 $mq-mini: 480px;
 $mq-small: 600px;
@@ -90,6 +99,10 @@ $mq-xxxlarge: 1640px;
   transform: translateX(-100%);
   transition: transform 500ms linear;
 
+  .h1 {
+    color: #fff;
+  }
+
   .heroes-active & {
     display: block;
     transform: translateX(0);
@@ -103,9 +116,6 @@ $mq-xxxlarge: 1640px;
     margin: 0 auto;
     padding: 2rem;
     padding-bottom: 10rem;
-    background-image: url('~assets/rooftop1.png');
-    background-repeat: no-repeat;
-    background-size: contain;
     background-color: var(--color-background-grey);
     background-position: center 0;
   }
@@ -118,34 +128,34 @@ $mq-xxxlarge: 1640px;
 
   .character-list {
     display: grid;
-    grid-template-columns: minmax(35rem, 1fr);
     justify-content: center;
     grid-gap: 2.5rem;
+    margin: 2rem;
+    padding: 0 2rem 5rem;
     list-style: none;
-    padding-bottom: 5rem;
-    padding-left: 0;
 
     @media (min-width: $mq-small) {
-      grid-template-columns: repeat(1, 35rem);
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (min-width: $mq-medium) {
-      grid-template-columns: repeat(2, 35rem);
-    }
-
-    @media (min-width: $mq-xxxlarge) {
+    @media (min-width: $mq-xlarge) {
       grid-template-columns: repeat(3, 35rem);
     }
 
+    @media (min-width: $mq-xxxlarge) {
+      grid-template-columns: repeat(4, 35rem);
+    }
+
     li {
+      position: relative;
       display: flex;
       flex-direction: column;
-      border: 0.1rem solid black;
-      background-color: #fff;
+      margin: 0;
       transform: translateY(-10%);
       animation: gridDropIn 250ms linear forwards;
       overflow: hidden;
       opacity: 0;
+
       @for $i from 1 through 12 {
         &:nth-child(#{$i}) {
           animation-delay: #{$i * 250}ms;
@@ -153,20 +163,39 @@ $mq-xxxlarge: 1640px;
       }
 
       .image-wrapper {
+        max-width: 30rem;
+        margin: 0 auto;
         filter: grayscale(100%);
+        z-index: 2;
       }
 
       &:hover {
         .image-wrapper {
           filter: grayscale(0);
         }
+
+        .select-box-wrapper {
+          display: block;
+        }
       }
 
       &.selected {
-        border: 0.1rem solid green;
-        box-shadow: 0.1rem 0.1rem 0.1rem 0.2rem green;
         .image-wrapper {
           filter: grayscale(0);
+        }
+
+        .color-splash {
+          border: 5px solid green;
+        }
+
+        .select-box-wrapper {
+          display: block;
+        }
+
+        .select-box {
+          display: block !important;
+          opacity: 1 !important;
+          animation: none;
         }
       }
 
@@ -193,16 +222,26 @@ $mq-xxxlarge: 1640px;
     text-transform: uppercase;
   }
 
+  .color-splash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) skew(-12deg);
+    width: 20rem;
+    height: 125%;
+    z-index: 1;
+  }
+
   .character-view {
     padding: 0;
-    background-color: none;
+    height: 100%;
+    background-color: transparent;
     border: none;
     cursor: pointer;
   }
 
   .image-wrapper {
     display: block;
-    max-height: 39rem;
     overflow: hidden;
   }
 
@@ -224,6 +263,95 @@ $mq-xxxlarge: 1640px;
     display: none;
   }
 
+  .select-box-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 10;
+
+    .arrow {
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: 3;
+
+      .nav-inner-wrapper & {
+        top: -3.75rem;
+        right: 4.75rem;
+      }
+
+      .open & {
+        display: block;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 3.5rem;
+        left: 1rem;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #000;
+        border-left-color: transparent;
+        border-width: 1.5rem;
+      }
+
+      /* this border color controlls the outside, thin border */
+      &::before {
+        top: 3.2rem;
+        left: 0.8rem;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: #8fd129;
+        border-left-color: transparent;
+        border-width: 2rem;
+      }
+    }
+  }
+
+  .select-box {
+    position: absolute;
+    color: #4aa9e0;
+    font-size: 2.5rem;
+    line-height: 1;
+    border: 0.3rem solid #8fd129;
+    background-color: #000;
+    padding: 0.5rem 0.5rem;
+    animation: processing 1250ms linear infinite;
+    animation-fill-mode: both;
+    border-radius: 1rem;
+    opacity: 0;
+    z-index: 3;
+
+    b {
+      font-size: 4rem;
+    }
+  }
+
+  @keyframes processing {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
   // Ater starting the Game
   .started {
     margin: 0 auto;
@@ -234,6 +362,8 @@ $mq-xxxlarge: 1640px;
     }
 
     .selected {
+      margin: 0;
+
       .stop {
         display: block;
         position: absolute;
@@ -243,6 +373,10 @@ $mq-xxxlarge: 1640px;
         opacity: 1;
         z-index: 2;
       }
+    }
+
+    .color-splash {
+      display: none;
     }
 
     .ko {
@@ -260,7 +394,8 @@ $mq-xxxlarge: 1640px;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      margin: 2rem;
+      border: 0;
+      background-color: #fff;
 
       @media (min-width: $mq-large) {
         flex-direction: row;
@@ -320,7 +455,6 @@ $mq-xxxlarge: 1640px;
       }
 
       li {
-        width: 100%;
         max-width: none;
 
         @media (min-width: $mq-large) {
@@ -328,9 +462,12 @@ $mq-xxxlarge: 1640px;
           grid-template-columns: repeat(2, 1fr);
           width: auto;
           grid-template-areas:
-            'title title'
             'image info'
             'ability ability';
+        }
+
+        .select-box-wrapper {
+          display: none;
         }
       }
 

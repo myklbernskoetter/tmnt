@@ -39,20 +39,20 @@
   margin: 0;
 
   button {
-    background-color: #619939;
+    background-color: #8fd129;
+    border: 0.6rem solid black;
     color: white;
-    border-radius: 0.5rem;
-    border: none;
+    border-radius: 1rem;
     font-size: 2.6rem;
     font-weight: bold;
     margin: 1rem;
 
     &:hover,
     &:focus {
-      background-color: darken(#619939, 15%);
+      background-color: darken(#8fd129, 15%);
     }
     &:active {
-      background-color: darken(#619939, 35%);
+      background-color: darken(#8fd129, 35%);
     }
   }
 }
@@ -88,18 +88,21 @@
   font-size: 2.6rem;
   font-weight: bold;
   margin: 0.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: darken(#619939, 15%);
+    background-color: darken(#8fd129, 15%);
   }
   &:active {
-    background-color: darken(#619939, 35%);
+    background-color: darken(#8fd129, 35%);
   }
 }
 
 .hero-add-remove-button {
-  background-color: #619939;
+  background-color: #8fd129;
   color: white;
   border-radius: 0.5rem;
   border: none;
@@ -109,9 +112,9 @@
 
   &:hover,
   &:focus {
-    background-color: darken(#619939, 15%);
+    background-color: darken(#8fd129, 15%);
   }
   &:active {
-    background-color: darken(#619939, 35%);
+    background-color: darken(#8fd129, 35%);
   }
 }

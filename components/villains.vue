@@ -82,15 +82,17 @@ $mq-xxxlarge: 1640px;
   }
 
   .h1 {
-    color: var(--color-white);
+    color: #fff;
   }
 
   .h2 b {
-    color: var(--color-black);
+    color: #000;
   }
 
   .villain-header {
-    color: var(--color-white);
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
   }
 
   .wrapper {
@@ -119,10 +121,10 @@ $mq-xxxlarge: 1640px;
       flex-direction: column;
       border: 0.1rem solid black;
       overflow: hidden;
-      min-width: 15%;
-      max-width: 18rem;
+      min-width: 25%;
+      max-width: 35rem;
       margin: 1rem;
-      background-color: var(--color-black);
+      background-color: #fff;
       animation: gridDropIn 200ms linear forwards;
       overflow: hidden;
       opacity: 0;
@@ -170,7 +172,7 @@ $mq-xxxlarge: 1640px;
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
-    background-color: var(--color-black);
+    background-color: #000;
     color: #fff;
     z-index: 1;
   }
@@ -340,6 +342,7 @@ $mq-xxxlarge: 1640px;
   .attribute-wrapper {
     display: block;
     padding-left: 8rem;
+    color: #000;
   }
 
   .icon {

@@ -5,6 +5,7 @@
     'heroes-active active'      : (page === 'heroes'),
     'villains-active active'      : (page === 'villains'),
   }">
+    <nav2></nav2>
     <navigation></navigation>
     <nuxt/>
     <div>
@@ -20,6 +21,7 @@ import { mapState } from 'vuex';
 
 // Common components will not need to reload when switching routes
 import navigation from '~/components/Navigation.vue';
+import nav2 from '~/components/secondaryNav.vue';
 import terrain from '~/components/Terrain.vue';
 import heroes from '~/components/heroes.vue';
 import villains from '~/components/villains.vue';
@@ -27,6 +29,7 @@ import villains from '~/components/villains.vue';
 export default {
   components: {
     navigation,
+    nav2,
     terrain,
     heroes,
     villains

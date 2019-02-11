@@ -1,17 +1,10 @@
 <template>
   <div class="title-container">
-    heroes
   </div>
 </template>
 
 <script>
-export default {
-  data: function() {
-    return {
-      selected: false
-    };
-  }
-};
+export default {};
 </script>
 
 <style lang="scss">

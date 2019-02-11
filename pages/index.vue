@@ -13,9 +13,13 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
-  max-width: 130rem;
+  max-width: 200rem;
   margin: auto;
+  background-image: url('~assets/tmnt-logo2.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
 }
 </style>

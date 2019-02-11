@@ -22,15 +22,22 @@ export const select = {
       }
     },
     startGame: function(characterSet) {
+      console.log(characterSet);
       const $this = this;
       $this.started = true;
-      const characters = document.getElementsByClassName('character');
-      for (let i = 0; i < characters.length; i++) {
-        if (!characters[i].classList.contains('selected')) {
-          if (characterSet === 'villains') {
-            $this.badGuys[i]['status'] = 'disabled';
-          } else {
-            $this.goodGuys[i]['status'] = 'disabled';
+
+      if (characterSet == 'heroes') {
+        for (let i = 0; i <= $this.goodGuys.length; i++) {
+          if (!$this.goodGuys[i]['status'] == true) {
+            $this.goodGuys.splice(i, 1);
+            i = 0;
+          }
+        }
+      } else {
+        for (let i = 0; i <= $this.badGuys.length; i++) {
+          if (!$this.badGuys[i]['status'] == true) {
+            $this.badGuys.splice(i, 1);
+            i = 0;
           }
         }
       }

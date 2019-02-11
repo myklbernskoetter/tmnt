@@ -15,7 +15,7 @@
     </ul>
   </nav>
 </template>
-
+p;;op;
 <script>
 import { mapState } from 'vuex';
 
@@ -47,118 +47,124 @@ $mq-xxxlarge: 1640px;
 
 .site-nav {
   position: absolute;
-  opacity: 0;
-  z-index: -1;
+  z-index: 0;
   transition: all 500ms linear;
   transition-delay: 500ms;
 
   .first {
     transform: translateX(-100%);
     transition: transform 500ms linear;
+    transition-delay: 0;
+    border-right: 0.2rem solid #000;
   }
 
   .second {
     transform: translateX(100%);
     transition: transform 500ms linear;
+    transition-delay: 0;
+    border-left: 0.2rem solid #000;
   }
 
   .home-active & {
     display: block;
     opacity: 1;
-    z-index: 1;
     transition: all 500ms linear;
     transition-delay: 0;
+    z-index: 4;
 
     .first {
       transform: translateX(0);
+      transition-delay: 1000ms;
     }
 
     .second {
       transform: translateX(0);
+      transition-delay: 1000ms;
     }
   }
-}
 
-.site-nav-container {
-  display: grid;
-  grid-template-rows: 5rem 1fr 1fr;
-  grid-template-areas:
-    'main1'
-    'main2'
-    'footer';
-  margin: 0;
-  width: 100vw;
-  min-height: 100vh;
-  padding: 0;
-  list-style: none;
-  z-index: 10;
-
-  @media (min-width: $mq-medium) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+  .site-nav-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
-      'main1 main2'
-      'footer footer';
+      'main1'
+      'main2';
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    list-style: none;
+    z-index: 10;
+
+    @media (min-width: $mq-medium) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      grid-template-areas:
+        'main1 main2'
+        'footer footer';
+    }
   }
-}
 
-.h1 {
-  grid-area: title;
-}
-
-.first {
-  grid-area: main1;
-  background-color: var(--color-button-green);
-  background-image: url('~assets/tmnt2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .menu-link {
-    color: white;
-    font-size: 5rem;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.1);
+  .h1 {
+    grid-area: title;
   }
-}
 
-.second {
-  grid-area: main2;
-  background-color: var(--color-black);
-  background-image: url('~assets/shredder.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  .first {
+    grid-area: main1;
+    background-color: var(--color-button-green);
+    background-image: url('~assets/tmnt2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 
-  .menu-link {
-    color: white;
-    font-size: 5rem;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.2);
+    .menu-link {
+      color: white;
+      font-size: 5rem;
+      font-weight: bold;
+    }
   }
-}
 
-.start-button {
-  grid-area: footer;
-}
+  .second {
+    grid-area: main2;
+    background-color: var(--color-black);
+    background-image: url('~assets/shredder.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 
-.menu-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .menu-link {
+      color: white;
+      font-size: 5rem;
+      font-weight: bold;
+    }
+  }
 
-a.menu-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  justify-self: stretch;
-  text-decoration: none;
+  .start-button {
+    grid-area: footer;
+  }
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-    color: #fff;
+  .menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.menu-link {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-self: stretch;
+    text-decoration: none;
+
+    .home-active & {
+      display: flex;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      color: #fff;
+    }
   }
 }
 </style>

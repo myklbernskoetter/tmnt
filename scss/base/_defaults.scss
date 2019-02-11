@@ -3,6 +3,13 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background: rgba(143, 209, 41, 0.3); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: rgba(143, 209, 41, 0.3); /* Gecko Browsers */
+}
+
 html,
 body {
   box-sizing: border-box;
@@ -18,7 +25,7 @@ html {
 }
 body {
   font-size: 2rem;
-  background-color: #000;
+  background-color: #000000;
 }
 
 :root {
@@ -39,7 +46,7 @@ body {
   --color-light-grey: lightgrey;
   --color-magenta: #8b008b;
   --color-magentadark: #4f2f4f;
-  --color-button-green: #619939;
+  --color-button-green: #8fd129;
   --color-palegreen: rgba(194, 255, 137, 0.3);
 
   --gradient-green-white: linear-gradient(
