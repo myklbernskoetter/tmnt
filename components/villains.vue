@@ -73,12 +73,12 @@ $mq-xxxlarge: 1640px;
 
 .villains-wrapper {
   display: none;
-  transform: translateX(100%);
+  transform: translateY(100%);
   transition: transform 500ms linear;
 
   .villains-active & {
     display: block;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .h1 {

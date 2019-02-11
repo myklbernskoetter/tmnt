@@ -96,7 +96,7 @@ $mq-xxxlarge: 1640px;
 
 .heroes-wrapper {
   display: none;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
   transition: transform 500ms linear;
 
   .h1 {
@@ -105,7 +105,7 @@ $mq-xxxlarge: 1640px;
 
   .heroes-active & {
     display: block;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   .wrapper {
