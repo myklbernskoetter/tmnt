@@ -160,8 +160,10 @@ $mq-xxxlarge: 1640px;
       &:first-child,
       &:nth-child(2),
       &:nth-child(5) {
-        img {
-          width: 75%;
+        .image-wrapper {
+          img {
+            width: 75%;
+          }
         }
       }
 
@@ -473,10 +475,6 @@ $mq-xxxlarge: 1640px;
           grid-template-areas:
             'image info'
             'ability ability';
-        }
-
-        img {
-          width: 100%;
         }
 
         .select-box-wrapper {
