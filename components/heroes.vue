@@ -475,6 +475,13 @@ $mq-xxxlarge: 1640px;
             'ability ability';
         }
 
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(5) {
+          img {
+            width: 100%;
+          }
+
         .select-box-wrapper {
           display: none;
         }
