@@ -8,7 +8,8 @@
           <li class="character hero"
             v-if="item.status != 'disabled'"
             v-for="(item, key) in goodGuys"
-            :key="key" :class="{ selected : item.status, disabled : item.status === 'disabled' }">
+            :key="key"
+            :class="{ selected : item.status, disabled : item.status === 'disabled' }">
             <span class="color-splash" v-bind:style="{ backgroundColor: item.color}"></span>
             <span class="select-box-wrapper">
               <span class="select-box">
@@ -155,6 +156,14 @@ $mq-xxxlarge: 1640px;
       animation: gridDropIn 250ms linear forwards;
       overflow: hidden;
       opacity: 0;
+
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(5) {
+        img {
+          width: 75%;
+        }
+      }
 
       @for $i from 1 through 12 {
         &:nth-child(#{$i}) {
