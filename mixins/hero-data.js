@@ -4,7 +4,7 @@ export const heroData = {
       goodGuys: [
         {
           name: 'Leonardo',
-          image1: '/leo2.png',
+          image1: '/heroes/leo2.png',
           color: '#4aa9e0',
           imageSelected: '',
           status: false,
@@ -24,7 +24,7 @@ export const heroData = {
         {
           name: 'Donatello',
           description: 'text',
-          image1: '/donnie2.png',
+          image1: '/heroes/donnie2.png',
           color: '#905f9c',
           imageSelected: '',
           status: false,
@@ -44,7 +44,7 @@ export const heroData = {
         {
           name: 'Raphael',
           description: 'text',
-          image1: '/raph3.png',
+          image1: '/heroes/raph3.png',
           color: '#d1432d',
           imageSelected: '',
           status: false,
@@ -64,7 +64,7 @@ export const heroData = {
         {
           name: 'Michaelangelo',
           description: 'text',
-          image1: '/mikey2.png',
+          image1: '/heroes/mikey2.png',
           color: '#de9835',
           imageSelected: '',
           status: false,
@@ -84,7 +84,7 @@ export const heroData = {
         {
           name: 'Splinter',
           description: 'text',
-          image1: '/splinter2.png',
+          image1: '/heroes/splinter2.png',
           color: 'brown',
           imageSelected: '',
           status: false,
@@ -102,7 +102,7 @@ export const heroData = {
         {
           name: 'April',
           description: 'text',
-          image1: '/april2.png',
+          image1: '/heroes/april2.png',
           color: 'yellow',
           imageSelected: '',
           status: false,
@@ -122,7 +122,7 @@ export const heroData = {
         {
           name: 'Casey Jones',
           description: 'text',
-          image1: '/casey2.png',
+          image1: '/heroes/casey2.png',
           color: 'grey',
           imageSelected: '',
           status: false,
@@ -138,7 +138,12 @@ export const heroData = {
             <b>Walk It Off: </b></br>Casey regains Life (but not focus) when he rolls skateboard
             icons on his Action dice, just as though he had rolled a chi icon.`
         }
-      ]
+      ],
+      objectives: [
+        {
+          name: 'Objective name 1',
+        }
+      ],
     };
   }
 };

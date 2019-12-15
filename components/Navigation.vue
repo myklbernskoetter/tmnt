@@ -15,7 +15,7 @@
     </ul>
   </nav>
 </template>
-p;;op;
+
 <script>
 import { mapState } from 'vuex';
 

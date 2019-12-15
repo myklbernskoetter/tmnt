@@ -210,7 +210,7 @@ export const terrainData = {
           name: 'Crouch',
           color: '#4a5125',
           text: `
-          While adjacent to a space of blocking terrain, use this action to make yourself less noticeabl. Until you leave the space you're currently in, you gain Defend +1
+          While adjacent to a space of blocking terrain, use this action to make yourself less noticeable. Until you leave the space you're currently in, you gain Defend +1
           This can stack with the +1 bonus from being in covered terrain.
           `,
           example: 'example here',

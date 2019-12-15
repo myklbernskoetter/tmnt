@@ -6,8 +6,7 @@
         <span class="h2" :style="{ backgroundColor: item.color}">{{item.name}}</span>
         <!-- <span class="terrain-image">{{item.image}}</span> -->
         <span class="description" v-html="item.text">{{item.text}}</span>
-        <!-- <span class="example">{{item.example}}</span> -->
-        <!-- <span class="terrain-icon">{{item.icon}}</span> -->
+        <span class="terrain-icon">{{item.icon}}</span>
         <button class="remove-button" type="button" @click="removeCard(key)">X</button>
       </li>
     </ul>
@@ -26,81 +25,92 @@ export default {
   },
   methods: {
     removeCard(index) {
+      const deselectAudio = new Audio('/deselect1.mp3');
+
       this.terrain.splice(index, 1);
+      deselectAudio.play();
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $mq-small: 600px;
 $mq-medium: 768px;
 $mq-large: 1020px;
 
-.terrain-panel {
-  .h3 {
-    position: relative;
-    top: 0;
-    display: flex;
+.home-active .terrain-panel {
+  display: none;
+}
+
+.h3 {
+  position: relative;
+  top: 0;
+  display: flex;
+}
+
+.h2 {
+  align-self: stretch;
+  text-align: center;
+  font-size: 2.4rem;
+  border-bottom: 0.2rem solid var(--color-dark-grey);
+  margin-top: 1rem;
+  margin-right: 3rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.card-list {
+  padding: 2rem;
+  margin-bottom: 0;
+
+  @media (min-width: $mq-small) {
+    display: grid;
+    grid-gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $mq-large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 0.1rem solid var(--color-dark-grey);
+  padding: 1rem 1rem 4.5rem;
+  margin-bottom: 2.5rem;
+  background-color: #fdfdfd;
+  min-height: 40rem;
+  font-size: 1.6rem;
+  animation: gridDropIn 125ms linear forwards;
+  overflow: hidden;
+  opacity: 0;
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+
+  @media (min-width: $mq-small) {
+    margin-bottom: 0;
   }
 
   .h2 {
-    align-self: stretch;
-    text-align: center;
-    font-size: 2.4rem;
-    border-bottom: 0.2rem solid var(--color-dark-grey);
-    margin-top: 1rem;
-    margin-right: 3rem;
-    margin-bottom: 2.5rem;
-    font-weight: bold;
-    color: var(--color-white);
+    color: #fff;
   }
+}
 
-  .card-list {
-    padding: 2rem;
-    margin-bottom: 0;
+.home-active {
+  display: none;
+}
 
-    @media (min-width: $mq-small) {
-      display: grid;
-      grid-gap: 2.5rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: $mq-large) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    border: 0.1rem solid var(--color-dark-grey);
-    padding: 1rem;
-    margin-bottom: 2.5rem;
-    background-color: #fdfdfd;
-    min-height: 40rem;
-    font-size: 1.6rem;
-    animation: gridDropIn 125ms linear forwards;
-    overflow: hidden;
-    opacity: 0;
-    @for $i from 1 through 12 {
-      &:nth-child(#{$i}) {
-        animation-delay: #{$i * 100}ms;
-      }
-    }
-
-    @media (min-width: $mq-small) {
-      margin-bottom: 0;
-    }
-
-    .h2 {
-      color: #fff;
-    }
-  }
-
-  .home-active & {
-    display: none;
-  }
+.terrain-icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
 }
 </style>
