@@ -16,7 +16,7 @@
     "watch": "parallelshell \"npm run watch:symbols\""
   },
   "dependencies": {
-    "ajv": "^6.4.0",
+    "ajv": "^6.12.3",
     "hammerjs": "^2.0.8",
     "muuri": "^0.7.1",
     "node-sass": "^4.8.3",
